@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    {{-- <link href="{{ asset('css/business-casual.min.css')}}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/coffee_shop.css')}}" rel="stylesheet"> 
 
   </head>
 
@@ -31,7 +31,7 @@
 
     @include('frontend.layouts.footer')
         <!-- Bootstrap core JavaScript -->
-    {{-- <script src="{{asset('jquery/jquery.min.js')}}"></script> --}}
+    <script src="{{asset('jquery/jquery.min.js')}}"></script> 
     <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   </body>
