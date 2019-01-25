@@ -1,3 +1,9 @@
+body {
+    font-family: 'Lora';
+    background: url("../img/bg.jpg");
+   
+   
+  }
 section{
     height:100vh;  
     display: flex;
@@ -5,5 +11,5 @@ section{
     align-content: center; 
 }
 #navbarResponsive{
-    writing-mode: vertical-lr;
+    writing-mode: vertical-lr; /* Let navbar vertical*/
 } 
