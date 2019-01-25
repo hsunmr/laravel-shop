@@ -10,6 +10,20 @@ section{
     justify-content: center;
     align-content: center; 
 }
+
 #navbarResponsive{
+    width: 100%;
     writing-mode: vertical-lr; /* Let navbar vertical*/
+   
 } 
+#site-logo {
+    height: 176px;
+    width: 90px; 
+}
+#site-logo .logo{
+    height: 167px;
+}
+
+.fixed{
+    height: 120px;
+}
