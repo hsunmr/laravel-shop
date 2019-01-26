@@ -1,13 +1,14 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" id="site-nav">
+<nav class="navbar navbar-expand-md navbar-light sticky-top" id="site-nav">
   <div class="container">
-    <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Coffee</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse navbar" id="navbarResponsive">
+    <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-md-none mx-auto" href="#">コーヒー</a>
+  
+    <div class="collapse navbar-collapse navbar vertical " id="navbarResponsive">
       <ul class="nav navbar-nav flex-column mr-auto" id="mainNav">
-        <li class="nav-item" id="site-logo">
+        <li class="nav-item d-none d-lg-block d-md-block " id="site-logo">
           <a class="nav-link text-uppercase font-weight-bold logo" href="#"><img class="rounded" src="img/icon/home_icon.png"></a>
         </li>
         <li class="nav-item">

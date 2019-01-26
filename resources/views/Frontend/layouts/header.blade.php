@@ -1,2 +1,6 @@
+<header  id="header"> 
+  <div class="image-wrapper"></div>
+</header>
 
-@include('frontend.layouts.navbar')
+
+

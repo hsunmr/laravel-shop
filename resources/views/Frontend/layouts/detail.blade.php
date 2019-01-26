@@ -1,3 +1,3 @@
-<section>
-detail<br>
-</section>
+<div id="detail">
+    detail<br>
+</div>
