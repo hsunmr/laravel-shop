@@ -1,41 +1,28 @@
 body {
     font-family: 'Lora';
     background: url("../img/bg.jpg");
-   
-   
-  }
-
-/* header{
-    min-height: 540px;
-    height: 540px;
-    height: 100vh;
+}
+header{
+    min-height: 60vh;
+    height: 60vh;
     max-height: 800px;
     padding: 0; 
-}  */
-.image-wrapper {
-      background: url("../img/header_bg.jpg"); 
-     background-position: 50%;
-     background-repeat: no-repeat;
-     -webkit-background-size: cover;
-     background-size: cover;
-     height:70%;
-     min-height: 350px;     
-     left: 0;
-     right: 0;
-     position: absolute;
-     top: 0;
-     width: 100%;
-     
+    display: block;
+    position: relative;
 }
 nav{
     background-color:transparent;
     top:0;
+    display: block;
+    position: relative;
 }
+
 #navbarResponsive{
     width: 100%;
 } 
+/* Let navbar vertical*/
 .vertical{
-    writing-mode: vertical-lr; /* Let navbar vertical*/
+    writing-mode: vertical-lr; 
 }
 #site-logo {
     height: 176px;
@@ -45,15 +32,33 @@ nav{
     height: 167px;
 }
 #mainNav .nav-item a:hover{
-    -webkit-transform:rotateY(360deg); -moz-transform:rotateY(360deg); -ms-transform:rotateY(360deg); transform:rotateY(360deg); 
+    -webkit-transform:rotateY(360deg); 
+    -moz-transform:rotateY(360deg); 
+    -ms-transform:rotateY(360deg); 
+    transform:rotateY(360deg); 
     transition: 0.5s;
 }
-header{
-    height: 60%;
+
+.image-wrapper {                                 /* header bg img css*/
+     background: url("../img/header_bg.jpg"); 
+     background-position: 50%;
+     background-repeat: no-repeat;
+     -webkit-background-size: cover;
+     background-size: cover;
+     height:100%;
+     left: 0;
+     right: 0;
+     position: absolute;
+     top: 0;
+     width: 100%;
+     z-index: -1;
+     
 }
+
 #detail{
     height:100vh;  
-    top:50vh;
+    top:0;
+    background-color: cornsilk;
     position: relative;
     justify-content: center;
     align-content: center; 

@@ -1,5 +1,8 @@
 <header  id="header"> 
-  <div class="image-wrapper"></div>
+
+    @include('frontend.layouts.navbar')
+    <div class="image-wrapper"></div>
+    
 </header>
 
 
