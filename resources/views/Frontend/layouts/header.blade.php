@@ -1,7 +1,10 @@
 <header  id="header"> 
 
     @include('frontend.layouts.navbar')
-    <div class="image-wrapper"></div>
+   
+    @if(isset($wrapper))
+      <div class="image-wrapper"></div>
+    @endif 
 
 </header>
 

@@ -70,7 +70,7 @@ nav{
 #detail{
     height:100vh;  
     top:0;
-   
+    background-color: cornsilk;
     position: relative;
     justify-content: center;
     align-content: center; 

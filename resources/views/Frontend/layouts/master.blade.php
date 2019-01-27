@@ -23,15 +23,21 @@
   </head>
 
   <body>
-
-    @include('frontend.layouts.header')  
-
+   
+    
+    @if (isset($header_bg))
+      @include('frontend.layouts.header',['wrapper' => $header_bg])  
+    @else
+      @include('frontend.layouts.header')
+    @endif
+    
     @yield('content')
 
     @include('frontend.layouts.detail')
 
     @include('frontend.layouts.footer')
-        <!-- Bootstrap core JavaScript -->
+
+    <!-- Bootstrap core JavaScript -->
     <script src="{{asset('jquery/jquery.min.js')}}"></script> 
     <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/coffee_shop.js')}}"></script>
