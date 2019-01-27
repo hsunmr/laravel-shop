@@ -1,6 +1,6 @@
 body {
     font-family: 'Lora';
-    background: url("../img/bg.jpg");
+    background-image: url("../img/bg.jpg");
 }
 header{
     min-height: 60vh;
@@ -40,7 +40,7 @@ nav{
 }
 
 .image-wrapper {                                 /* header bg img css*/
-     background: url("../img/header_bg.jpg"); 
+     background-image: url("../img/header_bg.jpg"); 
      background-position: 50%;
      background-repeat: no-repeat;
      -webkit-background-size: cover;
@@ -54,11 +54,23 @@ nav{
      z-index: -1;
      
 }
+.image-wrapper:after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 40px;
+    background-image: url(../img/frame_b.png);
+    background-position: center 0;
+    z-index: 100;
+}
 
 #detail{
     height:100vh;  
     top:0;
-    background-color: cornsilk;
+   
     position: relative;
     justify-content: center;
     align-content: center; 
