@@ -38,6 +38,7 @@ $(document).ready(function () {
 });
 //set navbar text and img fade out
 var Navbar_fadeOut = function () {
+    $('.fixed-top').css('top', '-5%');        //fixed top
     $("#navbarResponsive span").fadeOut();   //text
     if (!$("body").hasClass('fixed')) {
         $("#site-logo .logo img").animate({ height: '120px' }, 500, 'linear'); //logo img 
@@ -46,6 +47,7 @@ var Navbar_fadeOut = function () {
 }
 //set navbar text and img fade in
 var Navbar_fadeIn = function () {
+    $('.fixed-top').css('top', '0');
     $("#navbarResponsive span").fadeIn();
     if ($("body").hasClass('fixed')) {
         $("#site-logo .logo img").animate({ height: '167px' }, 500, 'linear');
@@ -78,7 +80,7 @@ var fixNavbar = function () {
 }
 //determine windows scroll top
 var isfade = function () {
-    if ($(window).scrollTop() > 100) {                                       //scroll navbar action
+    if ($(window).scrollTop() > 100) {                                        //scroll navbar action
         Navbar_fadeOut();
     } else {
         Navbar_fadeIn();

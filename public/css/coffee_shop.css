@@ -15,10 +15,12 @@ nav{
     top:0;
     display: block;
     position: relative;
+    transition: 0.5s;
 }
 
 #navbarResponsive{
     width: 100%;
+
 } 
 /* Let navbar vertical*/
 .vertical{
@@ -38,8 +40,6 @@ nav{
     transform:rotateY(360deg); 
     transition: 1s;
 }
-
-
 .icon-bar{
     width: 22px;
     height: 2px;
