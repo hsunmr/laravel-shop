@@ -5,11 +5,45 @@ body {
 /*------------header--------------*/
 header{
     min-height: 60vh;
-    height: 100vh;
-    max-height: 100vh;
+    height: 120vh;
+    max-height: 120vh;
     padding: 0; 
     display: block;
     position: relative;
+}       
+.image-wrapper{
+    top:0;
+    width: 100%;  
+    height: 100vh;
+    position: relative;
+}         
+.image-wrapper .carousel-item{                                     /* header bg img css*/
+    top:18vh;
+    left:5%;
+    width:90%;  
+    height: 82vh;
+    position: absolute;
+}  
+.carousel-item img{                                 /* header bg img css*/
+    top:0;
+    left:0;
+    width:100%;  
+    height: auto;
+    position: absolute;
+
+}
+
+.carousel-item:after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px; 
+    height: 40px;
+    background-image: url(../img/frame_b.png);
+    background-position: center 0;
+    z-index: 100;
 }
 /*------------navbar--------------*/
 nav{
@@ -58,9 +92,9 @@ nav{
     font-size: 18px;
 }
 #nav-intro{
-    top: -24vh;
-    left: -5vh;
-    position: relative;
+    top: 0;
+    left: 80%;
+    position: absolute;
 }
 /*toggler icon transform*/
 .icon-bar{
@@ -90,26 +124,7 @@ nav{
 	opacity: 1;
 }
 /*------------navbar end--------------*/
-.image-wrapper img{                                 /* header bg img css*/
-    
-    height: 98vh;
-    position: relative;
-    margin: 0 auto;
 
-}
-
-.carousel-item:after {
-    display: block;
-    content: ' ';
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    height: 40px;
-    background-image: url(../img/frame_b.png);
-    background-position: center 0;
-    z-index: 100;
-}
 #header-info{
     bottom: 0;
     right: 0;

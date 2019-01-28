@@ -63,7 +63,7 @@ var fixNavbar = function () {
     // less than small size => fadeIn and remove animation
     if (window.matchMedia('(max-width: 767.98px)').matches) {
         Navbar_fadeIn();
-        $('.image-wrapper img').css('height','60vh');                          //change header size
+       // $('.image-wrapper img').css('height','60vh');                          //change header size
         $('header').css('height','65vh');
         $('.fixed-top').css('top', '0%');
         $('#mainNav').removeClass('flex-column');                              //remove navbar vertical
@@ -74,8 +74,8 @@ var fixNavbar = function () {
     // bigger than small size 
     else {
         isfade();
-        $('.image-wrapper img').css('height','98vh');
-        $('header').css('height','100vh');
+      //  $('.image-wrapper img').css('height','98vh');
+        $('header').css('height','120vh');
         $('#mainNav').addClass('flex-column');                                //add hover animation and vertical 
         $('#navbarResponsive').addClass('vertical');
         $('nav').css("background-color", "transparent").css("opacity", 1);
