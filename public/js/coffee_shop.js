@@ -38,10 +38,13 @@ $(document).ready(function () {
 });
 //set navbar text and img fade out
 var Navbar_fadeOut = function () {
-    $('.fixed-top').css('top', '-5%');        //fixed top
+    if(window.matchMedia('(min-width: 1025px)').matches)
+        $('.fixed-top').css('top', '-5%');        //fixed top
+    else
+        $('.fixed-top').css('top', '-3%');   
     $("#navbarResponsive span").stop().fadeOut();   //text
     if (!$("body").hasClass('fixed')) {
-        $("#site-logo .logo img").stop().animate({ height: '150px', width: '25vh' }, 500, 'linear'); //logo img 
+        $("#site-logo .logo img").stop().animate({ height: '12vh', width: '17vh' }, 500, 'linear'); //logo img 
         $("body").addClass('fixed');
     }
 }
@@ -50,7 +53,7 @@ var Navbar_fadeIn = function () {
     $('.fixed-top').css('top', '-2%');
     $("#navbarResponsive span").stop().fadeIn();
     if ($("body").hasClass('fixed')) {
-        $("#site-logo .logo img").stop().animate({ height: '167px', width: '30vh' }, 500, 'linear');
+        $("#site-logo .logo img").stop().animate({ height: '15vh', width: '20vh' }, 500, 'linear');
         $("body").removeClass('fixed');
     }
 }
@@ -58,10 +61,10 @@ var Navbar_fadeIn = function () {
 var fixNavbar = function () {
 
     // less than small size => fadeIn and remove animation
-    // if (window.matchMedia('(max-width: 830px)').matches)
-    //     $('#nav-info').css
     if (window.matchMedia('(max-width: 767.98px)').matches) {
         Navbar_fadeIn();
+        $('.image-wrapper img').css('height','60vh');                          //change header size
+        $('header').css('height','65vh');
         $('.fixed-top').css('top', '0%');
         $('#mainNav').removeClass('flex-column');                              //remove navbar vertical
         $('#navbarResponsive').removeClass('vertical');
@@ -71,6 +74,8 @@ var fixNavbar = function () {
     // bigger than small size 
     else {
         isfade();
+        $('.image-wrapper img').css('height','98vh');
+        $('header').css('height','100vh');
         $('#mainNav').addClass('flex-column');                                //add hover animation and vertical 
         $('#navbarResponsive').addClass('vertical');
         $('nav').css("background-color", "transparent").css("opacity", 1);
@@ -85,3 +90,8 @@ var isfade = function () {
         Navbar_fadeIn();
     }
 }
+
+$('.carousel').carousel({
+    interval:8000,
+    pause: false
+})

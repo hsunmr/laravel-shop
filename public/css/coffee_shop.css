@@ -25,29 +25,27 @@ nav{
 #navbarResponsive{
     width: 100%;
 } 
-#test{
-   left:50px;
-   position: relative
-  
-}
+
 /* Let navbar vertical*/
 .vertical{
     writing-mode: vertical-lr; 
 }
 #site-logo {
-    height: 176px;
+    height: 20vh;
     width: 35vh; 
 }
 #site-logo .logo{
-    height: 167px;
+    height: 15vh;
 }
 #site-logo .logo .logo-img{
-    width: 30vh;
-    height: 167px;
+    width: 20vh;
+    height: 15vh;
+    left: 3vh;
+    position: relative;
 }
 .toggle-logo-img{
-    width: 20vh;
-    height: 120px;
+    width: 15vh;
+    height: 10vh;
 }
 #mainNav .nav-item a:hover{
     -webkit-transform:rotateY(360deg); 
@@ -56,6 +54,15 @@ nav{
     transform:rotateY(360deg); 
     transition: 1s;
 }
+.nav-item span{
+    font-size: 18px;
+}
+#nav-intro{
+    top: -24vh;
+    left: -5vh;
+    position: relative;
+}
+/*toggler icon transform*/
 .icon-bar{
     width: 22px;
     height: 2px;
@@ -83,23 +90,15 @@ nav{
 	opacity: 1;
 }
 /*------------navbar end--------------*/
-.image-wrapper {                                 /* header bg img css*/
-     background-image: url("../img/header_bg.jpg"); 
-     background-position: 50%;
-     background-repeat: no-repeat;
-     -webkit-background-size: cover;
-     background-size: cover;
-     background-position: 55% 40%;
-     height:100vh;
-     left: 0;
-     right: 0;
-     position: absolute;
-     top: 0 ;
-     width: 100%;
-     z-index: -1;
-     
+.image-wrapper img{                                 /* header bg img css*/
+    
+    height: 98vh;
+    position: relative;
+    margin: 0 auto;
+
 }
-.image-wrapper:after {
+
+.carousel-item:after {
     display: block;
     content: ' ';
     position: absolute;
@@ -112,7 +111,7 @@ nav{
     z-index: 100;
 }
 #header-info{
-    bottom: 5px;
+    bottom: 0;
     right: 0;
     left: 0;
     position: absolute;
