@@ -39,18 +39,18 @@ $(document).ready(function () {
 //set navbar text and img fade out
 var Navbar_fadeOut = function () {
     $('.fixed-top').css('top', '-5%');        //fixed top
-    $("#navbarResponsive span").fadeOut();   //text
+    $("#navbarResponsive span").stop().fadeOut();   //text
     if (!$("body").hasClass('fixed')) {
-        $("#site-logo .logo img").animate({ height: '120px' }, 500, 'linear'); //logo img 
+        $("#site-logo .logo img").stop().animate({ height: '150px', width: '25vh' }, 500, 'linear'); //logo img 
         $("body").addClass('fixed');
     }
 }
 //set navbar text and img fade in
 var Navbar_fadeIn = function () {
-    $('.fixed-top').css('top', '0');
-    $("#navbarResponsive span").fadeIn();
+    $('.fixed-top').css('top', '-2%');
+    $("#navbarResponsive span").stop().fadeIn();
     if ($("body").hasClass('fixed')) {
-        $("#site-logo .logo img").animate({ height: '167px' }, 500, 'linear');
+        $("#site-logo .logo img").stop().animate({ height: '167px', width: '30vh' }, 500, 'linear');
         $("body").removeClass('fixed');
     }
 }
@@ -58,10 +58,11 @@ var Navbar_fadeIn = function () {
 var fixNavbar = function () {
 
     // less than small size => fadeIn and remove animation
+    // if (window.matchMedia('(max-width: 830px)').matches)
+    //     $('#nav-info').css
     if (window.matchMedia('(max-width: 767.98px)').matches) {
         Navbar_fadeIn();
-        $('#navbar-container').removeClass('container');
-        $('#navbar-container').addClass('container-fluid');
+        $('.fixed-top').css('top', '0%');
         $('#mainNav').removeClass('flex-column');                              //remove navbar vertical
         $('#navbarResponsive').removeClass('vertical');
         $('nav').css("background-color", "antiquewhite").css("opacity", 0.8);  //set bg color and opacity
@@ -70,8 +71,6 @@ var fixNavbar = function () {
     // bigger than small size 
     else {
         isfade();
-        $('#navbar-container').removeClass('container-fluid');
-        $('#navbar-container').addClass('container');
         $('#mainNav').addClass('flex-column');                                //add hover animation and vertical 
         $('#navbarResponsive').addClass('vertical');
         $('nav').css("background-color", "transparent").css("opacity", 1);

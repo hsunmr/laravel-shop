@@ -1,5 +1,6 @@
 <header  id="header"> 
 
+   
     @include('frontend.layouts.navbar')
    
     @if(isset($wrapper))

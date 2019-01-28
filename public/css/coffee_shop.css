@@ -2,14 +2,16 @@ body {
     font-family: 'Lora';
     background-image: url("../img/bg.jpg");
 }
+/*------------header--------------*/
 header{
     min-height: 60vh;
-    height: 60vh;
-    max-height: 800px;
+    height: 100vh;
+    max-height: 100vh;
     padding: 0; 
     display: block;
     position: relative;
 }
+/*------------navbar--------------*/
 nav{
     background-color:transparent;
     top:0;
@@ -17,21 +19,35 @@ nav{
     position: relative;
     transition: 0.5s;
 }
-
+.fixed-top{
+    top:-2%;
+}
 #navbarResponsive{
     width: 100%;
-
 } 
+#test{
+   left:50px;
+   position: relative
+  
+}
 /* Let navbar vertical*/
 .vertical{
     writing-mode: vertical-lr; 
 }
 #site-logo {
     height: 176px;
-    width: 90px; 
+    width: 35vh; 
 }
 #site-logo .logo{
     height: 167px;
+}
+#site-logo .logo .logo-img{
+    width: 30vh;
+    height: 167px;
+}
+.toggle-logo-img{
+    width: 20vh;
+    height: 120px;
 }
 #mainNav .nav-item a:hover{
     -webkit-transform:rotateY(360deg); 
@@ -66,18 +82,19 @@ nav{
 .navbar-toggler.x.collapsed .icon-bar:nth-of-type(2) {
 	opacity: 1;
 }
-
+/*------------navbar end--------------*/
 .image-wrapper {                                 /* header bg img css*/
      background-image: url("../img/header_bg.jpg"); 
      background-position: 50%;
      background-repeat: no-repeat;
      -webkit-background-size: cover;
      background-size: cover;
-     height:56vh;
+     background-position: 55% 40%;
+     height:100vh;
      left: 0;
      right: 0;
      position: absolute;
-     top: 0;
+     top: 0 ;
      width: 100%;
      z-index: -1;
      
@@ -101,7 +118,7 @@ nav{
     position: absolute;
     z-index: 11;
 }
-
+/*------------header end--------------*/
 #detail{
     height:100vh;  
     top:0;
