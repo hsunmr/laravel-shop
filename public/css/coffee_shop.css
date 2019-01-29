@@ -9,7 +9,8 @@ header{
     padding: 0; 
     display: block;
     position: relative;
-}  
+}
+/*navbar start*/  
 nav{
     top:0;
     display: block;
@@ -50,11 +51,12 @@ nav{
     position: relative;
     transition: 0s;
 }
-
 .toggle-logo-img{
-    width: 15vh;
-    height: 10vh;
+    width: 60px;
+    height: 40px;
 }
+/*home logo end*/
+
 
 /*toggler icon transform*/
 .icon-bar{
@@ -74,8 +76,6 @@ nav{
 .navbar-toggler.x .icon-bar:nth-of-type(3) {
 	transform: rotate(45deg) translate(-3px,-7px);
 }
-
-
 /* ANIMATED X COLLAPSED */
 .navbar-toggler.x.collapsed .icon-bar:nth-of-type(1),.navbar-toggler.x.collapsed .icon-bar:nth-of-type(3)  {
 	transform: rotate(0);
@@ -83,6 +83,57 @@ nav{
 .navbar-toggler.x.collapsed .icon-bar:nth-of-type(2) {
 	opacity: 1;
 }
+/*toggler icon transform end*/
+
+/*------------navbar end--------------*/
+
+
+/* wrapeer carousel */
+.image-wrapper{
+
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 42%;
+    overflow: hidden;
+
+}         
+.image-wrapper .carousel-item{                       /* header bg img css*/
+    top:0;
+    left:4%;
+    width:92%;  
+    height:100%;
+    position: absolute;
+}  
+.carousel-item img{                                 /* header bg img css*/
+    top:0;
+    left:0;
+    width:100%;  
+    height: auto;
+    position: absolute;
+
+}
+/* bottom bg*/
+.carousel-item:after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    bottom: -5px;
+    left: -1px;
+    right: -1px; 
+    height: 40px;
+    background-image: url(../img/frame_b.png);
+    background-position: center 0;
+    z-index: 100;
+}
+/* wrapeer carousel end */   
+#header-info{
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    z-index: 11;
+}
+
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px)  { 
@@ -99,6 +150,7 @@ nav{
         background-color: antiquewhite;
         opacity: 0.8;
     }
+
 }
 /* Large devices (desktops, less than 1200px) */
 @media (min-width: 768px) and (max-width: 1199.98px) { 
@@ -106,6 +158,7 @@ nav{
         height: 80%;
         width: 30vh; 
     }
+
 }
 @media (min-width: 1200px){
       
@@ -114,52 +167,6 @@ nav{
         height: 80%;
         width: 33vh; 
     }
-}
-/*------------navbar end--------------*/
-
-
-/* wrapeer carousel */
-.image-wrapper{
-    top:0;
-    width: 100%;  
-    height: 80vh;
-    position: relative;
-}         
-.image-wrapper .carousel-item{                       /* header bg img css*/
-    top:0;
-    left:4%;
-    width:92%;  
-    height:80vh;
-    position: absolute;
-}  
-.carousel-item img{                                 /* header bg img css*/
-    top:0;
-    left:0;
-    width:100%;  
-    height: auto;
-    position: absolute;
-    transition: 5s;
-}
-
-.carousel-item:after {
-    display: block;
-    content: ' ';
-    position: absolute;
-    bottom: 0;
-    left: -1px;
-    right: -1px; 
-    height: 40px;
-    background-image: url(../img/frame_b.png);
-    background-position: center 0;
-    z-index: 100;
-}
-   
-#header-info{
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: absolute;
-    z-index: 11;
 }
 /*------------header end--------------*/
 #detail{
