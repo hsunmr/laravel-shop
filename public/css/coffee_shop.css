@@ -2,100 +2,60 @@ body {
     font-family: 'Lora';
     background-image: url("../img/bg.jpg");
 }
-/*------------header--------------*/
-header{
-    min-height: 60vh;
-    height: 120vh;
-    max-height: 120vh;
+
+/*------------header global--------------*/
+header{ 
+    height: 20vh;
     padding: 0; 
     display: block;
     position: relative;
-}       
-.image-wrapper{
-    top:0;
-    width: 100%;  
-    height: 100vh;
-    position: relative;
-}         
-.image-wrapper .carousel-item{                                     /* header bg img css*/
-    top:18vh;
-    left:5%;
-    width:90%;  
-    height: 82vh;
-    position: absolute;
 }  
-.carousel-item img{                                 /* header bg img css*/
-    top:0;
-    left:0;
-    width:100%;  
-    height: auto;
-    position: absolute;
-
-}
-
-.carousel-item:after {
-    display: block;
-    content: ' ';
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    right: -1px; 
-    height: 40px;
-    background-image: url(../img/frame_b.png);
-    background-position: center 0;
-    z-index: 100;
-}
-/*------------navbar--------------*/
 nav{
-    background-color:transparent;
     top:0;
     display: block;
-    position: relative;
+    position: absolute;
     transition: 0.5s;
-}
-.fixed-top{
-    top:-2%;
-}
+    background-color: transparent;
+    opacity: 1;
+} 
 #navbarResponsive{
     width: 100%;
 } 
-
 /* Let navbar vertical*/
 .vertical{
     writing-mode: vertical-lr; 
 }
-#site-logo {
-    height: 20vh;
-    width: 35vh; 
-}
-#site-logo .logo{
-    height: 15vh;
-}
-#site-logo .logo .logo-img{
-    width: 20vh;
-    height: 15vh;
-    left: 3vh;
-    position: relative;
-}
-.toggle-logo-img{
-    width: 15vh;
-    height: 10vh;
-}
-#mainNav .nav-item a:hover{
+#mainNav .nav-hover a:hover{
     -webkit-transform:rotateY(360deg); 
     -moz-transform:rotateY(360deg); 
     -ms-transform:rotateY(360deg); 
     transform:rotateY(360deg); 
-    transition: 1s;
+    transition: 1.5s;
 }
 .nav-item span{
     font-size: 18px;
 }
 #nav-intro{
     top: 0;
-    left: 80%;
+    left: 85%;
     position: absolute;
 }
+
+/*home logo*/
+#site-logo .logo .logo-img{
+    width: 100%;
+    height: 150px;
+    left:10px;
+    top:-10px;
+    position: relative;
+    transition: 0s;
+}
+
+.toggle-logo-img{
+    width: 15vh;
+    height: 10vh;
+}
+
 /*toggler icon transform*/
 .icon-bar{
     width: 22px;
@@ -108,13 +68,13 @@ nav{
 .navbar-toggler.x .icon-bar:nth-of-type(1) {
     transform: rotate(-45deg) translate(-3px,5px);
 }
-
 .navbar-toggler.x .icon-bar:nth-of-type(2) {
 	opacity: 0;
 }
 .navbar-toggler.x .icon-bar:nth-of-type(3) {
 	transform: rotate(45deg) translate(-3px,-7px);
 }
+
 
 /* ANIMATED X COLLAPSED */
 .navbar-toggler.x.collapsed .icon-bar:nth-of-type(1),.navbar-toggler.x.collapsed .icon-bar:nth-of-type(3)  {
@@ -123,8 +83,77 @@ nav{
 .navbar-toggler.x.collapsed .icon-bar:nth-of-type(2) {
 	opacity: 1;
 }
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px)  { 
+    header{ 
+        height: 10vh;
+        padding: 0; 
+        display: block;
+        position: relative;
+    }    
+    #mainNav .nav-item a:hover{
+        transition: 0s;
+    }
+    nav{
+        background-color: antiquewhite;
+        opacity: 0.8;
+    }
+}
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 768px) and (max-width: 1199.98px) { 
+    #site-logo {
+        height: 80%;
+        width: 30vh; 
+    }
+}
+@media (min-width: 1200px){
+      
+    /*------------navbar--------------*/
+    #site-logo {
+        height: 80%;
+        width: 33vh; 
+    }
+}
 /*------------navbar end--------------*/
 
+
+/* wrapeer carousel */
+.image-wrapper{
+    top:0;
+    width: 100%;  
+    height: 80vh;
+    position: relative;
+}         
+.image-wrapper .carousel-item{                       /* header bg img css*/
+    top:0;
+    left:4%;
+    width:92%;  
+    height:80vh;
+    position: absolute;
+}  
+.carousel-item img{                                 /* header bg img css*/
+    top:0;
+    left:0;
+    width:100%;  
+    height: auto;
+    position: absolute;
+    transition: 5s;
+}
+
+.carousel-item:after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    right: -1px; 
+    height: 40px;
+    background-image: url(../img/frame_b.png);
+    background-position: center 0;
+    z-index: 100;
+}
+   
 #header-info{
     bottom: 0;
     right: 0;

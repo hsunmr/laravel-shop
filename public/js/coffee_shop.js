@@ -1,7 +1,4 @@
-
 $(document).ready(function () {
-
-
 
     //init 
     var pos = $(window).scrollTop();
@@ -11,7 +8,7 @@ $(document).ready(function () {
         Navbar_fadeOut();
     }
 
-    /*text hover animation*/
+    /*----------------text hover animation-------------------*/
     $("#about-text,#news-text,#products-text,#shop-text,#cart-text").hover(function () {
         $(this).find('span').stop().fadeIn();
     }, function () {
@@ -20,40 +17,45 @@ $(document).ready(function () {
             $(this).find('span').stop().fadeOut();
         }
     });
+    /*----------------text hover animation end-------------------*/
 
-
-    /*navbar scorll animation*/
+    /*----------------navbar scorll animation-------------------*/
     $(window).scroll(function () {
         if ((window.matchMedia('(min-width: 767.98px)').matches)) {
             isfade();
         }
     });
+     /*--------------navbar scorll animation end------------ -*/
 
-    /*navbar fixed animation*/
+
+    /*----------------navbar fixed animation----------------*/
     $(window).resize(function () {
         fixNavbar();
     });
+    /*----------------navbar fixed animation----------------*/
 
 
 });
 //set navbar text and img fade out
 var Navbar_fadeOut = function () {
-    if(window.matchMedia('(min-width: 1025px)').matches)
-        $('.fixed-top').css('top', '-5%');        //fixed top
-    else
-        $('.fixed-top').css('top', '-3%');   
+     if(window.matchMedia('(min-width: 1025px)').matches)
+         $('.fixed-top').css('top', '-5%');        //fixed top
+     else
+         $('.fixed-top').css('top', '-3%');   
     $("#navbarResponsive span").stop().fadeOut();   //text
     if (!$("body").hasClass('fixed')) {
-        $("#site-logo .logo img").stop().animate({ height: '12vh', width: '17vh' }, 500, 'linear'); //logo img 
+        $("#site-logo .logo img").stop().animate({ height: '130px', width: '80%' }, 500, 'linear'); //logo img 
         $("body").addClass('fixed');
     }
 }
 //set navbar text and img fade in
 var Navbar_fadeIn = function () {
-    $('.fixed-top').css('top', '-2%');
+   
+    $('.fixed-top').css('top', '-1%');   
+
     $("#navbarResponsive span").stop().fadeIn();
     if ($("body").hasClass('fixed')) {
-        $("#site-logo .logo img").stop().animate({ height: '15vh', width: '20vh' }, 500, 'linear');
+        $("#site-logo .logo img").stop().animate({ height: '150px', width: '100%' }, 500, 'linear');
         $("body").removeClass('fixed');
     }
 }
@@ -64,22 +66,16 @@ var fixNavbar = function () {
     if (window.matchMedia('(max-width: 767.98px)').matches) {
         Navbar_fadeIn();
        // $('.image-wrapper img').css('height','60vh');                          //change header size
-        $('header').css('height','65vh');
-        $('.fixed-top').css('top', '0%');
-        $('#mainNav').removeClass('flex-column');                              //remove navbar vertical
-        $('#navbarResponsive').removeClass('vertical');
-        $('nav').css("background-color", "antiquewhite").css("opacity", 0.8);  //set bg color and opacity
-        $('#mainNav .nav-item a').css("transition", "0s"); //remove hover animation
+         $('#mainNav').removeClass('flex-column');                              //remove navbar vertical
+         $('#navbarResponsive').removeClass('vertical');
     }
     // bigger than small size 
     else {
         isfade();
       //  $('.image-wrapper img').css('height','98vh');
-        $('header').css('height','120vh');
-        $('#mainNav').addClass('flex-column');                                //add hover animation and vertical 
-        $('#navbarResponsive').addClass('vertical');
-        $('nav').css("background-color", "transparent").css("opacity", 1);
-        $('#mainNav .nav-item a').css("transition", "0.5s");
+
+         $('#mainNav').addClass('flex-column');                                //add hover animation and vertical 
+         $('#navbarResponsive').addClass('vertical');
     }
 }
 //determine windows scroll top

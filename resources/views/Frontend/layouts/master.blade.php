@@ -24,13 +24,10 @@
 
   <body>
    
+    @include('frontend.layouts.header')  
     
-    @if (isset($header_bg))
-      @include('frontend.layouts.header',['wrapper' => $header_bg])  
-    @else
-      @include('frontend.layouts.header')
-    @endif
-    
+    @yield('index_wrapper')
+
     @yield('content')
 
     @include('frontend.layouts.detail')
