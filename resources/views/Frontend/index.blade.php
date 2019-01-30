@@ -18,6 +18,35 @@
 @section('content')
  {{-- index bg carousel --}}
  
-  <div class="container-fluid" style="border: 2px solid yellow">content</div>
+  <div class="container" style="border: 2px solid yellow" id="index-content">
+    <h2 class="area_head title_type01">ABOUT</h2>
+    <div class="about-des">
+        <div class="row ">
+          <div class="col-lg-6 ">
+            <div id="about-img">
+                <img class="d-block w-100"src="../img/index/about_img.jpg">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div id="about-word">
+                <p class="about_des_txt -ja">
+                    私たちが目指すのは、<br>
+                    たった一杯で幸せになるコーヒー屋。<br>
+                    まずは目の前の人を笑顔にすること、<br>
+                    そのための努力は、惜しみません。<br>
+                    一つの笑顔が連鎖していくように、<br>
+                    世界がワクワクで溢れるまで。
+                </p>
+                <p class="about_des_txt -en">
+                    We want to be your coffee shop. A place that brings a smile to your face with just one cup of roasted goodness.<br>
+                    What drives us is bringing joy to each and every person who walks through our doors.<br>
+                    In the hope that your happiness touches others throughout the rest of your day.<br>
+                    Like a chain reaction, building a better community and a better world.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 @endsection
     
