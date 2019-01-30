@@ -44,7 +44,7 @@ var Navbar_fadeOut = function () {
          $('.fixed-top').css('top', '-3%');   
     $("#navbarResponsive span").stop().fadeOut();   //text
     if (!$("body").hasClass('fixed')) {
-        $("#site-logo .logo img").stop().animate({ height: '130px', width: '80%' }, 500, 'linear'); //logo img 
+        $("#site-logo .logo img").stop().animate({ height: '130px', width: '250px' }, 500, 'linear'); //logo img 
         $("body").addClass('fixed');
     }
 }
@@ -55,7 +55,7 @@ var Navbar_fadeIn = function () {
 
     $("#navbarResponsive span").stop().fadeIn();
     if ($("body").hasClass('fixed')) {
-        $("#site-logo .logo img").stop().animate({ height: '150px', width: '100%' }, 500, 'linear');
+        $("#site-logo .logo img").stop().animate({ height: '150px', width: '280px' }, 500, 'linear');
         $("body").removeClass('fixed');
     }
 }
@@ -64,18 +64,14 @@ var fixNavbar = function () {
 
     // less than small size => fadeIn and remove animation
     if (window.matchMedia('(max-width: 767.98px)').matches) {
-        Navbar_fadeIn();
-       // $('.image-wrapper img').css('height','60vh');                          //change header size
-         $('#mainNav').removeClass('flex-column');                              //remove navbar vertical
-         $('#navbarResponsive').removeClass('vertical');
+        Navbar_fadeIn();                      //change header size
+        $('#mainNav').removeClass('flex-column vertical');                              //remove navbar vertical
     }
     // bigger than small size 
     else {
         isfade();
-      //  $('.image-wrapper img').css('height','98vh');
+        $('#mainNav').addClass('flex-column vertical');                          //add hover animation and vertical 
 
-         $('#mainNav').addClass('flex-column');                                //add hover animation and vertical 
-         $('#navbarResponsive').addClass('vertical');
     }
 }
 //determine windows scroll top

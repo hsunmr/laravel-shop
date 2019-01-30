@@ -14,16 +14,27 @@ header{
 nav{
     top:0;
     display: block;
-    position: absolute;
+    width:100%;
+    position: relative;
     transition: 0.5s;
     background-color: transparent;
     opacity: 1;
 } 
 #navbarResponsive{
     width: 100%;
+    position: relative;
+}
+#mainNav{
+    width:95%;
+    left:0;
 } 
-/* Let navbar vertical*/
-.vertical{
+#nav-intro{
+    width:5%;
+    top: 0;
+    left:90%;
+    position: absolute;
+}
+.vertical{                      /* Let navbar vertical*/
     writing-mode: vertical-lr; 
 }
 #mainNav .nav-hover a:hover{
@@ -36,17 +47,13 @@ nav{
 .nav-item span{
     font-size: 18px;
 }
-#nav-intro{
-    top: 0;
-    left: 85%;
-    position: absolute;
-}
+
 
 /*home logo*/
 #site-logo .logo .logo-img{
-    width: 100%;
+    width: 280px;
     height: 150px;
-    left:10px;
+    left:0;
     top:-10px;
     position: relative;
     transition: 0s;
@@ -150,15 +157,14 @@ nav{
         background-color: antiquewhite;
         opacity: 0.8;
     }
-
+    
 }
+
 /* Large devices (desktops, less than 1200px) */
 @media (min-width: 768px) and (max-width: 1199.98px) { 
     #site-logo {
-        height: 80%;
-        width: 30vh; 
+        width: 28vh; 
     }
-
 }
 @media (min-width: 1200px){
       
