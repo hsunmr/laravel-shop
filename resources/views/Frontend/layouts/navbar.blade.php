@@ -17,8 +17,8 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
   
       <ul class="nav navbar-nav mr-auto vertical flex-column" id="mainNav">
-        <li class="nav-item d-none d-lg-block d-md-block " id="site-logo">
-          <a class="nav-link text-uppercase font-weight-bold logo" href="#"><img class="rounded logo-img" src="img/icon/home_icon.png"></a>
+        <li class="nav-item d-none d-lg-block d-md-block" id="site-logo" >
+            <a class="nav-link logo" href="#"><img class="rounded logo-img" src="img/icon/home_icon.png"></a>
         </li>
         <li class="nav-item nav-hover">
           <a class="nav-link text-uppercase font-weight-bold" id="about-text" href="#"><img src="img/icon/about_icon.png"><span class="align-middle"> 關於我們</span></a>

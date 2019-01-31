@@ -3,6 +3,7 @@ $(document).ready(function () {
     //init 
     var pos = $(window).scrollTop();
     fixNavbar();
+    scroll_bottom_fade();
     //init fix size
     if (pos > 100 && window.matchMedia('(min-width: 767.98px)').matches) {
         Navbar_fadeOut();
@@ -17,31 +18,30 @@ $(document).ready(function () {
             $(this).find('span').stop().fadeOut();
         }
     });
-    /*----------------text hover animation end-------------------*/
 
     /*----------------navbar scorll animation-------------------*/
     $(window).scroll(function () {
+        scroll_bottom_fade();
         if ((window.matchMedia('(min-width: 767.98px)').matches)) {
             isfade();
         }
+        
     });
-     /*--------------navbar scorll animation end------------ -*/
-
 
     /*----------------navbar fixed animation----------------*/
     $(window).resize(function () {
         fixNavbar();
     });
-    /*----------------navbar fixed animation----------------*/
+
 
 
 });
 //set navbar text and img fade out
 var Navbar_fadeOut = function () {
-     if(window.matchMedia('(min-width: 1025px)').matches)
-         $('.fixed-top').css('top', '-5%');        //fixed top
-     else
-         $('.fixed-top').css('top', '-3%');   
+      if(window.matchMedia('(min-width: 1025px)').matches)
+          $('.fixed-top').css('top', '-5%');        //fixed top
+      else
+          $('.fixed-top').css('top', '-4%');   
     $("#navbarResponsive span").stop().fadeOut();   //text
     if (!$("body").hasClass('fixed')) {
         $("#site-logo .logo img").stop().animate({ height: '130px', width: '250px' }, 500, 'linear'); //logo img 
@@ -52,7 +52,6 @@ var Navbar_fadeOut = function () {
 var Navbar_fadeIn = function () {
    
     $('.fixed-top').css('top', '-1%');   
-
     $("#navbarResponsive span").stop().fadeIn();
     if ($("body").hasClass('fixed')) {
         $("#site-logo .logo img").stop().animate({ height: '150px', width: '280px' }, 500, 'linear');
@@ -82,7 +81,16 @@ var isfade = function () {
         Navbar_fadeIn();
     }
 }
+var scroll_bottom_fade = function(){
+   
+  
+     $scroll_bottom = ($(window).scrollTop()+$(window).height());
 
+    if( $scroll_bottom >= $('#index-about').offset().top)
+        $('.about-des').css('opacity',1);
+    if($scroll_bottom >= $('#index-news').offset().top)
+        $('.news-des').css('transform','translate3d(0,0,0)');
+}
 $('.carousel').carousel({
     interval:8000,
     pause: false

@@ -37,6 +37,7 @@ nav{
 .vertical{                      /* Let navbar vertical*/
     writing-mode: vertical-lr; 
 }
+
 #mainNav .nav-hover a:hover{
     -webkit-transform:rotateY(360deg); 
     -moz-transform:rotateY(360deg); 
@@ -50,7 +51,7 @@ nav{
 
 
 /*home logo*/
-#site-logo .logo .logo-img{
+.logo .logo-img{
     width: 280px;
     height: 150px;
     left:0;
@@ -150,21 +151,25 @@ nav{
     background-size: 60px auto;
     padding: 38px 0 0;
     margin: 0 auto 50px;
-    color: #b98e51;
+    color:#655033;
     font-family: 'henriette', sans-serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: normal;
     text-align: center;
     line-height: 1.4;
     letter-spacing: 0.1em;
 }
-#about-img,#about-word{
+.about-des{
+    opacity: 0;
+    transition: 5s;
+}
+#about-img{
     margin-bottom: 50px;
 }
-
 #about-word{
     width:100%;
     font-size: 16px;
+    margin-bottom: 50px;
 }
 .about_des_txt.-ja {
     font-weight: bold;
@@ -173,6 +178,40 @@ nav{
 .about_des_txt.-en {
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
+}
+.news-des{
+
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+    transform: translate3d(100px,0,0);
+    margin: auto;
+    background-color: rgba(240, 235, 217, 0.8); 
+    padding: 50px 30px;
+    margin-bottom: 40px;
+}
+.news-des ul {
+    list-style: none;
+    width: 90%;
+    margin: auto;
+    padding-left:0;
+}
+
+.news-des ul li{
+    color: #422210;
+    font-size: 14px;
+    border-bottom: 1px dotted #422210;
+    line-height: 3.5em;
+    vertical-align: baseline;
+}
+.news-des ul li:last-child {
+    border-bottom: none;
+}
+.news_text{
+    margin-left:50px;
+}
+.break{
+    display: none;
 }
 #detail{
     height:100vh;  
@@ -198,14 +237,16 @@ nav{
         background-color: antiquewhite;
         opacity: 0.8;
     }
- 
+    .news_text{
+        margin-left:0;
+    }
+    .break{
+        display: block;
+    }
 }
 
 /* Large devices (desktops, less than 1200px) */
 @media (min-width: 768px) and (max-width: 1199.98px) { 
-    #site-logo {
-        width: 28vh; 
-    }
     #about-word{
         font-size: 14px;
     }
@@ -216,10 +257,7 @@ nav{
 @media (min-width: 1200px){
       
     /*------------navbar--------------*/
-    #site-logo {
-        height: 80%;
-        width: 33vh; 
-    }
+
 }
 
 
