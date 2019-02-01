@@ -89,6 +89,8 @@ var scroll_bottom_fade = function () {
         $('.about-des').css('opacity', 1);
     if ($scroll_bottom >= $('.news-des').offset().top )
         $('.news-des').css('transform', 'translate3d(0,0,0)');
+    if ($scroll_bottom >= $('.img_wrap').offset().top )
+        $('.img_wrap img').css('opacity', 1);
 }
 $('.carousel').carousel({
     interval: 8000,

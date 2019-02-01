@@ -98,12 +98,10 @@ nav{
 
 /* wrapeer carousel */
 .image-wrapper{
-
     max-width: 100%;
     height: auto;
     padding-bottom: 42%;
     overflow: hidden;
-
 }         
 .image-wrapper .carousel-item{                       /* header bg img css*/
     top:0;
@@ -146,14 +144,14 @@ nav{
 
 
 /*------------header end--------------*/
-.title_type01 {
+.head_title{
     background: url(../img/title01.png) center top no-repeat;
     background-size: 60px auto;
     padding: 38px 0 0;
     margin: 0 auto 50px;
     color:#655033;
     font-family: 'henriette', sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
     line-height: 1.4;
@@ -257,17 +255,67 @@ nav{
     transform: translateY(-5px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
+
+
+/*detail start*/
 #detail{
-    height:100vh;  
     top:0;
     background-color: white;
+    border:3px solid salmon;
     position: relative;
     justify-content: center;
-    align-content: center; 
-   
+    align-content: center;   
 }
+#detail-cotent{
+    height:100vh;  
+    padding-top: 50px;
+    width: 100%;  
+    position: relative;
+}
+#detail-cotent .img_wrap{
+    top:0;
+    left:25%;
+    width:50%;  
+    height:auto;
+
+    position: relative;
+}
+.img_wrap img{
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: 3s;
+}
+.block_wrap{
+    margin-top:50px;
+    border: 3px solid salmon;
+}
+.block_left{
+    padding-left: 30%;
+    color: #655046;
+    font-size: 18px;
+}
+.shop_name{
+    font-size: 20px;
+}
+.box_head{
+    width: 80px;
+    color: #668e68;
+    display: inline-block;
+}
+.tel,.mail{
+    color: inherit;
+}
+.mail_box a{
+    text-decoration: none;
+}
+.mail_box a:hover{
+    color: inherit;
+}
+/*footer start*/
 footer{
     background: #655046;
+    height:100px;
 }
 @media (max-width: 767.98px)  { 
     header{ 
@@ -289,6 +337,15 @@ footer{
     .break{
         display: block;
     }
+    .head_title {
+        margin: 0 auto 25px;
+        font-size: 1.5rem;
+    }
+    #detail-cotent .img_wrap {
+        left:0;
+        width:100%;  
+    }
+
 }
 
 /* Large devices (desktops, less than 1200px) */
@@ -299,6 +356,7 @@ footer{
     .about_des_txt.-en {
         font-size: 12px;
     }
+
 }
 @media (min-width: 1200px){
       

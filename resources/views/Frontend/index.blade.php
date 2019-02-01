@@ -19,7 +19,7 @@
  {{-- index bg carousel --}}
  
   <div class="container" id="index-about">
-    <h2 class="area_head title_type01">ABOUT</h2>
+    <h2 class="head_title">ABOUT</h2>
         <div class="row about-des">
           <div class="col-lg-6 ">
             <div id="about-img">
@@ -47,7 +47,7 @@
         </div>
   </div>
   <div class="container" id="index-news">
-    <h2 class="area_head title_type01">NEWS</h2>
+    <h2 class="head_title">NEWS</h2>
     <div class="row news-des">
             <ul id="news_topics">			
                  <li>
