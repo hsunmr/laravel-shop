@@ -25,7 +25,7 @@ $(document).ready(function () {
         if ((window.matchMedia('(min-width: 767.98px)').matches)) {
             isfade();
         }
-        
+
     });
 
     /*----------------navbar fixed animation----------------*/
@@ -38,10 +38,10 @@ $(document).ready(function () {
 });
 //set navbar text and img fade out
 var Navbar_fadeOut = function () {
-      if(window.matchMedia('(min-width: 1025px)').matches)
-          $('.fixed-top').css('top', '-5%');        //fixed top
-      else
-          $('.fixed-top').css('top', '-4%');   
+    if (window.matchMedia('(min-width: 1025px)').matches)
+        $('.fixed-top').css('top', '-5%');        //fixed top
+    else
+        $('.fixed-top').css('top', '-4%');
     $("#navbarResponsive span").stop().fadeOut();   //text
     if (!$("body").hasClass('fixed')) {
         $("#site-logo .logo img").stop().animate({ height: '130px', width: '250px' }, 500, 'linear'); //logo img 
@@ -50,8 +50,8 @@ var Navbar_fadeOut = function () {
 }
 //set navbar text and img fade in
 var Navbar_fadeIn = function () {
-   
-    $('.fixed-top').css('top', '-1%');   
+
+    $('.fixed-top').css('top', '-1%');
     $("#navbarResponsive span").stop().fadeIn();
     if ($("body").hasClass('fixed')) {
         $("#site-logo .logo img").stop().animate({ height: '150px', width: '280px' }, 500, 'linear');
@@ -81,17 +81,16 @@ var isfade = function () {
         Navbar_fadeIn();
     }
 }
-var scroll_bottom_fade = function(){
-   
-  
-     $scroll_bottom = ($(window).scrollTop()+$(window).height());
+var scroll_bottom_fade = function () {
 
-    if( $scroll_bottom >= $('#index-about').offset().top)
-        $('.about-des').css('opacity',1);
-    if($scroll_bottom >= $('#index-news').offset().top)
-        $('.news-des').css('transform','translate3d(0,0,0)');
+
+    $scroll_bottom = ($(window).scrollTop() + $(window).height());
+    if ($scroll_bottom >= $('.about-des').offset().top )
+        $('.about-des').css('opacity', 1);
+    if ($scroll_bottom >= $('.news-des').offset().top )
+        $('.news-des').css('transform', 'translate3d(0,0,0)');
 }
 $('.carousel').carousel({
-    interval:8000,
+    interval: 8000,
     pause: false
 })
