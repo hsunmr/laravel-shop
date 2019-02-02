@@ -261,15 +261,14 @@ nav{
 #detail{
     top:0;
     background-color: white;
-    border:3px solid salmon;
     position: relative;
     justify-content: center;
     align-content: center;   
 }
 #detail-cotent{
-    height:100vh;  
-    padding-top: 50px;
+    height:100%;  
     width: 100%;  
+    padding-top: 50px;
     position: relative;
 }
 #detail-cotent .img_wrap{
@@ -288,12 +287,16 @@ nav{
 }
 .block_wrap{
     margin-top:50px;
-    border: 3px solid salmon;
-}
-.block_left{
-    padding-left: 30%;
+    left:25%;
+    width:50%;  
+    height:auto;
     color: #655046;
     font-size: 18px;
+    position: relative;
+}
+.block_left{
+    color:inherit;
+    margin-bottom: 50px;
 }
 .shop_name{
     font-size: 20px;
@@ -312,10 +315,86 @@ nav{
 .mail_box a:hover{
     color: inherit;
 }
+.block_right{
+    margin-bottom: 50px;
+}
+.calendar_box {
+    width: 100%;
+    margin: -4px -4px 0 0;
+}
+.calendar_content {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.calendar_content ul{
+    list-style: none;
+}
+.calendar_content li {
+    box-sizing: border-box;
+    background-color: #f0ebea;
+    width: calc(14.2857% - 8px);
+    padding: 8px 0 8px 4px;
+    margin: 4px;
+    color: #655046;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.0;
+    letter-spacing: 0.3em;
+    list-style: none;
+    overflow: hidden;
+}
+.calendar_content .label {
+    background-color: #655046;
+    color: #ffffff;
+    font-weight: bold;
+}
+.calendar_content .prev,.calendar_content .next {
+    background: #ffffff;
+    text-indent: -100%;
+}
+.calendar_content .store_close{
+    background-color: #668e68;
+    color: #ffffff;
+}
+.calendar_notice {
+    margin: 12px 0 0 auto;
+    color: #655046;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    line-height: 1.0;
+    letter-spacing: 0.2em;
+}
+.calendar_notice .calendar_sample {
+    box-sizing: border-box;
+    background-color: #668e68;
+    width: 34px;
+    height: 22px;
+    margin-right: 10px;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
 /*footer start*/
 footer{
     background: #655046;
     height:100px;
+}
+.footer{
+    color:white;
+    text-align: center;
+    padding-top:50px;
+    font-size: 14px;
 }
 @media (max-width: 767.98px)  { 
     header{ 
@@ -341,7 +420,7 @@ footer{
         margin: 0 auto 25px;
         font-size: 1.5rem;
     }
-    #detail-cotent .img_wrap {
+    #detail-cotent .img_wrap,.block_wrap{
         left:0;
         width:100%;  
     }
@@ -355,6 +434,10 @@ footer{
     }
     .about_des_txt.-en {
         font-size: 12px;
+    }
+    #detail-cotent .img_wrap,.block_wrap{
+        left:10%;
+        width:80%;  
     }
 
 }
