@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master') {{-- pass var  to determine header bg whether exist  --}}
+@extends('frontend.layouts.master') 
 @section('title','HOME')
 @section('index_wrapper')
     <div id="wrapper" class="carousel slide carousel-fade" data-ride="carousel">

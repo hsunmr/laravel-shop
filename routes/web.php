@@ -13,4 +13,19 @@
 
 Route::get('/', function () {
     return view('frontend.index');
-});
+})->name('home');
+Route::get('/about', function () {
+    return view('frontend.about');
+})->name('about');
+Route::get('/news', function () {
+    return view('frontend.news');
+})->name('news');
+Route::get('/products', function () {
+    return view('frontend.products');
+})->name('products');
+Route::get('/shop', function () {
+    return view('frontend.shop');
+})->name('shop');
+Route::get('/cart', function () {
+    return view('frontend.cart');
+})->name('cart');

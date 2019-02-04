@@ -157,12 +157,15 @@ nav{
     line-height: 1.4;
     letter-spacing: 0.1em;
 }
+
+
 .about-des{
     opacity: 0;
     transition: 5s;
 }
 #about-img{
     margin-bottom: 50px;
+
 }
 #about-word{
     width:100%;
@@ -181,7 +184,7 @@ nav{
     position: relative;
     width: 100%;
     transition: 1s;
-    transform: translate3d(100px,0,0);
+    transform: translate3d(40px,0,0);
     margin: auto;
     background-color: cornsilk; 
     padding: 50px 30px;
@@ -276,7 +279,6 @@ nav{
     left:25%;
     width:50%;  
     height:auto;
-
     position: relative;
 }
 .img_wrap img{
@@ -396,6 +398,64 @@ footer{
     padding-top:50px;
     font-size: 14px;
 }
+
+
+/*about page*/
+.page_title{
+    width: 110px;
+    padding: 38px 0 0;
+    margin: 0 auto 50px;
+    border-bottom: 3px solid #655033;
+    color:#655033;
+    font-family: 'henriette', sans-serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+}
+
+.about_page_des,.about_history_des{
+    left:10%;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 80px;
+    
+}
+.about_page_des::after{
+    content: '';
+    width: 312px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: url(../img/sec_boundary.png) repeat-x top left;
+    background-size: 24px 24px;
+}
+.about_page_img,.about_page_word{
+    margin-bottom: 50px;
+}
+.about_history_des ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+    width: 100%;
+}
+.about_history_des ul li{
+    color: #422210;
+    font-size: 14px;
+    border-top: 2px solid #422210;
+    line-height: 3.5em;
+    vertical-align: baseline;
+}
+.about_history_des ul li:last-child {
+    border-bottom: 2px solid #422210;
+}
+.history_text{
+    margin-left: 60px;
+}
 @media (max-width: 767.98px)  { 
     header{ 
         height: 80px;
@@ -410,7 +470,7 @@ footer{
         background-color: antiquewhite;
         opacity: 0.8;
     }
-    .news_text{
+    .news_text,.history_text{
         margin-left:0;
     }
     .break{
@@ -423,6 +483,9 @@ footer{
     #detail-cotent .img_wrap,.block_wrap{
         left:0;
         width:100%;  
+    }
+    .news-des{
+        transform: translate3d(0,0,0);
     }
 
 }

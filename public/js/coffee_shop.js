@@ -85,9 +85,9 @@ var scroll_bottom_fade = function () {
 
 
     $scroll_bottom = ($(window).scrollTop() + $(window).height());
-    if ($scroll_bottom >= $('.about-des').offset().top )
+    if ($('.about-des').length > 0 && $scroll_bottom >= $('.about-des').offset().top )
         $('.about-des').css('opacity', 1);
-    if ($scroll_bottom >= $('.news-des').offset().top )
+    if ($('.news-des').length > 0 && $scroll_bottom >= $('.news-des').offset().top && (window.matchMedia('(min-width: 767.98px)').matches))
         $('.news-des').css('transform', 'translate3d(0,0,0)');
     if ($scroll_bottom >= $('.img_wrap').offset().top )
         $('.img_wrap img').css('opacity', 1);
