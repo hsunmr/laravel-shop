@@ -20,6 +20,9 @@ Route::get('/about', function () {
 Route::get('/news', function () {
     return view('frontend.news');
 })->name('news');
+Route::get('/news-detail', function () {
+    return view('frontend.news_detail');
+})->name('news_detail');
 Route::get('/products', function () {
     return view('frontend.products');
 })->name('products');
