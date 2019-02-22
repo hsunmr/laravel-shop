@@ -406,7 +406,6 @@ footer{
     width: 110px;
     padding: 38px 0 0;
     margin: 0 auto 50px;
-    border-bottom: 3px solid #655033;
     color:#655033;
     font-family: 'henriette', sans-serif;
     font-size: 1.8rem;
@@ -526,6 +525,40 @@ footer{
     letter-spacing: 0.2em;
     display: inline-block;
 }
+.menu_title{
+    padding: 0 0 5px;
+    color: #b98e51;
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+}
+.menu_title::after {
+    content: "";
+    border-bottom: 1px solid #b98e51;
+    width: 80px;
+    height: 1px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.menu_row{
+    margin-top: 50px;
+}
+.menu_col{
+    padding: 30px;
+}
+.box_title {
+    padding: 20px 15px 0;
+    color: #655046;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
 
 @media (max-width: 767.98px)  { 
     header{ 
