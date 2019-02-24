@@ -78,7 +78,7 @@
            </ul>
     </div>
     <div class="row news_more">
-        <p><a href="#">more</a></p>
+        <p><a href="{{route('news')}}">more</a></p>
     </div>
   </div>
 @endsection
