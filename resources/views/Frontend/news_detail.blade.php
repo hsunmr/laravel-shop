@@ -4,7 +4,7 @@
 <div class="container" id="news_detail_content">
     <div class="news_detail_des">
         <time>2019.01.29</time>
-        <h3 class="post_title">OPENnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaannn</h2>
+        <h3 class="post_title">OPEN</h2>
         <div class="row" id="post_img">
             <div class="col">
                 <img class="d-block w-100" src="../img/about.jpg">

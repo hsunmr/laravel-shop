@@ -580,8 +580,40 @@ footer{
     line-height: 50px;
     display: inline-block;
 }
+.shop_page_content{
+    margin-bottom: 50px;
+}
+.shop_box{
+    border-bottom: 1px solid #655046;
+    border-top: 1px solid #655046;
+    padding: 30px 0 0 0;
+    color:#655046;
+}
+
+.shop_title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-left: -2px;
+    border-left: 5px double #655046;
+    padding-left: 5px;
+    margin-bottom:50px;
+}
+.shop_box span{
+    line-height: 1.8;
+}
+.shop_box .info_title{
+    border-bottom:2px solid #655046;
+    line-height: 5;
+    font-weight: bold;
+}
+.shop_box .shop_map iframe{
+    margin-left: 0%;
+}
 
 @media (max-width: 767.98px)  { 
+    
     header{ 
         height: 80px;
         padding: 0; 
@@ -594,6 +626,9 @@ footer{
     nav{
         background-color: antiquewhite;
         opacity: 0.8;
+    }
+    #about-word{
+        font-size: 10px;
     }
     .news_text,.history_text{
         margin-left:0;
@@ -612,7 +647,10 @@ footer{
     .news-des{
         transform: translate3d(0,0,0);
     }
-
+    .shop_box .shop_map iframe{
+        margin-left: 0%;
+        width:100%;
+    }
 }
 
 /* Large devices (desktops, less than 1200px) */

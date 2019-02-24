@@ -9,7 +9,7 @@
                 <li>
                     <time>2019年2月19日</time>
                     <br>
-                    <a href="{{route('news_detail')}}"><span>OPENnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaannn</span></a>
+                    <a href="{{route('news_detail')}}"><span>OPEN</span></a>
                 </li>
                 <li>
                     <time>2019年2月19日</time>
