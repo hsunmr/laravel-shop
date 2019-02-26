@@ -5,7 +5,7 @@ $(document).ready(function () {
     fixNavbar();
     scroll_bottom_fade();
     //init fix size
-    if (pos > 100 && window.matchMedia('(min-width: 767.98px)').matches) {
+    if (pos > 100 && window.matchMedia('(min-width: 991.98px)').matches) {
         Navbar_fadeOut();
     }
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
         $(this).find('span').stop().fadeIn();
     }, function () {
 
-        if (($(window).scrollTop() > 100) && (window.matchMedia('(min-width: 767.98px)').matches)) {
+        if (($(window).scrollTop() > 100) && (window.matchMedia('(min-width: 991.98px)').matches)) {
             $(this).find('span').stop().fadeOut();
         }
     });
@@ -22,7 +22,7 @@ $(document).ready(function () {
     /*----------------navbar scorll animation-------------------*/
     $(window).scroll(function () {
         scroll_bottom_fade();
-        if ((window.matchMedia('(min-width: 767.98px)').matches)) {
+        if ((window.matchMedia('(min-width: 991.98px)').matches)) {
             isfade();
         }
 
@@ -62,8 +62,9 @@ var Navbar_fadeIn = function () {
 var fixNavbar = function () {
 
     // less than small size => fadeIn and remove animation
-    if (window.matchMedia('(max-width: 767.98px)').matches) {
-        Navbar_fadeIn();                      //change header size
+    if (window.matchMedia('(max-width: 991.98px)').matches) {
+        Navbar_fadeIn();       
+        $('.fixed-top').css('top', '0');               //change header size
         $('#mainNav').removeClass('flex-column vertical');                              //remove navbar vertical
     }
     // bigger than small size 

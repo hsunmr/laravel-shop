@@ -28,11 +28,43 @@ nav{
     width:95%;
     left:0;
 } 
-#nav-intro{
-    width:5%;
-    top: 0;
-    left:90%;
+#nav-info{
+    width:200px;
+    top: 50px;
+    right:5%;
     position: absolute;
+}
+
+#nav-info .cart {
+    display: block;
+    background: rgba(255,255,255,.7);
+    height: 40px;
+    padding: 8px;
+}
+.fa-shopping-cart{
+    color:rgb(227, 195, 8);
+    margin-right:5px; 
+}
+.cart a .in-cart span.cart-num {
+    float: left;
+    color:#655033;
+}
+.cart a .in-cart span.cart-price {
+    float: right;
+    color:#655033;
+}
+.memberships {
+    text-align: left;
+    margin-top: 5px;
+}
+.memberships a{
+    text-decoration: none;
+    width: 50%;
+    color:grey;
+}
+.memberships a {
+    width: 50%; 
+    padding: 8px;
 }
 .vertical{                      /* Let navbar vertical*/
     writing-mode: vertical-lr; 
@@ -59,9 +91,11 @@ nav{
     position: relative;
     transition: 0s;
 }
-.toggle-logo-img{
-    width: 60px;
-    height: 40px;
+.cart-toggler-link,.login-toggler-link{
+    padding:8px;
+}
+.fa-user{
+    color:grey;
 }
 /*home logo end*/
 
@@ -622,7 +656,7 @@ footer{
     margin-left: 0%;
 }
 
-@media (max-width: 767.98px)  { 
+@media (max-width: 991.98px)  { 
     header{ 
         height: 80px;
         padding: 0; 
@@ -666,7 +700,7 @@ footer{
 }
 
 /* Large devices (desktops, less than 1200px) */
-@media (min-width: 768px) and (max-width: 1199.98px) { 
+@media (min-width: 992px) and (max-width: 1199.98px) { 
     #about-word{
         font-size: 14px;
     }
