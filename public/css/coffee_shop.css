@@ -403,9 +403,8 @@ footer{
 
 /*about page*/
 .page_title{
-    width: 110px;
     padding: 38px 0 0;
-    margin: 0 auto 50px;
+    margin-bottom: 50px;
     color:#655033;
     font-family: 'henriette', sans-serif;
     font-size: 1.8rem;
@@ -413,6 +412,17 @@ footer{
     text-align: center;
     line-height: 1.4;
     letter-spacing: 0.1em;
+}
+.page_title:before,.page_title:after{
+    display: inline-block;
+    content: ' ';
+    line-height: 1em;
+    height: .45em;
+    width: 60px;
+    border-top-width: 3px;
+    border-top-style: dotted;
+    margin: 0 .5em;
+
 }
 
 .about_page_des,.about_history_des{
@@ -613,7 +623,6 @@ footer{
 }
 
 @media (max-width: 767.98px)  { 
-    
     header{ 
         height: 80px;
         padding: 0; 
@@ -650,6 +659,9 @@ footer{
     .shop_box .shop_map iframe{
         margin-left: 0%;
         width:100%;
+    }
+    .page_title,.head_title{
+        font-size: 1.4rem
     }
 }
 
