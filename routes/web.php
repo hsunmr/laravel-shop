@@ -32,3 +32,7 @@ Route::get('/shop', function () {
 Route::get('/cart', function () {
     return view('frontend.cart');
 })->name('cart');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
