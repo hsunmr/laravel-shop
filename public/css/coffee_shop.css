@@ -9,6 +9,7 @@ header{
     padding: 0; 
     display: block;
     position: relative;
+
 }
 /*navbar start*/  
 nav{
@@ -19,6 +20,7 @@ nav{
     transition: 0.5s;
     background-color: transparent;
     opacity: 1;
+ 
 } 
 #navbarResponsive{
     width: 100%;
@@ -654,6 +656,13 @@ footer{
 }
 .shop_box .shop_map iframe{
     margin-left: 0%;
+}
+#register{
+    margin-bottom:50px; 
+}
+
+.card-body{
+    background-color: rgba(200,180,130,.1);
 }
 
 @media (max-width: 991.98px)  { 

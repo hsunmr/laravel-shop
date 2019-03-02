@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,7 +49,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name_last' => ['required', 'string', 'max:255'],
+            'name_first' => ['required', 'string', 'max:255'],
+            'gender' => ['required', 'string', 'max:255'],
+            'birthday_year' => ['required', 'string', 'max:255'],
+            'birthday_month' => ['required', 'string', 'max:255'],
+            'birthday_day' => ['required', 'string', 'max:255'],
+            'ZIP_CD' => ['required', 'string', 'max:255'],
+            'CITY' => ['required', 'string', 'max:255'],
+            'ADDR1' => ['required', 'string', 'max:255'],
+            'ADDR2' => ['required', 'string', 'max:255'],
+            'TEL' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
@@ -63,8 +73,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      
         return User::create([
-            'name' => $data['name'],
+            'name_last' => $data['name_last'],
+            'name_first' => $data['name_first'],
+            'gender' => $data['gender'],
+            'birthday' => $data['birthday_year'] . '/' .  $data['birthday_month'] . '/' . $data['birthday_day'] ,
+            'ZIP_CD' => $data['ZIP_CD'],
+            'CITY' => $data['CITY'],
+            'ADDR1' => $data['ADDR1'],
+            'ADDR2' => $data['ADDR2'],
+            'TEL' => $data['TEL'],
+            'type' => '0',
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

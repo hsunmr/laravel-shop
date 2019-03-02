@@ -15,8 +15,23 @@
 
     <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none mx-auto" href="{{route('home')}}">HSUN COFFEE</a>
     <a class="cart-toggler-link  d-lg-none" href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i></a>
-    <a class="login-toggler-link d-lg-none"  href="#"><i class="fas fa-user"></i></a>
-    
+    @guest
+      <a class="login-toggler-link d-lg-none"  href="{{route('login')}}"><i class="fas fa-user"></i></a>
+    @endguest
+    @auth
+      <a class="dropdown-toggle d-lg-none" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right d-lg-none" aria-labelledby="navbarDropdownMenuLink">
+        <a class="user dropdown-item"  href="#" ><i class="fas fa-user"></i>  
+          {{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} 
+        </a>
+        <a class="logout dropdown-item" href="{{ route('logout') }}" 
+                  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+          <i class="fas fa-sign-out-alt"></i>登出
+        </a>
+      </div>
+    @endauth
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="nav navbar-nav mr-auto vertical flex-column" id="mainNav">
         <li class="nav-item d-none d-lg-block" id="site-logo" >
@@ -49,8 +64,23 @@
         </a>
       </div>
       <div class="memberships">
-        <a class="login" href="#"><i class="fas fa-user"></i>會員登入</a>
-        <a class="regist" href="#"><i class="fas fa-pen-fancy"></i>會員註冊</a>
+        @guest                
+          <a class="login" href="{{ route('login') }}"><i class="fas fa-user"></i>會員登入</a>
+          <a class="registr" href="{{ route('register') }}"><i class="fas fa-pen-fancy"></i>會員註冊</a>
+        @endguest
+        @auth         
+          <a class="user"  href="#" ><i class="fas fa-user"></i>  
+            {{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} 
+          </a>
+
+          <a class="logout" href="{{ route('logout') }}" 
+                  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>登出
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+        @endauth
       </div>
     </div>
   </div>
