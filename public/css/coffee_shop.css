@@ -660,11 +660,14 @@ footer{
 #register{
     margin-bottom:50px; 
 }
-
 .card-body{
-    background-color: rgba(200,180,130,.1);
+    background: url(../img/bg.jpg) 0 0 repeat;
 }
 
+
+.login-info a{
+    color:grey;
+}
 @media (max-width: 991.98px)  { 
     header{ 
         height: 80px;
