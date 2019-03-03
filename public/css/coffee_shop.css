@@ -502,6 +502,8 @@ footer{
 .history_text{
     margin-left: 60px;
 }
+
+/*news page*/
 .news_page_text{
     border-top: 1px solid #655046;
     border-bottom: 1px solid #655046;
@@ -571,6 +573,8 @@ footer{
     letter-spacing: 0.2em;
     display: inline-block;
 }
+
+/*product page*/
 .menu_title{
     padding: 0 0 5px;
     color: #b98e51;
@@ -603,6 +607,7 @@ footer{
     font-weight: bold;
     text-align: center;
 }
+
 .product_page_product{
     border-bottom:1px solid #655046;
 }
@@ -626,6 +631,7 @@ footer{
     line-height: 50px;
     display: inline-block;
 }
+/*shop page*/
 .shop_page_content{
     margin-bottom: 50px;
 }
@@ -657,17 +663,22 @@ footer{
 .shop_box .shop_map iframe{
     margin-left: 0%;
 }
+
+/*login register system*/
 #register{
     margin-bottom:50px; 
 }
 .card-body{
     background: url(../img/bg.jpg) 0 0 repeat;
 }
-
-
 .login-info a{
     color:grey;
 }
+#user-toggle{
+    color:rgb(212, 82, 82);
+}
+
+
 @media (max-width: 991.98px)  { 
     header{ 
         height: 80px;

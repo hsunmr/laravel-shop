@@ -19,7 +19,7 @@
       <a class="login-toggler-link d-lg-none"  href="{{route('login')}}"><i class="fas fa-user"></i></a>
     @endguest
     @auth
-      <a class="dropdown-toggle d-lg-none" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="dropdown-toggle d-lg-none" href="#" id="user-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-right d-lg-none" aria-labelledby="navbarDropdownMenuLink">
