@@ -35,22 +35,22 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="nav navbar-nav mr-auto vertical flex-column" id="mainNav">
         <li class="nav-item d-none d-lg-block" id="site-logo" >
-            <a class="nav-link logo" href="{{route('home')}}"><img class="rounded logo-img" src="img/icon/home_icon.png"></a>
+            <a class="nav-link logo" href="{{route('home')}}"><img class="rounded logo-img" src="{{asset('img/icon/home_icon.png')}}"></a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link text-uppercase font-weight-bold" id="about-text" href="{{route('about')}}"><img src="img/icon/about_icon.png"><span class="align-middle"> 關於我們</span></a>
+          <a class="nav-link text-uppercase font-weight-bold" id="about-text" href="{{route('about')}}"><img src="{{asset('img/icon/about_icon.png')}}"><span class="align-middle"> 關於我們</span></a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link text-uppercase font-weight-bold" id="news-text" href="{{route('news')}}"><img src="img/icon/news_icon.png"><span class="align-middle"> 最新消息</span></a>
+          <a class="nav-link text-uppercase font-weight-bold" id="news-text" href="{{route('news')}}"><img src="{{asset('img/icon/news_icon.png')}}"><span class="align-middle"> 最新消息</span></a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link text-uppercase font-weight-bold" id="products-text" href="{{route('products')}}"><img src="img/icon/products_icon.png"><span class="align-middle"> 商品介紹</span></a>
+          <a class="nav-link text-uppercase font-weight-bold" id="products-text" href="{{route('products')}}"><img src="{{asset('img/icon/products_icon.png')}}"><span class="align-middle"> 商品介紹</span></a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link text-uppercase font-weight-bold" id="shop-text" href="{{route('shop')}}"><img src="img/icon/shop_icon.png"><span class="align-middle"> 店鋪消息</span></a>
+          <a class="nav-link text-uppercase font-weight-bold" id="shop-text" href="{{route('shop')}}"><img src="{{asset('img/icon/shop_icon.png')}}"><span class="align-middle"> 店鋪消息</span></a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link text-uppercase font-weight-bold" id="cart-text" href="{{route('cart')}}"><img src="img/icon/cart_icon.png"><span class="align-middle"> 購物車</span></a>
+          <a class="nav-link text-uppercase font-weight-bold" id="cart-text" href="{{route('cart')}}"><img src="{{asset('img/icon/cart_icon.png')}}"><span class="align-middle"> 購物車</span></a>
         </li>
       </ul>
     </div>
