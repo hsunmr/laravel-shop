@@ -25,7 +25,27 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+   
+    
+    public function redirectTo(){
+
+        // User role
+ 
+        $role = auth()->user()->type; 
+        
+        // Check user role
+        switch ($role) {
+            case '1':
+                    return '/dashboard';
+                break;
+            case '0':
+                    return '/';
+                break; 
+            default:
+                    return '/login'; 
+                break;
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -34,6 +54,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('guest')->except('logout');
     }
 }

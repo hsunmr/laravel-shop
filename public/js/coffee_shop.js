@@ -8,6 +8,11 @@ $(document).ready(function () {
     if (pos > 100 && window.matchMedia('(min-width: 991.98px)').matches) {
         Navbar_fadeOut();
     }
+    // $('.user-menu,.dropdown-menu').hover(function(){
+    //     $('.dropdown-menu').stop(true,true).fadeIn();
+    // },function(){
+    //     $('.dropdown-menu').stop(true,true).fadeOut();
+    // });
 
     /*----------------text hover animation-------------------*/
     $("#about-text,#news-text,#products-text,#shop-text,#cart-text").hover(function () {

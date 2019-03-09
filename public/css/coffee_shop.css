@@ -678,6 +678,10 @@ footer{
     color:rgb(212, 82, 82);
 }
 
+.dropdown,.dropdown:hover .dropdown-menu {
+    display:inline-block;
+}
+
 
 @media (max-width: 991.98px)  { 
     header{ 

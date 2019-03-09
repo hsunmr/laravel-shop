@@ -26,6 +26,15 @@
         <a class="user dropdown-item"  href="#" ><i class="fas fa-user"></i>  
           {{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} 
         </a>
+        <a class="order-management dropdown-item"  href="{{route('order')}}" >
+          <i class="fas fa-shopping-bag"></i> 訂單管理 
+        </a>
+        <a class="address-book dropdown-item"  href="#" >
+          <i class="fas fa-address-book"></i> 通訊錄 
+        </a>
+        <a class="order-management dropdown-item"  href="#" >
+          <i class="fas fa-key"></i> 重設密碼 
+        </a>
         <a class="logout dropdown-item" href="{{ route('logout') }}" 
                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
           <i class="fas fa-sign-out-alt"></i>登出
@@ -68,11 +77,24 @@
           <a class="login" href="{{ route('login') }}"><i class="fas fa-user"></i>會員登入</a>
           <a class="registr" href="{{ route('register') }}"><i class="fas fa-pen-fancy"></i>會員註冊</a>
         @endguest
-        @auth         
-          <a class="user"  href="#" ><i class="fas fa-user"></i>  
-            {{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} 
-          </a>
-
+        @auth   
+          <div class="dropdown"  >    
+            <a class="user-menu dropdown-toggle"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user"></i>{{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} 
+            </a>
+            
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="order-management dropdown-item"  href="{{route('order')}}" >
+                <i class="fas fa-shopping-bag"></i> 訂單管理 
+              </a>
+              <a class="address-book dropdown-item"  href="#" >
+                <i class="fas fa-address-book"></i> 通訊錄 
+              </a>
+              <a class="order-management dropdown-item"  href="#" >
+                <i class="fas fa-key"></i> 重設密碼 
+              </a>
+            </div>
+          </div>
           <a class="logout" href="{{ route('logout') }}" 
                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt"></i>登出

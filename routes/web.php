@@ -32,6 +32,11 @@ Route::get('/shop', function () {
 Route::get('/cart', function () {
     return view('frontend.cart');
 })->name('cart');
-
+Route::get('/order', function () {
+    return view('frontend.user.order');
+})->name('order');
+Route::get('/dashboard', function () {
+    return view('backend.backend');
+})->name('backend');
 Auth::routes();
 
