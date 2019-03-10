@@ -1,0 +1,51 @@
+nav{
+    background-color: #4e73df;
+    color:white;
+    width:14rem;
+
+    min-height: 100vh;
+}
+
+.sidebar-brand{
+    height: 4.375rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    z-index: 1;
+}
+#Sidebar a{
+    text-decoration: none;
+}
+
+.nav-item .nav-link {
+    color:rgba(255,255,255,.8);
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 14rem;
+}
+
+.nav-item .nav-link span {
+    font-size: .85rem;
+    display: inline;
+}
+.nav-item .nav-link:hover,#Sidebar a:hover {
+    color: #fff;
+}
+.sidebar-heading {
+    color: rgba(255,255,255,.4);
+    text-align: left;
+    padding: 0 1rem;
+    font-weight: 800;
+    font-size: .65rem;
+}
+hr{
+    border-top: 1px solid rgba(255,255,255,.15);
+    margin: 0 1rem 1rem;
+}
+

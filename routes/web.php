@@ -36,7 +36,7 @@ Route::get('/order', function () {
     return view('frontend.user.order');
 })->name('order');
 Route::get('/dashboard', function () {
-    return view('backend.backend');
+    return view('backend.index');
 })->name('backend');
 Auth::routes();
 
