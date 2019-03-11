@@ -35,8 +35,11 @@ Route::get('/cart', function () {
 Route::get('/order', function () {
     return view('frontend.user.order');
 })->name('order');
-Route::get('/dashboard', function () {
-    return view('backend.index');
-})->name('backend');
+Route::middleware(['auth','admin'])->group(function(){
+    Route::get('/dashboard', function () {
+        return view('backend.index');
+    })->name('dashboard');
+});
+
 Auth::routes();
 

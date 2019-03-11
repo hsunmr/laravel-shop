@@ -1,8 +1,13 @@
-nav{
+#wrapper{
+    position: relative;
+    display: flex;
+}
+/* sidebar css */
+#sidebar{
     background-color: #4e73df;
     color:white;
     width:14rem;
-
+    position: relative;
     min-height: 100vh;
 }
 
@@ -17,11 +22,11 @@ nav{
     letter-spacing: .05rem;
     z-index: 1;
 }
-#Sidebar a{
+#sidebar a{
     text-decoration: none;
 }
 
-.nav-item .nav-link {
+#sidebar .nav-item .nav-link {
     color:rgba(255,255,255,.8);
     display: block;
     width: 100%;
@@ -30,11 +35,11 @@ nav{
     width: 14rem;
 }
 
-.nav-item .nav-link span {
+#sidebar .nav-item .nav-link span {
     font-size: .85rem;
     display: inline;
 }
-.nav-item .nav-link:hover,#Sidebar a:hover {
+#sidebar .nav-item .nav-link:hover,#sidebar a:hover {
     color: #fff;
 }
 .sidebar-heading {
@@ -48,4 +53,13 @@ hr{
     border-top: 1px solid rgba(255,255,255,.15);
     margin: 0 1rem 1rem;
 }
-
+#content-wrapper{
+    width: 100%;
+    position: relative;
+}
+nav{
+    position: absolute;
+    width: 100%;
+    height: 4.375rem;
+    
+}

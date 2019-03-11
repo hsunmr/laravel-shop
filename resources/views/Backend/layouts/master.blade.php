@@ -18,20 +18,28 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('css/shop_backend.css')}}" rel="stylesheet"> 
+
 </head>
 
 <body>
    
-  @include('backend.layouts.navbar')  
+  <div id="wrapper">
+    @include('backend.layouts.sidebar')  
 
-  @yield('content')
+    <div id="content-wrapper">
 
+      @include('backend.layouts.navbar')  
+  
+      @yield('content')
+
+    </div>
+
+  </div>
   <!-- Bootstrap core JavaScript -->
   
   <script src="{{asset('jquery/jquery.min.js')}}"></script> 
   <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
   <script src="{{asset('fontawesome/js/all.min.js')}}"></script>
-  <script src="{{asset('js/coffee_shop.js')}}"></script>
 
 </body>
 
