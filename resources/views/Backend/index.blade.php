@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','backend')
+@section('title','HSUN COFFEE | dashboard')
 @section('content')
  <div id="content">
     cotent

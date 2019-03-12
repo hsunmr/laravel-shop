@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand navbar-light bg-white   shadow">
     
-
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+      <i class="fa fa-bars"></i>
+    </button>
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
@@ -9,6 +11,7 @@
         <a class="login" href="{{ route('login') }}"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>會員登入</a>
       @endguest
       @auth  
+
       <li class="nav-item dropdown ">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="">{{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} </span>
