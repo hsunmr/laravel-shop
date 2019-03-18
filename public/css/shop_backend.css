@@ -1,10 +1,13 @@
+body{
+    background-color: #f5f9fc;
+}
 #wrapper{
     position: relative;
     display: flex;
 }
 /* sidebar css */
 #sidebar{
-    background-color: #4e73df;
+    background-color: #354052;
     color:white;
     width:6.5rem;
     position: relative;
@@ -229,11 +232,78 @@ hr{
 #content-wrapper{
     width: 100%;
     position: relative;
+    background-color: #f8f9fc;
 }
 nav{
     position: absolute;
     width: 100%;
     height: 4.375rem;
 }
+
+#dashboard-user{
+    padding: 0;
+    height:500px;
+    margin-bottom:2rem; 
+}
+#user-content{
+    text-align: center;
+    line-height: 50px;
+    background-color: cornsilk;
+}
+.dashboard-icon{
+    color:rosybrown;
+}
+#user-num{
+    color:darkseagreen;
+    font-size: 25px;
+    font-weight: bold;
+}
+.dashboard-btn{
+    margin-top:3rem; 
+}
+
+#carousel-content{
+    widows: 100%;
+}
+.row{
+    margin-top:2rem;
+    margin-bottom: 2rem;
+}
+.content-title{
+    color:grey;
+    margin-left:18px;
+}
+.content-title span{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left:5px;
+    margin-right:20px;
+}
+.content-title a{
+    height: 40px;
+}
+#carousel-content{
+    border:3px solid salmon;
+    margin-bottom:80px; 
+}
+footer{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height: 4.375rem;
+    background-color: white;
+}
+.footer{
+    text-align: center;
+    padding-top:1.8rem;
+    font-size: 14px;
+}
+
+@media (min-width:768px) and (max-width:1024px){
+    .dashboard-btn{
+        margin-top:0; 
+    }
+}
+
 
 

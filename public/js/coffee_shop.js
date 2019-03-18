@@ -14,6 +14,14 @@ $(document).ready(function () {
     //     $('.dropdown-menu').stop(true,true).fadeOut();
     // });
 
+    /*----------------navbar scorll animation-------------------*/
+    $(window).scroll(function () {
+        if ((window.matchMedia('(min-width: 991.98px)').matches)) {
+            isfade();
+        }
+        scroll_bottom_fade();
+    });
+
     /*----------------text hover animation-------------------*/
     $("#about-text,#news-text,#products-text,#shop-text,#cart-text").hover(function () {
         $(this).find('span').stop().fadeIn();
@@ -24,14 +32,8 @@ $(document).ready(function () {
         }
     });
 
-    /*----------------navbar scorll animation-------------------*/
-    $(window).scroll(function () {
-        scroll_bottom_fade();
-        if ((window.matchMedia('(min-width: 991.98px)').matches)) {
-            isfade();
-        }
 
-    });
+
 
     /*----------------navbar fixed animation----------------*/
     $(window).resize(function () {
@@ -43,12 +45,14 @@ $(document).ready(function () {
 });
 //set navbar text and img fade out
 var Navbar_fadeOut = function () {
-    if (window.matchMedia('(min-width: 1025px)').matches)
-        $('.fixed-top').css('top', '-5%');        //fixed top
-    else
-        $('.fixed-top').css('top', '-4%');
-    $("#navbarResponsive span").stop().fadeOut();   //text
+
     if (!$("body").hasClass('fixed')) {
+
+        if (window.matchMedia('(min-width: 1025px)').matches)
+            $('.fixed-top').css('top', '-5%');        //fixed top
+        else
+            $('.fixed-top').css('top', '-4%');
+        $("#navbarResponsive span").stop().fadeOut();   //text
         $("#site-logo .logo img").stop().animate({ height: '130px', width: '250px' }, 500, 'linear'); //logo img 
         $("body").addClass('fixed');
     }
@@ -56,9 +60,9 @@ var Navbar_fadeOut = function () {
 //set navbar text and img fade in
 var Navbar_fadeIn = function () {
 
-    $('.fixed-top').css('top', '-1%');
-    $("#navbarResponsive span").stop().fadeIn();
     if ($("body").hasClass('fixed')) {
+        $('.fixed-top').css('top', '-1%');
+        $("#navbarResponsive span").stop().fadeIn();
         $("#site-logo .logo img").stop().animate({ height: '150px', width: '280px' }, 500, 'linear');
         $("body").removeClass('fixed');
     }
@@ -81,14 +85,14 @@ var fixNavbar = function () {
 }
 //determine windows scroll top
 var isfade = function () {
-    if ($(window).scrollTop() > 100) {                                        //scroll navbar action
+    console.log($(window).scrollTop());
+    if ($(window).scrollTop() > 150) {                                        //scroll navbar action
         Navbar_fadeOut();
     } else {
         Navbar_fadeIn();
     }
 }
 var scroll_bottom_fade = function () {
-
 
     $scroll_bottom = ($(window).scrollTop() + $(window).height());
     if ($('.about-des').length > 0 && $scroll_bottom >= $('.about-des').offset().top )

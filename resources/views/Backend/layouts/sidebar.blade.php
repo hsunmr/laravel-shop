@@ -2,7 +2,7 @@
     
     <ul class="navbar-nav accordion" id="sidebar-content">
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand" href="#">
+        <a class="sidebar-brand" href="{{route('dashboard')}}">
             <i class="fas fa-chess-bishop fa-lg"></i><span class="sidebar-brand-text"> HSUN 後台</span>
         </a>
     
@@ -11,7 +11,7 @@
     
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('dashboard')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
         </li>
@@ -32,7 +32,7 @@
                 <span>首頁</span>
             </a>
             <div class="collapse bg-white rounded collapse-box" id="collapse-home" data-parent="#sidebar-content">
-                <a class="collapse-item" href="#">輪播圖</a>
+                <a class="collapse-item" href="{{route('carousel')}}">輪播圖</a>
                 <a class="collapse-item" href="#">關於區塊</a>
                 <a class="collapse-item" href="#">新聞區塊</a>
                 <a class="collapse-item" href="#">商店資訊</a>
