@@ -19,20 +19,26 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>No.</th>
+                                <th>{{'#'}}</th>
                                 <th>Name</th>
                                 <th>Post Image</th>
                                 <th>created_at</th>
-                                <th>Action</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
                                 <td>First</td>
-                                <td>img</td>
-                                <td>2019-3-19</td>
-                                <td>create</td>
+                                <td>
+                                    <img src="img/about.jpg">
+                                </td>
+                                <td>2019-03-03 14:18:48 </td>
+                                <td>
+                                    <a href="#" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>
+                                    <a href="#" class="btn btn-primary"><i class="far fa-edit fa-fw"></i><span class="d-none d-lg-inline"> Edit</span></a>
+                                    <a href="#" class="btn btn-danger"><i class="far fa-trash-alt fa-fw"></i><span class="d-none d-lg-inline"> Delete</span></a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
