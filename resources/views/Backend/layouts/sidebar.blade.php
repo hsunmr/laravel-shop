@@ -32,7 +32,7 @@
                 <span>首頁</span>
             </a>
             <div class="collapse bg-white rounded collapse-box" id="collapse-home" data-parent="#sidebar-content">
-                <a class="collapse-item" href="{{route('carousel')}}">輪播圖</a>
+                <a class="collapse-item" href="{{route('backend.home.carousel.index')}}">輪播圖</a>
                 <a class="collapse-item" href="#">關於區塊</a>
                 <a class="collapse-item" href="#">新聞區塊</a>
                 <a class="collapse-item" href="#">商店資訊</a>

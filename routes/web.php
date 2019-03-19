@@ -39,9 +39,11 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::get('/dashboard', function () {
         return view('backend.index');
     })->name('dashboard');
-    Route::get('/carousel', function () {
-        return view('backend.home.carousel');
-    })->name('carousel');
+
+    //Carousel index create edit
+  
+    Route::resource('/carousel', 'Backend\Home\CarouselController',['as' => 'backend.home']);
+
 });
 
 Auth::routes();

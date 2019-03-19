@@ -283,16 +283,23 @@ nav{
     height: 40px;
 }
 #carousel-content{
-    border:3px solid salmon;
     margin-bottom:80px; 
 }
 #carousel-content img{
     width:150px;
     height:100px;
 }
-#carousel-content a{
+#carousel-content table a{
     color:white;
     margin-bottom: 5px;
+}
+.pagination-text{
+    color:grey;
+    padding: .5rem .75rem;
+    margin-bottom: 5px; 
+}
+.file-upload{
+    height:45px;
 }
 footer{
     position: absolute;
