@@ -20,7 +20,10 @@ class CarouselController extends Controller
     public function create(){
         return view('backend.home.carousel.create');
     }
-
+    public function show($id){
+        $carousel = Carousel::find($id);
+        return view('backend.home.carousel.detail',compact('carousel'));
+    }
 
     public function store(Request $request)
     {

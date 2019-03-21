@@ -6,9 +6,55 @@
         <div class="col content-title">
             <i class="fas fa-images fa-4x align-middle"></i>
             <span class="align-middle">Carousel</span>
-            <a href="{{route('backend.home.carousel.create')}}" class="btn btn-success "><i class="fas fa-plus-circle"></i> Add New</a>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createModal">
+                <i class="fas fa-plus-circle"></i> Add New
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createModalLabel">Add New</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">                  
+                            <form action="{{route('backend.home.carousel.store')}}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="row ">
+                                    <div class="col-md-12 mb-3">
+                                        <strong>圖片名稱 :</strong>
+                                        <input type="text" name="name" class="form-control" placeholder="Image Name">
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <strong>上傳圖片 :</strong>
+                                        <input type="file" name="image_name" accept=".jpg,.png" class="form-control file-upload" >
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">上傳</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>           
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    @if ($errors->any())
+        <div id="error_msg" class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="row" id="carousel-content">
         <div class="col">
             <div class="card">
@@ -36,11 +82,10 @@
                                 </td>
                                 <td>{{ $carousel->created_at }} </td>
                                 <td>
-                                    
-                                    <a href="{{ asset('uploads/carousel/' . $carousel->image_name) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>
+                                    <a href="{{ route('backend.home.carousel.show',$carousel->id ) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>
                                     <a href="#" class="btn btn-primary"><i class="far fa-edit fa-fw"></i><span class="d-none d-lg-inline"> Edit</span></a>
                                     <form action="{{ asset('backend.home.carousel.destroy') }}" method="post" class="d-inline ">
-                                        @csrf    
+                                        @csrf  
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger align-top"><i class="far fa-trash-alt fa-fw"></i><span class="d-none d-lg-inline"> Delete</span></a>
                                     </form>
