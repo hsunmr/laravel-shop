@@ -10,7 +10,7 @@
                 <i class="fas fa-plus-circle"></i> Add New
             </button>
             
-            <!-- Modal -->
+            <!-- create new Modal -->
             <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <strong>上傳圖片 :</strong>
-                                        <input type="file" name="image_name" accept=".jpg,.png" class="form-control file-upload" >
+                                        <input type="file" name="image_name" accept="image/*" class="form-control file-upload" >
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -43,8 +43,14 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{$message}}</p>
+        </div>
+     @endif
     @if ($errors->any())
         <div id="error_msg" class="alert alert-danger">
             <ul>
@@ -75,25 +81,52 @@
                         <tbody>
                             @foreach ($carousels as $carousel)                            
                             <tr>
-                                <td>{{ $carousel->id }}</td>
+                                <td id="carousel-id">{{ $carousel->id }}</td>
                                 <td>{{ $carousel->name }}</td>
                                 <td>
                                     <img src="{{ asset('uploads/carousel/' . $carousel->image_name) }}">
                                 </td>
                                 <td>{{ $carousel->created_at }} </td>
                                 <td>
+                                    {{-- View button --}}
                                     <a href="{{ route('backend.home.carousel.show',$carousel->id ) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>
-                                    <a href="#" class="btn btn-primary"><i class="far fa-edit fa-fw"></i><span class="d-none d-lg-inline"> Edit</span></a>
-                                    <form action="{{ asset('backend.home.carousel.destroy') }}" method="post" class="d-inline ">
-                                        @csrf  
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger align-top"><i class="far fa-trash-alt fa-fw"></i><span class="d-none d-lg-inline"> Delete</span></a>
-                                    </form>
-                                </td>
+                                    {{-- edit button --}}
+                                    <a href="{{ route('backend.home.carousel.edit',$carousel->id ) }}" class="btn btn-primary"><i class="far fa-edit fa-fw"></i><span class="d-none d-lg-inline"> Edit</span></a>
+                                    {{-- delete modal button --}}
+                                    <button type="button" class="btn btn-danger align-top delete-button" data-toggle="modal" data-target="#deleteModal" data-id="{{ $carousel->id }}" data-url="{{ route('backend.home.carousel.destroy', $carousel->id ) }}" >
+                                        <i class="far fa-trash-alt fa-fw"></i><span class="d-none d-lg-inline"> Delete</span>
+                                    </button>
+                                 </td>
+                                 <!-- delete Modal -->
+                                 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                     <div class="modal-dialog" role="document">
+                                         <div class="modal-content">
+                                             <div class="modal-header">
+                                                 <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
+                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                     <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                             </div>
+                                             <div class="modal-body">                  
+                                                 <p>Are you sure you want to delete it?</p>       
+                                             </div>
+                                             <div class="modal-footer">
+                                                 <form action="{{ route('backend.home.carousel.destroy', $carousel->id ) }}" method="post"  class="d-inline delete-form">
+                                                     @csrf  
+                                                     @method('DELETE')
+                                                     <button type="submit" class="btn btn-danger">Yes,delete</button>
+                                                 </form>
+                                                 
+                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>           
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    
                     <div class="row pagination" >
                         <div class="col-sm-10 text-left pagination-text">
                             Showing  {{ $carousels->firstItem() }} to {{ $carousels->lastItem() }} of {{ $carousels->total() }} items

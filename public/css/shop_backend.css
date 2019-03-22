@@ -304,6 +304,10 @@ nav{
 .container-fluid {
     padding-bottom: 4.375rem;
 }
+img{
+    width:100%;
+    height:auto;
+}
 footer{
     position: absolute;
     bottom:0;
