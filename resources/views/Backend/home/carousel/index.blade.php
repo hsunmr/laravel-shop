@@ -67,8 +67,8 @@
                 <div class="card-header">
                     <i class="far fa-caret-square-right"></i> 輪播圖
                 </div>
-                <div class="card-body table-responsive">
-                    <table class="table table-hover">
+                <div class="card-body tableresponsive">
+                    <table class="table table-hover" >
                         <thead>
                             <tr>
                                 <th>{{'#'}}</th>

@@ -234,6 +234,9 @@ hr{
     position: relative;
     background-color: #f8f9fc;
 }
+.container-fluid {
+    padding-bottom: 4.375rem;
+}
 nav{
     position: absolute;
     width: 100%;
@@ -301,12 +304,13 @@ nav{
 .file-upload{
     height:45px;
 }
-.container-fluid {
-    padding-bottom: 4.375rem;
-}
+
 img{
     width:100%;
     height:auto;
+}
+.tableresponsive{
+    overflow-x:auto;
 }
 footer{
     position: absolute;
