@@ -33,10 +33,7 @@
             </a>
             <div class="collapse bg-white rounded collapse-box" id="collapse-home" data-parent="#sidebar-content">
                 <a class="collapse-item" href="{{route('backend.home.carousel.index')}}">輪播圖</a>
-                <a class="collapse-item" href="#">關於區塊</a>
-                <a class="collapse-item" href="#">新聞區塊</a>
-                <a class="collapse-item" href="#">商店資訊</a>
-                <a class="collapse-item" href="#">footer</a>
+                <a class="collapse-item" href="{{route('backend.home.aboutdiv.index')}}">關於區塊</a>
             </div>
         </li>
 
@@ -76,6 +73,16 @@
             <i class="fas fa-shopping-bag fa-fw" aria-hidden="true"></i>
             <span>店鋪消息</span>
             </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-share" aria-expanded="false" href="#" >
+                <i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>
+                <span>共用內容</span>
+            </a>
+            <div class="collapse bg-white rounded collapse-box" id="collapse-share" data-parent="#sidebar-content">
+                <a class="collapse-item" href="#">商品資訊</a>
+                <a class="collapse-item" href="#">FOOTER</a>
+            </div>
         </li>
           
         <!-- Divider -->

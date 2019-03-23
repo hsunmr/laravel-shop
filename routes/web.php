@@ -41,8 +41,9 @@ Route::middleware(['auth','admin'])->group(function(){
     })->name('dashboard');
 
     //Carousel index create edit
-  
     Route::resource('/carousel', 'Backend\Home\CarouselController',['as' => 'backend.home']);
+
+    Route::resource('/aboutdiv', 'Backend\Home\AboutDivController',['as' => 'backend.home']);
 
 });
 

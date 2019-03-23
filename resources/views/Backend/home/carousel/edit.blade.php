@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','Carousel | DETAIL')
+@section('title','Carousel | EDIT')
 @section('content')
     <div class="container-fluid" id="carousel-edit">
         <div class="row">
