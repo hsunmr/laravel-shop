@@ -4,7 +4,7 @@
 <div class="container-fluid" id="carousel">
     <div class="row" id="carousel-title">
         <div class="col content-title">
-            <i class="fas fa-images fa-4x align-middle"></i>
+            <i class="fas fa-images fa-3x align-middle"></i>
             <span class="align-middle">Carousel</span>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createModal">
                 <i class="fas fa-plus-circle"></i> Add New

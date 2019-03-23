@@ -1,4 +1,13 @@
 $(document).ready(function () {
+
+    if($("textarea").length > 0){
+        CKEDITOR.replace( 'text',{
+            height:400,
+        } );
+    }
+    if (window.matchMedia('(max-width:768px)').matches) {
+        $('#sidebar').addClass('toggled');
+    }
     $('#sidebarToggle,#sidebarToggleTop').click(function(){
         $('#sidebar').toggleClass('toggled');
     })
@@ -7,7 +16,7 @@ $(document).ready(function () {
         $url = $(this).attr('data-url');
         $('.delete-form').attr('action',$url);
     })
-    $("#img-update").change(function () {
+    $("#img-update,#image-create").change(function () {
         preview(this);   //if change -> preview img
     })
 });

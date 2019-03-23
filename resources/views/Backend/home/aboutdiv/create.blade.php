@@ -1,11 +1,11 @@
 @extends('backend.layouts.master')
 @section('title','ABOUT-DIV | CREATE')
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" id="aboutdiv-create">
     <div class="row">
         <div class="col content-title">
             <i class="fas fa-plus-circle fa-2x align-middle"></i>
-            <span class="align-middle">New ABOUTDIV Posts</span>
+            <span class="align-middle">New AboutDiv Posts</span>
         </div>
     </div>
 
@@ -33,31 +33,28 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Post Text</h5>
-                        <textarea class="ckeditor"name="post-text"></textarea>
+                        <textarea name="text"></textarea>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3 ">
-                    <div class="card">
-                            <div class="card-header">
-                              Featured
-                            </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        圖片上傳
+                    </div>
+                    <div class="card-body">
+                        <input type="file" name="image" accept="image/*" class="form-control file-upload mb-3" id="image-create" >
+                        <img class="preview border" src="">
+                    </div>
+                </div>
             </div>
-           
-        </div>
-        <div class="row">
             <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="{{route('backend.home.aboutdiv.index')}}" class="btn btn-success">Back</a>
-                
-            </div>
+                <button type="submit" class="btn btn-primary">上傳</button>
+                <a href="{{route('backend.home.aboutdiv.index')}}" class="btn btn-secondary">Back</a>
+
+            </div>   
         </div>
+
     </form>
 
 </div>

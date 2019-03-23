@@ -37,7 +37,33 @@ class AboutDivController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+        $request->validate([
+            'title'=> ['required','string', 'max:14'],
+            'image'=>['required','image'],
+            'text' =>['required','string']
+        ],$messages = [
+
+        ]);
+     
+        //if do not have carousel directory, add it
+        if (!file_exists('uploads/aboutdiv')) {
+            mkdir('uploads/aboutdiv', 0755, true);
+        }
+        //set image path ,name and move it to local directory 
+        $file = $request->file('image');
+
+        $path = public_path() . '\uploads\aboutdiv\\';
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $file->move($path, $fileName);
+
+        AboutDiv::create([
+            'title' =>  $request->input('title'),
+            'image'=>$fileName,
+            'text' => $request->input('text')
+        ]);
+        return redirect()->route('backend.home.aboutdiv.index')
+                         ->with('success', 'New about div post created successfully');
     }
 
     /**
@@ -48,7 +74,8 @@ class AboutDivController extends Controller
      */
     public function show($id)
     {
-        //
+        $aboutdiv = AboutDiv::find($id);
+        return view('backend.home.aboutdiv.detail',compact('aboutdiv'));
     }
 
     /**
@@ -59,7 +86,8 @@ class AboutDivController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aboutdiv = AboutDiv::find($id);
+        return view('backend.home.aboutdiv.edit',compact('aboutdiv'));
     }
 
     /**
@@ -71,7 +99,33 @@ class AboutDivController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validation
+        $request->validate([
+            'title'=> ['required','string', 'max:14'],
+            'image'=>['image'],
+            'text' =>['string']
+        ],$messages = [
+        ]);
+        $aboutdiv = AboutDiv::find($id);
+        
+        if ($request->file('image')) {
+            //remove original file
+            @unlink('uploads/aboutdiv/' . $aboutdiv->image);
+
+            //set image path ,name and move it to local directory
+            $file = $request->file('image');
+            $path = public_path() . '\uploads\aboutdiv\\';
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->move($path, $fileName);
+
+            $aboutdiv->image =  $fileName;
+        }
+        $aboutdiv->title = $request->get('title');
+        $aboutdiv->text = $request->get('text');
+        $aboutdiv->save();
+        
+        return redirect()->route('backend.home.aboutdiv.index')
+                         ->with('success', 'Update successfully');
     }
 
     /**
@@ -82,6 +136,11 @@ class AboutDivController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aboutdiv = AboutDiv::find($id);
+        //remove img
+        @unlink('uploads/about/' . $aboutdiv->image);
+        $aboutdiv->delete();
+        return redirect()->route('backend.home.aboutdiv.index')
+                         ->with('success', 'Delete successfully');
     }
 }

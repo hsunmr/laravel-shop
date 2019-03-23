@@ -4,7 +4,7 @@
 <div class="container-fluid" id="carousel">
     <div class="row" id="about-title">
         <div class="col content-title">
-            <i class="far fa-clipboard fa-4x align-middle"></i>
+            <i class="far fa-clipboard fa-3x align-middle"></i>
             <span class="align-middle">About Div</span>
             <a href="{{ route('backend.home.aboutdiv.create') }}" class="btn btn-success"><i class="fas fa-plus-circle"></i> Add New</a>
         </div>
@@ -46,7 +46,9 @@
                             <tr>
                                 <td>{{ $aboutdiv->id }}</td>
                                 <td>{{ $aboutdiv->title }}</td>
-                                <td>{{ $aboutdiv->image }}</td>
+                                <td> 
+                                    <img src="{{ asset('uploads/aboutdiv/' . $aboutdiv->image) }}">
+                                </td>
                                 <td>{{ $aboutdiv->created_at }}</td>
                                 <td>{{-- View button --}}
                                         <a href="{{ route('backend.home.aboutdiv.show',$aboutdiv->id ) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>

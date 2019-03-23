@@ -65,7 +65,7 @@ class CarouselController extends Controller
         //validation
         $request->validate([
             'name'=> ['required','string', 'max:14'],
-            'image_name'=>['mimes:,jpg,png','max:1000']
+            'image_name'=>['mimes:,image','max:1000']
         ]);
         $carousel = Carousel::find($id);
         
