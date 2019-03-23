@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\models\Home\AboutDiv;
 class AboutDivController extends Controller
 {
     /**
@@ -14,7 +14,9 @@ class AboutDivController extends Controller
      */
     public function index()
     {
-        return view('backend.home.aboutdiv.index');
+        $aboutdivs = AboutDiv::paginate(5);
+        
+        return view('backend.home.aboutdiv.index',compact('aboutdivs'));
     }
 
     /**
@@ -24,7 +26,7 @@ class AboutDivController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.home.aboutdiv.create');
     }
 
     /**
