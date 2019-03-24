@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use App\Models\Share\ShopInfo;
+use App\Models\Share\Calendar;
+use App\Models\Share\Footer;
 class LoginController extends Controller
 {
     /*
@@ -26,7 +28,13 @@ class LoginController extends Controller
      * @var string
      */
    
-    
+    public function showLoginForm(){
+        $shopinfo = ShopInfo::find(1);
+        $calendars = Calendar::all();
+        $footer = Footer::find(1);
+
+        return view('auth.login',compact('shopinfo','calendars','footer'));
+    }
     public function redirectTo(){
 
         // User role

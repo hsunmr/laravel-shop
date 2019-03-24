@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use App\Models\Share\ShopInfo;
+use App\Models\Share\Calendar;
+use App\Models\Share\Footer;
 class RegisterController extends Controller
 {
     /*
@@ -35,11 +37,18 @@ class RegisterController extends Controller
      *
      * @return void
      */
+    
     public function __construct()
     {
         $this->middleware('guest');
     }
+    public function showRegistrationForm(){
+        $shopinfo = ShopInfo::find(1);
+        $calendars = Calendar::all();
+        $footer = Footer::find(1);
 
+        return view('auth.register',compact('shopinfo','calendars','footer'));
+    }
     /**
      * Get a validator for an incoming registration request.
      *

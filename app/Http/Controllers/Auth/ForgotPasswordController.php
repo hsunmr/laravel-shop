@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-
+use App\Models\Share\ShopInfo;
+use App\Models\Share\Calendar;
+use App\Models\Share\Footer;
 class ForgotPasswordController extends Controller
 {
     /*
@@ -25,8 +27,16 @@ class ForgotPasswordController extends Controller
      *
      * @return void
      */
+    
     public function __construct()
     {
         $this->middleware('guest');
+    }
+    public function showLinkRequestForm(){
+        $shopinfo = ShopInfo::find(1);
+        $calendars = Calendar::all();
+        $footer = Footer::find(1);
+       
+        return view('auth.passwords.email',compact('shopinfo','calendars','footer'));
     }
 }
