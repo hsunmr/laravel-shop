@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     //init 
-    create_calendar();
     var pos = $(window).scrollTop();
     fixNavbar();
     scroll_bottom_fade();
@@ -97,53 +96,53 @@ var scroll_bottom_fade = function () {
     if ($scroll_bottom >= $('.img_wrap').offset().top )
         $('.img_wrap img').css('opacity', 1);
 }
-var month_olympic = [31,29,31,30,31,30,31,31,30,31,30,31];
-var month_normal = [31,28,31,30,31,30,31,31,30,31,30,31];
+// var month_olympic = [31,29,31,30,31,30,31,31,30,31,30,31];
+// var month_normal = [31,28,31,30,31,30,31,31,30,31,30,31];
 
-var create_calendar = function(){
+// var create_calendar = function(){
   
-    //get today date
-    var date = new Date();
-    var year = date.getFullYear();
-    var month = date.getMonth();
-    var day = date.getDate();
+//     //get today date
+//     var date = new Date();
+//     var year = date.getFullYear();
+//     var month = date.getMonth();
+//     var day = date.getDate();
 
 
-    var str = "";
-    //calc totalday of month and first day of month
-	var totalDay = daysMonth(month, year); 
-    var firstDay = dayStart(month, year); 
+//     var str = "";
+//     //calc totalday of month and first day of month
+// 	var totalDay = daysMonth(month, year); 
+//     var firstDay = dayStart(month, year); 
 
-	var myclass;
-	for(var i=1; i<firstDay; i++){ 
-	 	str += "<li class='prev'></li>"; 
-	}
-	for(var i=1; i<=totalDay; i++){
-		if(i < day ){ 
-	 		myclass = " class='lightgrey'"; 
-	 	}else if (i == day){
-	 		myclass = " class='today'"; 
-	 	}else{
-	 		myclass = " class=''"; 
-	 	}
-	 	str += "<li"+myclass+">"+i+"</li>";
-    }
-    $('.calendar_month').text(month+1);
-    $('.calendar_content').append(str);
+// 	var myclass;
+// 	for(var i=1; i<firstDay; i++){ 
+// 	 	str += "<li class='prev'></li>"; 
+// 	}
+// 	for(var i=1; i<=totalDay; i++){
+// 		if(i < day ){ 
+// 	 		myclass = " class='lightgrey'"; 
+// 	 	}else if (i == day){
+// 	 		myclass = " class='today'"; 
+// 	 	}else{
+// 	 		myclass = " class=''"; 
+// 	 	}
+// 	 	str += "<li"+myclass+">"+i+"</li>";
+//     }
+//     $('.calendar_month').text(month+1);
+//     $('.calendar_content').append(str);
 
-}
-function dayStart(month, year) {
-	var tmpDate = new Date(year, month, 1);
-	return (tmpDate.getDay());
-}
-function daysMonth(month, year) {
-	var tmp = year % 4;
-	if (tmp == 0) {
-		return (month_olympic[month]);
-	} else {
-		return (month_normal[month]);
-	}
-}
+// }
+// function dayStart(month, year) {
+// 	var tmpDate = new Date(year, month, 1);
+// 	return (tmpDate.getDay());
+// }
+// function daysMonth(month, year) {
+// 	var tmp = year % 4;
+// 	if (tmp == 0) {
+// 		return (month_olympic[month]);
+// 	} else {
+// 		return (month_normal[month]);
+// 	}
+// }
 $('.carousel').carousel({
     interval: 8000,
     pause: false

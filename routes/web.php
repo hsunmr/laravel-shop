@@ -11,27 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('home');
-Route::get('/about', function () {
-    return view('frontend.about');
-})->name('about');
-Route::get('/news', function () {
-    return view('frontend.news');
-})->name('news');
-Route::get('/news-detail', function () {
-    return view('frontend.news_detail');
-})->name('news_detail');
-Route::get('/products', function () {
-    return view('frontend.products');
-})->name('products');
-Route::get('/shop', function () {
-    return view('frontend.shop');
-})->name('shop');
-Route::get('/cart', function () {
-    return view('frontend.cart');
-})->name('cart');
+Route::get('/', 'Frontend\HomeController@index')->name('home');
+Route::get('/about', 'Frontend\AboutController@index')->name('about');
+Route::get('/news', 'Frontend\NewsController@index')->name('news');
+Route::get('/news-detail', 'Frontend\AboutController@index')->name('news_detail');
+Route::get('/products', 'Frontend\ProductsController@index')->name('products');
+Route::get('/shop','Frontend\ShopController@index')->name('shop');
+Route::get('/cart', 'Frontend\CartController@index')->name('cart');
 Route::get('/order', function () {
     return view('frontend.user.order');
 })->name('order');

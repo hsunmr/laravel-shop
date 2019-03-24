@@ -3,15 +3,16 @@
 @section('index_wrapper')
     <div id="wrapper" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner image-wrapper">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="../img/header_bg1.jpg" alt="First slide">
-            </div>
+        @foreach ($carousels as $carousel)
+            @if ($loop->first)
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{asset('uploads/carousel/' . $carousel->image_name)}}" alt="First slide">
+                </div>
+            @endif
             <div class="carousel-item">
-                <img class="d-block w-100" src="../img/header_bg2.jpg" alt="Second slide">
+                <img class="d-block w-100" src="{{asset('uploads/carousel/' . $carousel->image_name)}}" alt="First slide">
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="../img/header_bg3.jpg" alt="Third slide">
-            </div>
+        @endforeach
         </div>
     </div>
 @endsection
@@ -20,31 +21,37 @@
  
   <div class="container" id="index-about">
     <h2 class="head_title">ABOUT</h2>
+       @foreach ($aboutdivs as $aboutdiv)            
         <div class="row about-des">
-          <div class="col-lg-6 ">
-            <div id="about-img">
-                <img class="d-block w-100"src="../img/index/about_img.jpg">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div id="about-word">
-                <p class="about_des_txt -ja">
-                    私たちが目指すのは、<br>
-                    たった一杯で幸せになるコーヒー屋。<br>
-                    まずは目の前の人を笑顔にすること、<br>
-                    そのための努力は、惜しみません。<br>
-                    一つの笑顔が連鎖していくように、<br>
-                    世界がワクワクで溢れるまで。
-                </p>
-                <p class="about_des_txt -en">
-                    We want to be your coffee shop. A place that brings a smile to your face with just one cup of roasted goodness.<br>
-                    What drives us is bringing joy to each and every person who walks through our doors.<br>
-                    In the hope that your happiness touches others throughout the rest of your day.<br>
-                    Like a chain reaction, building a better community and a better world.
-                </p>
-            </div>
-          </div>
+            @if($loop->index % 2 == 0)
+                <div class="col-lg-6">
+                    <div id="about-img">
+                        <img class="d-block w-100"src="{{asset('uploads/aboutdiv/' . $aboutdiv->image)}}">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-word">
+                        {!!$aboutdiv->text!!}
+                    </div>
+                </div>      
+            @else
+                <div class="col-lg-6">
+                    <div class="about-title">
+                        <h5>{{$aboutdiv->title}}</h5>
+                    </div>
+                    <div class="about-word">
+                        {!!$aboutdiv->text!!}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="about-img">
+                        <img class="d-block w-100"src="{{asset('uploads/aboutdiv/' . $aboutdiv->image)}}">
+                    </div>
+                </div>     
+            @endif
         </div>
+        @endforeach  
+    
   </div>
   <div class="container" id="index-news">
     <h2 class="head_title">NEWS</h2>

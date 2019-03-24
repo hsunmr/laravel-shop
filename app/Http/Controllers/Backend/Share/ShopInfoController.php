@@ -47,7 +47,7 @@ class ShopInfoController extends Controller
         $shopinfo->offday = $request->input('offday');
         $shopinfo->save();
 
-        for($i = 1; $i < 31; $i++){
+        for($i = 1; $i <= 31; $i++){
             $calendar = Calendar::find($i);
 
             if($request->input('day' . $i)){
