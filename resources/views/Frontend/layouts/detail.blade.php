@@ -40,17 +40,19 @@
                 <div class="col-lg-6 ">
                     <div class="block_right">
                         <div class="calendar_head font-weight-bold text-center">
-                            <span class="number ">2</span>月営業日日曆
+                            <span class="calendar_month"></span>月営業日日曆
                             <br>
                             <br>
                         </div>
                         <div class="calendar_box">
                             <ul class="calendar_content">
-                                <li class="label">一</li><li class="label">二</li><li class="label">三</li><li class="label">四</li><li class="label">五</li><li class="label">六</li><li class="label">日</li>
-                                <li class="prev">28</li><li class="prev">29</li><li class="prev">30</li><li class="prev">31</li><li class="">1</li><li class="">2</li><li class="">3</li>
-                                <li class="store_close">4</li><li class="store_close">5</li><li class="">6</li><li class="">7</li><li class="">8</li><li class="">9</li><li class="">10</li>
-                                <li class="store_close">11</li><li class="store_close">12</li><li class="">13</li><li class="">14</li><li class="">15</li><li class="">16</li><li class="">17</li>
-                                <li class="store_close">25</li><li class="store_close">26</li><li class="">27</li><li class="">28</li><li class="next">1</li><li class="next">2</li><li class="next">3</li>
+                                <li class="label">一</li>
+                                <li class="label">二</li>
+                                <li class="label">三</li>
+                                <li class="label">四</li>
+                                <li class="label">五</li>
+                                <li class="label">六</li>
+                                <li class="label">日</li>
                             </ul>
                             <div class="calendar_notice"><span class="calendar_sample"></span>定休日</div>
                         </div>

@@ -80,8 +80,8 @@
                 <span>共用內容</span>
             </a>
             <div class="collapse bg-white rounded collapse-box" id="collapse-share" data-parent="#sidebar-content">
-                <a class="collapse-item" href="#">商品資訊</a>
-                <a class="collapse-item" href="#">FOOTER</a>
+                <a class="collapse-item" href="{{route('backend.share.shopinfo.index')}}">商品資訊</a>
+                <a class="collapse-item" href="{{route('backend.share.footer.index')}}">FOOTER</a>
             </div>
         </li>
           

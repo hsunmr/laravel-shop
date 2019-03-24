@@ -19,6 +19,7 @@ $(document).ready(function () {
     $("#img-update,#image-create").change(function () {
         preview(this);   //if change -> preview img
     })
+    
 });
 
 var preview = function(input) {
@@ -39,5 +40,4 @@ var preview = function(input) {
             reader.readAsDataURL(input.files[0]);
         }
 }
-
 

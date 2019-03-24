@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <div class="row" id="carousel-content">
+    <div class="row" id="aboutdiv-content">
         <div class="col">
             <div class="card">
                 <div class="card-header">

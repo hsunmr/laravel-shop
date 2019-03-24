@@ -383,7 +383,6 @@ nav{
     padding: 8px 0 8px 4px;
     margin: 4px;
     color: #655046;
-
     font-size: 14px;
     font-weight: bold;
     line-height: 1.0;
@@ -401,9 +400,15 @@ nav{
     color:#ffffff;
     text-indent: -100%;
 }
+.calendar_content .lightgrey{
+    color:lightgrey;
+}
+.calendar_content .today{
+    border:2px solid lightsalmon;
+}
 .calendar_content .store_close{
     background-color: #668e68;
-    color: #ffffff;
+
 }
 .calendar_notice {
     margin: 12px 0 0 auto;

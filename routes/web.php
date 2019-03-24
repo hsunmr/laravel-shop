@@ -40,10 +40,21 @@ Route::middleware(['auth','admin'])->group(function(){
         return view('backend.index');
     })->name('dashboard');
 
-    //Carousel index create edit
-    Route::resource('/carousel', 'Backend\Home\CarouselController',['as' => 'backend.home']);
+    
+    
+    Route::group(['as' => 'backend.home.'], function() {
 
-    Route::resource('/aboutdiv', 'Backend\Home\AboutDivController',['as' => 'backend.home']);
+        Route::resource('/carousel', 'Backend\Home\CarouselController');
+        Route::resource('/aboutdiv', 'Backend\Home\AboutDivController');
+    });
+
+    Route::group(['as' => 'backend.share.'], function() {
+        Route::get('/shopinfo', 'Backend\Share\ShopInfoController@index')->name('shopinfo.index');
+        Route::put('/shopinfo', 'Backend\Share\ShopInfoController@update')->name('shopinfo.update');
+        Route::get('/footer', 'Backend\Share\FooterController@index')->name('footer.index');
+        Route::put('/footer', 'Backend\Share\FooterController@update')->name('footer.update');
+    });
+
 
 });
 

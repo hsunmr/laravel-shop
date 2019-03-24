@@ -46,7 +46,6 @@
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">更新</button>
                 <a href="{{route('backend.home.aboutdiv.index')}}" class="btn btn-secondary">Back</a>
-
             </div>   
         </div>
 
