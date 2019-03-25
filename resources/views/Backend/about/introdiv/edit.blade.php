@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','ABOUT-DIV | EDIT')
+@section('title','INTRO-DIV | EDIT')
 @section('content')
 <div class="container-fluid" id="introdiv-edit">
 

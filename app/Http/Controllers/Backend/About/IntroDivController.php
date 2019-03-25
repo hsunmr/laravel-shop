@@ -62,7 +62,7 @@ class IntroDivController extends Controller
             'text' => $request->input('text')
         ]);
         return redirect()->route('backend.about.introdiv.index')
-                         ->with('success', 'New about div post created successfully');
+                         ->with('success', 'New intro div post created successfully');
     }
 
     /**

@@ -42,7 +42,7 @@ Route::middleware(['auth','admin'])->group(function(){
 
     Route::group(['as' => 'backend.about.'], function() {
         Route::resource('/introdiv', 'Backend\About\IntroDivController');
-        Route::resource('/history', 'Backend\About\HistoryDivController');
+        Route::resource('/historydiv', 'Backend\About\HistoryDivController');
     });
 
 
