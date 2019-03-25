@@ -6,7 +6,7 @@
         <h2 class="page_title">ABOUT</h2>
         <div class="row about_page_img">
             <div class="col">
-                <img class="d-block w-100" src="../img/index/about_img.jpg">
+                <img class="d-block w-100 rounded" src="../img/index/about_img.jpg">
             </div>
         </div>
         <div class="row about_page_word">

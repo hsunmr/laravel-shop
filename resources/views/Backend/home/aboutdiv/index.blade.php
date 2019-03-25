@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('title','ABOUT-DIV')
 @section('content')
-<div class="container-fluid" id="carousel">
+<div class="container-fluid" id="aboutdiv">
     <div class="row" id="about-title">
         <div class="col content-title">
             <i class="far fa-clipboard fa-3x align-middle"></i>
@@ -37,6 +37,7 @@
                                 <th>{{'#'}}</th>
                                 <th>Title</th>
                                 <th>Post Image</th>
+                                <th>Post Text</th>
                                 <th>created_at</th>
                                 <th>Actions</th>
                             </tr>
@@ -49,6 +50,7 @@
                                 <td> 
                                     <img src="{{ asset('uploads/aboutdiv/' . $aboutdiv->image) }}">
                                 </td>
+                                <td class="ellipsis">{{ $aboutdiv->text }}</td>
                                 <td>{{ $aboutdiv->created_at }}</td>
                                 <td>{{-- View button --}}
                                         <a href="{{ route('backend.home.aboutdiv.show',$aboutdiv->id ) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>

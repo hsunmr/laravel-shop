@@ -1,6 +1,6 @@
 <footer>
     <div class="footer">
-        <span>© 2019 HSUN All Rights Reserved.</span>
+        <span>{{$footer->footertext}}</span>
     </div>
 
 </footer>

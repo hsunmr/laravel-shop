@@ -29,7 +29,6 @@ Route::middleware(['auth','admin'])->group(function(){
     
     
     Route::group(['as' => 'backend.home.'], function() {
-
         Route::resource('/carousel', 'Backend\Home\CarouselController');
         Route::resource('/aboutdiv', 'Backend\Home\AboutDivController');
     });
@@ -39,6 +38,11 @@ Route::middleware(['auth','admin'])->group(function(){
         Route::put('/shopinfo', 'Backend\Share\ShopInfoController@update')->name('shopinfo.update');
         Route::get('/footer', 'Backend\Share\FooterController@index')->name('footer.index');
         Route::put('/footer', 'Backend\Share\FooterController@update')->name('footer.update');
+    });
+
+    Route::group(['as' => 'backend.about.'], function() {
+        Route::resource('/introdiv', 'Backend\About\IntroDivController');
+        Route::resource('/history', 'Backend\About\HistoryDivController');
     });
 
 

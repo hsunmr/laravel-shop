@@ -43,7 +43,7 @@
                 <span>關於我們</span>
             </a>
             <div class="collapse bg-white rounded collapse-box" id="collapse-about" data-parent="#sidebar-content">
-                <a class="collapse-item" href="#">介紹區塊</a>
+                <a class="collapse-item" href="{{route('backend.about.introdiv.index')}}">介紹區塊</a>
                 <a class="collapse-item" href="#">沿革區塊</a>
             </div>
         </li>

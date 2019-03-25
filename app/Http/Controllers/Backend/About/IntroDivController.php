@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Home;
+namespace App\Http\Controllers\Backend\About;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\models\Home\AboutDiv;
-class AboutDivController extends Controller
+use App\Models\About\IntroDiv;
+class IntroDivController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class AboutDivController extends Controller
      */
     public function index()
     {
-        $aboutdivs = AboutDiv::paginate(5);
-        
-        return view('backend.home.aboutdiv.index',compact('aboutdivs'));
+        $introdivs = IntroDiv::paginate(5);
+        return view('backend.about.introdiv.index',compact('introdivs'));
     }
 
     /**
@@ -26,7 +25,7 @@ class AboutDivController extends Controller
      */
     public function create()
     {
-        return view('backend.home.aboutdiv.create');
+        return view('backend.about.introdiv.create');
     }
 
     /**
@@ -47,22 +46,22 @@ class AboutDivController extends Controller
         ]);
      
         //if do not have carousel directory, add it
-        if (!file_exists('uploads/aboutdiv')) {
-            mkdir('uploads/aboutdiv', 0755, true);
+        if (!file_exists('uploads/introdiv')) {
+            mkdir('uploads/introdiv', 0755, true);
         }
         //set image path ,name and move it to local directory 
         $file = $request->file('image');
 
-        $path = public_path() . '\uploads\aboutdiv\\';
+        $path = public_path() . '\uploads\introdiv\\';
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->move($path, $fileName);
 
-        AboutDiv::create([
+        IntroDiv::create([
             'title' =>  $request->input('title'),
             'image'=>$fileName,
             'text' => $request->input('text')
         ]);
-        return redirect()->route('backend.home.aboutdiv.index')
+        return redirect()->route('backend.about.introdiv.index')
                          ->with('success', 'New about div post created successfully');
     }
 
@@ -74,8 +73,8 @@ class AboutDivController extends Controller
      */
     public function show($id)
     {
-        $aboutdiv = AboutDiv::find($id);
-        return view('backend.home.aboutdiv.detail',compact('aboutdiv'));
+        $introdiv = IntroDiv::find($id);
+        return view('backend.about.introdiv.detail',compact('introdiv'));
     }
 
     /**
@@ -86,8 +85,8 @@ class AboutDivController extends Controller
      */
     public function edit($id)
     {
-        $aboutdiv = AboutDiv::find($id);
-        return view('backend.home.aboutdiv.edit',compact('aboutdiv'));
+        $introdiv = IntroDiv::find($id);
+        return view('backend.about.introdiv.edit',compact('introdiv'));
     }
 
     /**
@@ -106,25 +105,25 @@ class AboutDivController extends Controller
             'text' =>['string']
         ],$messages = [
         ]);
-        $aboutdiv = AboutDiv::find($id);
+        $introdiv = IntroDiv::find($id);
         
         if ($request->file('image')) {
             //remove original file
-            @unlink('uploads/aboutdiv/' . $aboutdiv->image);
+            @unlink('uploads/introdiv/' . $introdiv->image);
 
             //set image path ,name and move it to local directory
             $file = $request->file('image');
-            $path = public_path() . '\uploads\aboutdiv\\';
+            $path = public_path() . '\uploads\introdiv\\';
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $file->move($path, $fileName);
 
-            $aboutdiv->image =  $fileName;
+            $introdiv->image =  $fileName;
         }
-        $aboutdiv->title = $request->get('title');
-        $aboutdiv->text = $request->get('text');
-        $aboutdiv->save();
+        $introdiv->title = $request->get('title');
+        $introdiv->text = $request->get('text');
+        $introdiv->save();
         
-        return redirect()->route('backend.home.aboutdiv.index')
+        return redirect()->route('backend.about.introdiv.index')
                          ->with('success', 'Update successfully');
     }
 
@@ -136,11 +135,11 @@ class AboutDivController extends Controller
      */
     public function destroy($id)
     {
-        $aboutdiv = AboutDiv::find($id);
+        $introdiv = IntroDiv::find($id);
         //remove img
-        @unlink('uploads/aboutdiv/' . $aboutdiv->image);
-        $aboutdiv->delete();
-        return redirect()->route('backend.home.aboutdiv.index')
+        @unlink('uploads/introdiv/' . $introdiv->image);
+        $introdiv->delete();
+        return redirect()->route('backend.about.introdiv.index')
                          ->with('success', 'Delete successfully');
     }
 }

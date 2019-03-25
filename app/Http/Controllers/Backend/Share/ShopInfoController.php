@@ -47,17 +47,17 @@ class ShopInfoController extends Controller
         $shopinfo->offday = $request->input('offday');
         $shopinfo->save();
 
-        for($i = 1; $i <= 31; $i++){
-            $calendar = Calendar::find($i);
+        for($i = 0; $i <= 31; $i++){
 
-            if($request->input('day' . $i)){
-                if($request->input('day' . $i)=='on')
+            $calendar = Calendar::find($i);
+            if(isset($calendar)){
+                if ($request->input('day' . $i)=='on') {
                     $calendar->offday = true;
-                else {
-                    $calendar->offday = $request->input('day' . $i);
+                } else{
+                    $calendar->offday = false;
                 }
                 $calendar->save();
-            }
+            }      
         }
         return redirect()->route('backend.share.shopinfo.index')
                          ->with('success', 'Update successfully');
