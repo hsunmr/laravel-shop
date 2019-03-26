@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <div class="row" id="aboutdiv-content">
+    <div class="row table-content" id="aboutdiv-content">
         <div class="col">
             <div class="card">
                 <div class="card-header">
@@ -52,39 +52,40 @@
                                 </td>
                                 <td class="ellipsis">{{ $aboutdiv->text }}</td>
                                 <td>{{ $aboutdiv->created_at }}</td>
-                                <td>{{-- View button --}}
-                                        <a href="{{ route('backend.home.aboutdiv.show',$aboutdiv->id ) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>
-                                        {{-- edit button --}}
-                                        <a href="{{ route('backend.home.aboutdiv.edit',$aboutdiv->id ) }}" class="btn btn-primary"><i class="far fa-edit fa-fw"></i><span class="d-none d-lg-inline"> Edit</span></a>
-                                        {{-- delete modal button --}}
-                                        <button type="button" class="btn btn-danger align-top delete-button" data-toggle="modal" data-target="#deleteModal" data-id="{{ $aboutdiv->id }}" data-url="{{ route('backend.home.aboutdiv.destroy', $aboutdiv->id ) }}" >
-                                            <i class="far fa-trash-alt fa-fw"></i><span class="d-none d-lg-inline"> Delete</span>
-                                        </button>
-                                        <!-- delete Modal -->
-                                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">                  
-                                                        <p>Are you sure you want to delete it?</p>       
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="{{ route('backend.home.aboutdiv.destroy', $aboutdiv->id ) }}" method="post"  class="d-inline delete-form">
-                                                            @csrf  
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger">Yes,delete</button>
-                                                        </form>
-                                                        
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>           
-                                                    </div>
+                                <td>
+                                    {{-- View button --}}
+                                    <a href="{{ route('backend.home.aboutdiv.show',$aboutdiv->id ) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>
+                                    {{-- edit button --}}
+                                    <a href="{{ route('backend.home.aboutdiv.edit',$aboutdiv->id ) }}" class="btn btn-primary"><i class="far fa-edit fa-fw"></i><span class="d-none d-lg-inline"> Edit</span></a>
+                                    {{-- delete modal button --}}
+                                    <button type="button" class="btn btn-danger align-top delete-button" data-toggle="modal" data-target="#deleteModal" data-id="{{ $aboutdiv->id }}" data-url="{{ route('backend.home.aboutdiv.destroy', $aboutdiv->id ) }}" >
+                                        <i class="far fa-trash-alt fa-fw"></i><span class="d-none d-lg-inline"> Delete</span>
+                                    </button>
+                                    <!-- delete Modal -->
+                                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">                  
+                                                    <p>Are you sure you want to delete it?</p>       
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{ route('backend.home.aboutdiv.destroy', $aboutdiv->id ) }}" method="post"  class="d-inline delete-form">
+                                                        @csrf  
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Yes,delete</button>
+                                                    </form>
+                                                    
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>           
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                 </td>
                                 
                             </tr>

@@ -288,14 +288,15 @@ nav{
 #carousel-content{
     margin-bottom:80px; 
 }
-#carousel-content img,#aboutdiv-content img{
+.table-content img{
     width:150px;
     height:100px;
 }
-#carousel-content table a,#aboutdiv-content table a{
+#carousel-content table a,#aboutdiv-content table a,#newsdiv-content table a{
     color:white;
     margin-bottom: 5px;
 }
+
 .pagination-text{
     color:grey;
     padding: .5rem .75rem;
@@ -330,7 +331,7 @@ nav{
     width: calc(14.2857% - 8px);
     padding: 8px 0 8px 4px;
     margin: 4px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 1.0;
     letter-spacing: 0.3em;

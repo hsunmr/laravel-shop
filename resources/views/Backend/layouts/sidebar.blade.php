@@ -48,14 +48,10 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-news" aria-expanded="false" href="#" >
+            <a class="nav-link" href="{{route('backend.news.newsdiv.index')}}" >
                 <i class="far fa-newspaper fa-fw" aria-hidden="true"></i>
                 <span>最新消息</span>
             </a>
-            <div class="collapse bg-white rounded collapse-box" id="collapse-news" data-parent="#sidebar-content">
-                <a class="collapse-item" href="#">新聞區塊</a>
-                <a class="collapse-item" href="#">新聞內文</a>
-            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-product" aria-expanded="false" href="#" >

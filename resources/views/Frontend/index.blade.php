@@ -56,32 +56,14 @@
   <div class="container" id="index-news">
     <h2 class="head_title">NEWS</h2>
     <div class="row news-des">
-            <ul id="news_topics">			
-                 <li>
-                    <time>2018年08月01日</time>
-                    <br class="break">
-                    <span class="news_text"><a href="#">news1</a></span>
-                </li>
+            <ul id="news_topics">
+                @foreach ($newss as $news)
                 <li>
-                    <time>2018年08月01日</time>	
+                    <time>{{$news->created_at->format('Y年m月d日')}}</time>
                     <br class="break">
-                    <span class="news_text"><a href="/#">news2</a></span>
-                </li>
-                <li>
-                    <time>2018年07月20日</time>
-                    <br class="break">
-                    <span class="news_text"><a href="#">news3</a></span>
-                </li>
-                <li>
-                    <time>2018年07月20日</time>
-                    <br class="break">
-                    <span class="news_text"><a href="#">news4</a></span>
-                </li>
-                <li>
-                    <time>2018年05月31日</time>
-                    <br class="break">
-                    <span class="news_text"><a href="#">news5</a></span>
-                </li>
+                    <span class="news_text"><a href="{{route('news.detail',$news->id)}}">{{$news->title}}</a></span>
+                </li> 
+                @endforeach			
            </ul>
     </div>
     <div class="row news_more">

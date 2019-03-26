@@ -1,13 +1,7 @@
 @extends('backend.layouts.master')
-@section('title','INTRO-DIV | CREATE')
+@section('title','NEWS-DIV | EDIT')
 @section('content')
-<div class="container-fluid" id="introdiv-create">
-    <div class="row">
-        <div class="col content-title">
-            <i class="fas fa-plus-circle fa-2x align-middle"></i>
-            <span class="align-middle">New IntroDivs Posts</span>
-        </div>
-    </div>
+<div class="container-fluid" id="newsdiv-edit">
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -19,21 +13,22 @@
         </div>
     @endif
 
-    <form action="{{route('backend.about.introdiv.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('backend.news.newsdiv.update',$news->id)}}" method="post" enctype="multipart/form-data">
         @csrf
-        <div class="row ">
+        @method('PUT')
+        <div class="row">
             <div class="col-md-8 ">
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Post Title</h5>
-                        <p class="card-text">The title of introdiv</p>
-                        <input type="text" name="title" class="form-control" placeholder="title">
+                        <p class="card-text">The title of news</p>
+                        <input type="text" name="title" class="form-control" value="{{$news->title}}" placeholder="title">
                     </div>
                 </div>
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Post Text</h5>
-                        <textarea name="text"></textarea>
+                        <textarea name="text">{{$news->text}}</textarea>
                     </div>
                 </div>
             </div>
@@ -44,14 +39,13 @@
                     </div>
                     <div class="card-body">
                         <input type="file" name="image" accept="image/*" class="form-control file-upload mb-3" id="image-create" >
-                        <img class="preview border" src="">
+                        <img class="preview border" src="{{ asset('uploads/newsdiv/' . $news->image) }}">
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">上傳</button>
-                <a href="{{route('backend.about.introdiv.index')}}" class="btn btn-secondary">Back</a>
-
+                <button type="submit" class="btn btn-primary">更新</button>
+                <a href="{{route('backend.news.newsdiv.index')}}" class="btn btn-secondary">Back</a>
             </div>   
         </div>
 

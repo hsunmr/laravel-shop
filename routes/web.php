@@ -14,7 +14,7 @@
 Route::get('/', 'Frontend\HomeController@index')->name('home');
 Route::get('/about', 'Frontend\AboutController@index')->name('about');
 Route::get('/news', 'Frontend\NewsController@index')->name('news');
-Route::get('/news-detail', 'Frontend\AboutController@index')->name('news_detail');
+Route::get('/news/detail/{news}', 'Frontend\NewsController@show')->name('news.detail');
 Route::get('/products', 'Frontend\ProductsController@index')->name('products');
 Route::get('/shop','Frontend\ShopController@index')->name('shop');
 Route::get('/cart', 'Frontend\CartController@index')->name('cart');
@@ -43,6 +43,10 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::group(['as' => 'backend.about.'], function() {
         Route::resource('/introdiv', 'Backend\About\IntroDivController');
         Route::resource('/historydiv', 'Backend\About\HistoryDivController');
+    });
+
+    Route::group(['as' => 'backend.news.'], function() {
+        Route::resource('/newsdiv', 'Backend\News\NewsController');
     });
 
 

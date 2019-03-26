@@ -61,7 +61,7 @@
         </div>
     @endif
 
-    <div class="row" id="carousel-content">
+    <div class="row table-content" id="carousel-content">
         <div class="col">
             <div class="card">
                 <div class="card-header">

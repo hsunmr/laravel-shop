@@ -22,4 +22,6 @@ class AboutController extends Controller
         return view('frontend.about',compact('introdivs','historys','shopinfo','calendars','footer'));
 
     }
+
+    
 }

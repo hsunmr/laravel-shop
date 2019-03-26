@@ -3,20 +3,17 @@
 @section('content')
 <div class="container" id="news_detail_content">
     <div class="news_detail_des">
-        <time>2019.01.29</time>
-        <h3 class="post_title">OPEN</h2>
+        <time>{{$news->created_at->format('Y年m月d日')}}</time>
+        <h3 class="post_title">{{$news->title}}</h2>
         <div class="row" id="post_img">
             <div class="col">
-                <img class="d-block w-100" src="../img/about.jpg">
+                <img class="d-block w-100" src="{{asset('uploads/newsdiv/' . $news->image)}}">
             </div>
         </div>
         <div class="row" id="post_text">
             <div class="col">
                 <p>
-                    We want to be your coffee shop. A place that brings a smile to your face with just one cup of roasted goodness.<br>
-                    What drives us is bringing joy to each and every person who walks through our doors.<br>
-                    In the hope that your happiness touches others throughout the rest of your day.<br>
-                    Like a chain reaction, building a better community and a better world.
+                {!!$news->text!!}
                 </p>
             </div>
         </div>

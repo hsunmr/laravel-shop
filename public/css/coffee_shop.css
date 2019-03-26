@@ -291,7 +291,16 @@ nav{
     transform: translateY(-5px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
+.pagination .page-link ,.page-item.disabled .page-link{
+    background-color: transparent;
+    color:black;
+}
 
+.page-item.active .page-link{
+    background-color: burlywood;
+    border-color:burlywood;
+    color:#fff;
+}
 
 /*detail start*/
 #detail{
