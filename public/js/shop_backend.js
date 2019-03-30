@@ -1,9 +1,8 @@
 $(document).ready(function () {
 
     if($("textarea").length > 0){
-        CKEDITOR.replace( 'text',{
-            height:400,
-        } );
+        $("#description").ckeditor({height:250});
+        $(".text").ckeditor({height:400});
     }
     if (window.matchMedia('(max-width:768px)').matches) {
         $('#sidebar').addClass('toggled');

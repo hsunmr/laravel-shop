@@ -28,7 +28,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Post Text</h5>
-                        <textarea name="text">{{$introdiv->text}}</textarea>
+                        <textarea class="text" name="text">{{$introdiv->text}}</textarea>
                     </div>
                 </div>
             </div>

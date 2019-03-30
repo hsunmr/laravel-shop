@@ -22,7 +22,7 @@
     <form action="{{route('backend.news.newsdiv.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row ">
-            <div class="col-md-8 ">
+            <div class="col-md-8">
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Post Title</h5>
@@ -33,11 +33,11 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Post Text</h5>
-                        <textarea name="text"></textarea>
+                        <textarea class="text" name="text" ></textarea>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3 ">
+            <div class="col-md-4 mb-3">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
                         圖片上傳

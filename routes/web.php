@@ -49,6 +49,12 @@ Route::middleware(['auth','admin'])->group(function(){
         Route::resource('/newsdiv', 'Backend\News\NewsController');
     });
 
+    Route::group(['as' => 'backend.products.'], function() {
+        Route::resource('/menu', 'Backend\Products\MenuController');
+        Route::resource('/product-type', 'Backend\Products\ProductTypeController');
+    });
+
+
 
 });
 

@@ -619,6 +619,7 @@ footer{
     text-align: center;
 }
 
+
 .product_page_product{
     border-bottom:1px solid #655046;
 }
@@ -634,9 +635,6 @@ footer{
     transition: 0.3s;
 }
 .product_page_product span{
-    background: url(../img/icon/icon_back02.png) right center no-repeat;
-    background-size: 20px auto;
-    padding: 0 30px 0 0;
     color: #ffffff;
     font-weight: bold;
     line-height: 50px;

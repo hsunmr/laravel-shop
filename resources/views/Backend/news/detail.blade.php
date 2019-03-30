@@ -13,7 +13,7 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Post Text</h5>
-                    <textarea name="text" disabled>{{ $news->text }}</textarea>
+                    <textarea class="text" name="text" disabled>{{ $news->text }}</textarea>
                 </div>
             </div>
         </div>

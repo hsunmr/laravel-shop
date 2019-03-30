@@ -8,9 +8,9 @@
             <h2 class="menu_title">Beans</h2>
             <div class="row menu_row" > 
                 <div class="col-lg-4 col-sm-6 menu_col">
-                    <img class="d-block w-100"src="../img/menu/beans_single.jpg">
-                    <div class="box_title">Single Origin Set</div>
-                    <a href="#"><span>購買</span></a>
+                    <img class="d-block w-100 rounded"src="../img/menu/beans_single.jpg">
+                    <div class="box_title ">Single Origin Set</div>
+                    <a href="#"><span>購買  <i class="fas fa-chevron-circle-right align-middle"></i></span> </a>
 
                 </div>
                 <div class="col-lg-4 col-sm-6 menu_col">
