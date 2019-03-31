@@ -20,9 +20,32 @@
             <div class="col-md-8 ">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Product Type</h5>
-                        <p class="card-text">The type of product</p>
-                        <input type="text" name="type" class="form-control" value="{{$type->type}}" placeholder="title">
+                        <h5 class="card-title">Type name</h5>
+                        <input type="text" name="name" class="form-control" value="{{$type->name}}" placeholder="name">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 ">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Type Category</h5>
+                        <input type="text" name="type" class="form-control" value="{{$type->type}}" placeholder="type">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 ">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Type order</h5>
+                        <select class="form-control" name="order" >
+                            @for ($i = 1; $i <= $types->count(); $i++)
+                                @if ($type->order == $i)
+                                    <option selected>{{$i}}</option>
+                                @else
+                                    <option>{{$i}}</option>
+                                @endif
+                            @endfor
+                        </select>
                     </div>
                 </div>
             </div>

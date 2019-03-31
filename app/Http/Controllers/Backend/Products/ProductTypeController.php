@@ -15,7 +15,7 @@ class ProductTypeController extends Controller
      */
     public function index()
     {
-        $types = ProductType::paginate(5);
+        $types = ProductType::orderby('order')->paginate(5);
         return view('backend.products.product_type.index',compact('types'));
     }
 
@@ -38,10 +38,14 @@ class ProductTypeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'type'=>['required','string','max:20']  
+            'name'=>['required','string','max:20'],  
+            'type'=>['required','string','max:20'],  
+            'order'=>['required','integer']   
         ]);
         ProductType::create([
-            'type'=>$request->input('type')
+            'name'=>$request->input('name'),
+            'type'=>$request->input('type'),
+            'order'=>$request->input('order')
         ]);
 
         return redirect()->route('backend.products.product-type.index')
@@ -69,7 +73,8 @@ class ProductTypeController extends Controller
     public function edit($id)
     {
         $type = ProductType::find($id);
-        return view('backend.products.product_type.edit',compact('type'));
+        $types = ProductType::all();
+        return view('backend.products.product_type.edit',compact('types','type'));
     }
 
     /**
@@ -82,11 +87,15 @@ class ProductTypeController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'type'=>['required','string','max:20']  
+            'name'=>['required','string','max:20'],  
+            'type'=>['required','string','max:20'],  
+            'order'=>['required','integer']  
         ]);
         
         $product_type = ProductType::find($id);
+        $product_type->name = $request->input('name');
         $product_type->type = $request->input('type');
+        $product_type->order = $request->input('order');
         $product_type->save();
 
         return redirect()->route('backend.products.product-type.index')

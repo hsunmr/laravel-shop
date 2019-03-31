@@ -26,7 +26,19 @@
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
                                         <strong>種類名稱 :</strong>
-                                        <input type="text" name="type" class="form-control" placeholder="Type Name">
+                                        <input type="text" name="name" class="form-control" placeholder="Type Name">
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <strong>種類 :</strong>
+                                        <input type="text" name="type" class="form-control" placeholder="Type">
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <strong>類別順序 :</strong>
+                                        <select class="form-control" name="order" >
+                                        @for ($i = 1; $i <= $types->count()+1; $i++)
+                                            <option>{{$i}}</option>
+                                        @endfor
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -68,6 +80,8 @@
                             <tr>
                                 <th>{{'#'}}</th>
                                 <th>Type Name</th>
+                                <th>Type</th>
+                                <th>Order</th>
                                 <th>created_at</th>
                                 <th>Actions</th>
                             </tr>
@@ -76,7 +90,9 @@
                         @foreach ($types as $type)   
                         <tr>
                             <td>{{ $type->id }}</td>
+                            <td>{{ $type->name }}</td>
                             <td>{{ $type->type }}</td>
+                            <td>{{ $type->order }}</td>
                             <td>{{ $type->created_at}}</td>
                             <td>
                                 {{-- edit button --}}
