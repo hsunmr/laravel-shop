@@ -26,10 +26,10 @@
                         <span >Product Type:</span>
                         <select class="form-control" name="type" >
                             @foreach ($types as $type)
-                                @if ($type->type == $menu->type)
-                                    <option selected>{{$type->type}}</option>
+                                @if ($type->name == $menu->type)
+                                    <option selected>{{$type->name}}</option>
                                 @else
-                                    <option>{{$type->type}}</option>
+                                    <option>{{$type->name}}</option>
                                 @endif
                             @endforeach
                         </select>

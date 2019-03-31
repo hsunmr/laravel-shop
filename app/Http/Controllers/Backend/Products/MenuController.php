@@ -41,7 +41,7 @@ class MenuController extends Controller
     {
         //validation
         $request->validate([
-            'name'=> ['required','string', 'max:14'],
+            'name'=> ['required','string'],
             'image'=>['required','image'],
             'price' =>['required','string'],
             'description' =>['required','string'],
@@ -105,7 +105,7 @@ class MenuController extends Controller
     {
         //validation
         $request->validate([
-            'name'=> ['string', 'max:14'],
+            'name'=> ['string'],
             'image'=>['image'],
             'price' =>['string'],
             'description' =>['string'],

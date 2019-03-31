@@ -31,7 +31,7 @@
                         <span >Product Type:</span>
                         <select class="form-control" name="type" >
                             @foreach ($types as $type)
-                                <option>{{$type->type}}</option>
+                                <option>{{$type->name}}</option>
                             @endforeach
                         </select>
                         <span >Product Price:</span>
