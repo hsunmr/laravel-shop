@@ -77,7 +77,7 @@
    var create_calendar = function(){
 
        var calendar = {!! json_encode($calendars) !!};
-       console.log(calendar);
+
        //get today date
        var date = new Date();
        var year = date.getFullYear();

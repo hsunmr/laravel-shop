@@ -51,6 +51,7 @@ Route::middleware(['auth','admin'])->group(function(){
 
     Route::group(['as' => 'backend.products.'], function() {
         Route::resource('/menu', 'Backend\Products\MenuController');
+        Route::resource('/product', 'Backend\Products\ProductController');
         Route::resource('/product-type', 'Backend\Products\ProductTypeController');
     });
 

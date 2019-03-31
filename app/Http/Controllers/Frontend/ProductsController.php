@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Products\Product;
 use App\Models\Products\Menu;
 use App\Models\Products\ProductType;
 use App\Models\Share\ShopInfo;
@@ -13,13 +14,21 @@ class ProductsController extends Controller
 {
     public function index(){
         
+    
+        $products = Product::all();
         $menus = Menu::all();
+
+        foreach ($menus as $menu) {
+            $products->add($menu);
+        }
+
+        $categorys = ProductType::orderBy('type','desc')->get()->groupBy('type');
         $types = ProductType::orderby('order')->get();
         $shopinfo = ShopInfo::find(1);
         $calendars = Calendar::all();
         $footer = Footer::find(1);
 
-        return view('frontend.products',compact('menus','types','shopinfo','calendars','footer'));
+        return view('frontend.products',compact('categorys','products','types','shopinfo','calendars','footer'));
 
     }
 }

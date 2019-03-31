@@ -292,11 +292,11 @@ nav{
     width:150px;
     height:100px;
 }
-#menu-content img{
+#menu-content img,#product-content img{
     width:100px;
     height:100px;
 }
-#carousel-content table a,#aboutdiv-content table a,#newsdiv-content table a,#menu-content table a{
+#carousel-content table a,#aboutdiv-content table a,#newsdiv-content table a,#menu-content table a,#product-content table a{
     color:white;
     margin-bottom: 5px;
 }

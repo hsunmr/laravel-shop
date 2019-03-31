@@ -59,7 +59,7 @@
                 <span>商品介紹</span>
             </a>
             <div class="collapse bg-white rounded collapse-box" id="collapse-product" data-parent="#sidebar-content">
-                <a class="collapse-item" href="#">商品</a>
+                <a class="collapse-item" href="{{route('backend.products.product.index')}}">商品</a>
                 <a class="collapse-item" href="{{route('backend.products.menu.index')}}">菜單</a>
                 <a class="collapse-item" href="{{route('backend.products.product-type.index')}}">種類</a>
             </div>

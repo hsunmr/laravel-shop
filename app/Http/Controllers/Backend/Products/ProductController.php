@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Backend\Products;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Products\Menu;
+use App\Models\Products\Product;
 use App\Models\Products\ProductType;
-
-class MenuController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::orderby('type')->paginate(5);
-        return view('backend.products.menu.index',compact('menus'));
+        $products = Product::orderby('type')->paginate(5);
+        return view('backend.products.product.index',compact('products'));
     }
 
     /**
@@ -27,8 +26,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        $types = ProductType::where('type','Menu')->get();
-        return view('backend.products.menu.create',compact('types'));
+        $types = ProductType::where('type','Product')->get();
+        return view('backend.products.product.create',compact('types'));
     }
 
     /**
@@ -49,23 +48,23 @@ class MenuController extends Controller
         ]);
      
         //if do not have carousel directory, add it
-        if (!file_exists('uploads/menu')) {
-            mkdir('uploads/menu', 0755, true);
+        if (!file_exists('uploads/product')) {
+            mkdir('uploads/product', 0755, true);
         }
         //set image path ,name and move it to local directory 
         $file = $request->file('image');
 
-        $path = public_path() . '\uploads\menu\\';
+        $path = public_path() . '\uploads\product\\';
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->move($path, $fileName);
-        Menu::create([
+        Product::create([
             'name' =>  $request->input('name'),
             'image'=>$fileName,
             'price' => $request->input('price'),
             'type' => $request->input('type'),
             'description' => $request->input('description')
         ]);
-        return redirect()->route('backend.products.menu.index')
+        return redirect()->route('backend.products.product.index')
                          ->with('success', 'New product created successfully');
     }
 
@@ -77,8 +76,8 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        $menu = Menu::find($id);
-        return view('backend.products.menu.detail',compact('menu'));
+        $product = Product::find($id);
+        return view('backend.products.product.detail',compact('product'));
     }
 
     /**
@@ -89,9 +88,9 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        $types = ProductType::where('type','Menu')->get();
-        $menu = Menu::find($id);
-        return view('backend.products.menu.edit',compact('types','menu'));
+        $types = ProductType::where('type','Product')->get();
+        $product = Product::find($id);
+        return view('backend.products.product.edit',compact('types','product'));
     }
 
     /**
@@ -111,28 +110,28 @@ class MenuController extends Controller
             'description' =>['string'],
             'type' =>['required','string']
         ]);
-        $menu = Menu::find($id);
+        $product = Product::find($id);
         
         if ($request->file('image')) {
             //remove original file
-            @unlink('uploads/menu/' . $menu->image);
+            @unlink('uploads/product/' . $product->image);
 
             //set image path ,name and move it to local directory
             $file = $request->file('image');
-            $path = public_path() . '\uploads\menu\\';
+            $path = public_path() . '\uploads\product\\';
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $file->move($path, $fileName);
 
-            $menu->image =  $fileName;
+            $product->image =  $fileName;
         }
-        $menu->name = $request->input('name');
-        $menu->price = $request->input('price');
-        $menu->type = $request->input('type');
-        $menu->description = $request->input('description');
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->type = $request->input('type');
+        $product->description = $request->input('description');
       
-        $menu->save();
+        $product->save();
         
-        return redirect()->route('backend.products.menu.index')
+        return redirect()->route('backend.products.product.index')
                          ->with('success', 'Update successfully');
     }
 
@@ -144,11 +143,11 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $menu = Menu::find($id);
+        $product = Product::find($id);
         //remove img
-        @unlink('uploads/menu/' . $menu->image);
-        $menu->delete();
-        return redirect()->route('backend.products.menu.index')
+        @unlink('uploads/product/' . $product->image);
+        $product->delete();
+        return redirect()->route('backend.products.product.index')
                          ->with('success', 'Delete successfully');
     }
 }
