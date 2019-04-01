@@ -48,7 +48,7 @@ class MenuController extends Controller
             'type' =>['required','string']
         ]);
      
-        //if do not have carousel directory, add it
+        //if do not have menu directory, add it
         if (!file_exists('uploads/menu')) {
             mkdir('uploads/menu', 0755, true);
         }

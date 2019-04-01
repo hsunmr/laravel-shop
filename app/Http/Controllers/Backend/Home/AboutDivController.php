@@ -46,7 +46,7 @@ class AboutDivController extends Controller
 
         ]);
      
-        //if do not have carousel directory, add it
+        //if do not have aboutdiv directory, add it
         if (!file_exists('uploads/aboutdiv')) {
             mkdir('uploads/aboutdiv', 0755, true);
         }

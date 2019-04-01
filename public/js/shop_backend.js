@@ -18,6 +18,12 @@ $(document).ready(function () {
     $("#img-update,#image-create").change(function () {
         preview(this);   //if change -> preview img
     })
+    $("#mapurl input").change(function(){    
+        $("#mapurl iframe").attr('src',$("#mapurl input").val());
+        $("#mapurl iframe").css('width','100%').css('height','250');
+        if(!$("#mapurl input").val())
+            $("#mapurl iframe").css('width','0').css('height','0');
+    })
     
 });
 

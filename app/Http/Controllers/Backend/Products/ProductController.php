@@ -47,7 +47,7 @@ class ProductController extends Controller
             'type' =>['required','string']
         ]);
      
-        //if do not have carousel directory, add it
+        //if do not have product directory, add it
         if (!file_exists('uploads/product')) {
             mkdir('uploads/product', 0755, true);
         }

@@ -66,7 +66,7 @@
         </li>        
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('backend.shop.shop-detail.index')}}">
             <i class="fas fa-shopping-bag fa-fw" aria-hidden="true"></i>
             <span>店鋪消息</span>
             </a>

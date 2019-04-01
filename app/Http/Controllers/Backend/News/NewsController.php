@@ -45,7 +45,7 @@ class NewsController extends Controller
 
         ]);
      
-        //if do not have carousel directory, add it
+        //if do not have newsdiv directory, add it
         if (!file_exists('uploads/newsdiv')) {
             mkdir('uploads/newsdiv', 0755, true);
         }

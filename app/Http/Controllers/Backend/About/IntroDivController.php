@@ -45,7 +45,7 @@ class IntroDivController extends Controller
 
         ]);
      
-        //if do not have carousel directory, add it
+        //if do not have introdiv directory, add it
         if (!file_exists('uploads/introdiv')) {
             mkdir('uploads/introdiv', 0755, true);
         }

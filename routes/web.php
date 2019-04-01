@@ -55,6 +55,10 @@ Route::middleware(['auth','admin'])->group(function(){
         Route::resource('/product-type', 'Backend\Products\ProductTypeController');
     });
 
+    Route::group(['as' => 'backend.shop.'], function() {
+        Route::resource('/shop-detail', 'Backend\Shop\ShopController');
+    });
+
 
 
 });
