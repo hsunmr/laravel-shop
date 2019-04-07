@@ -1,7 +1,7 @@
 <!-- Navigation -->
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="site-nav">
-  <div class="container-fluid" id="navbar-container">
+
 
     
     <button class="navbar-toggler x collapsed" id="toggle-button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="close" aria-label="Toggle navigation">
@@ -105,7 +105,7 @@
         @endauth
       </div>
     </div>
-  </div>
+
   
 </nav>
 

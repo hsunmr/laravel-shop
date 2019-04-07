@@ -27,9 +27,26 @@ nav{
     position: relative;
 }
 #mainNav{
+    height:0;
     width:95%;
     left:0;
 } 
+#mainNav li{
+    width:60px;
+}
+#mainNav li a{
+    height:165px;
+}
+#mainNav #site-logo{
+    width: 300px;
+}
+body.fixed #mainNav li a{
+    height:66px;
+}
+body.fixed #mainNav li a:hover{
+    height:165px;
+    transition: 0s;
+}
 #nav-info{
     width:200px;
     top: 50px;
@@ -72,15 +89,17 @@ nav{
     writing-mode: vertical-lr; 
 }
 
-#mainNav .nav-hover a:hover{
+/* #mainNav .nav-hover a:hover{
     -webkit-transform:rotateY(360deg); 
     -moz-transform:rotateY(360deg); 
     -ms-transform:rotateY(360deg); 
     transform:rotateY(360deg); 
     transition: 1.5s;
-}
+} */
+
 .nav-item span{
     font-size: 18px;
+
 }
 
 
@@ -701,6 +720,13 @@ footer{
     }    
     #mainNav .nav-item a:hover{
         transition: 0s;
+    }
+    #mainNav,#mainNav li a{
+        height:auto;
+
+    } 
+    #mainNav li{
+        width:100%;
     }
     nav{
         background-color: antiquewhite;

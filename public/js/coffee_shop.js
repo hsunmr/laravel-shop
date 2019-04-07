@@ -22,7 +22,8 @@ $(document).ready(function () {
     }, function () {
 
         if (($(window).scrollTop() > 100) && (window.matchMedia('(min-width: 991.98px)').matches)) {
-            $(this).find('span').stop().fadeOut();
+            $(this).find('span').stop().hide();
+            
         }
     });
 
@@ -46,7 +47,8 @@ var Navbar_fadeOut = function () {
             $('.fixed-top').css('top', '-5%');        //fixed top
         else
             $('.fixed-top').css('top', '-4%');
-        $("#navbarResponsive span").stop().fadeOut();   //text
+            
+        $("#navbarResponsive span").stop().hide();   //text
         $("#site-logo .logo img").stop().animate({ height: '130px', width: '250px' }, 500, 'linear'); //logo img 
         $("body").addClass('fixed');
     }
