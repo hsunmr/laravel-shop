@@ -31,4 +31,12 @@ class ProductsController extends Controller
         return view('frontend.products',compact('categorys','products','types','shopinfo','calendars','footer'));
 
     }
+    public function show($id)
+    {
+        $product = Product::find($id);
+        $shopinfo = ShopInfo::find(1);
+        $calendars = Calendar::all();
+        $footer = Footer::find(1);
+        return view('frontend.products_detail',compact('product','shopinfo','calendars','footer'));
+    }
 }

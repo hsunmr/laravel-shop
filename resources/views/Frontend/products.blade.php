@@ -15,8 +15,10 @@
                                     <div class="col-lg-4 col-sm-6 menu_col">
                                         <img class="d-block w-100 rounded"src="{{asset('uploads/' . $type->type . '/' . $product->image)}}">
                                         <div class="box_title">{{$product->name}}</div>
+                                        
                                        @if ($type->type == 'Product')
-                                            <a href="#"><span>購買 <i class="far fa-arrow-alt-circle-right align-middle"></i></span></a>
+                                            <div class="price">售價<price> {{$product->price}}</price>元</div>
+                                            <a href="{{route('products.detail',$product->id)}}"><span>購買 <i class="far fa-arrow-alt-circle-right align-middle"></i></span></a>
                                        @endif                                    
                                     </div>  
                                 @endif                      

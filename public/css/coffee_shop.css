@@ -582,10 +582,10 @@ footer{
     letter-spacing: 0.1rem;
     line-height: 1.8;
 }
-#news_detail_content a{
-    background: #655046;
+.back_button a{
+    background: #92ac95;
     border-radius: 5px;
-    height: 60px;
+    height: 50px;
     text-align: center;
     margin: 0 auto;
     text-decoration: none;
@@ -593,13 +593,13 @@ footer{
     cursor: pointer;
     transition: 0.3s;
 }
-#news_detail_content span{
+.back_button span{
     background: url(../img/icon/icon_back01.png) left center no-repeat;
     background-size: 20px auto;
     padding: 0 0 0 38px;
     color: #ffffff;
     font-weight: bold;
-    line-height: 60px;
+    line-height: 50px;
     letter-spacing: 0.2em;
     display: inline-block;
 }
@@ -637,8 +637,37 @@ footer{
     font-weight: bold;
     text-align: center;
 }
-
-
+.price{
+    color: #655046;
+    text-align: center;
+}
+.price price{
+    color: #655046;
+    font-size: 19px;
+    font-weight: bold;
+}
+#products_detail_info{
+    color: #655046;
+}
+.detail_price span{
+    font-size: 19px;
+    font-weight: bold;
+}
+#product_button .add_to_cart a{
+    background: #c09d9b;
+    border-radius: 5px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#product_button .add_to_cart span{
+    color: #ffffff;
+    line-height: 40px;
+    display: inline-block;
+}
 .product_page_product{
     border-bottom:1px solid #655046;
 }

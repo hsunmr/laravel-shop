@@ -18,7 +18,9 @@
             </div>
         </div>
     </div>
-    <a href="{{route('news')}}"><span>回到NEWS</span></a>
+    <div class="back_button">
+        <a href="{{route('news')}}"><span>回到NEWS</span></a>
+    </div>
 </div>
 
 
