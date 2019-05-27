@@ -67,8 +67,8 @@
       <div class="cart">
         <a class="cart-link" href="{{route('cart')}}">
           <div class="in-cart">             
-            <span class="cart-num"><i class="fas fa-shopping-cart"></i><strong>0</strong>項</span>
-            <span class="cart-price"><strong>0</strong>元</span>
+            <span class="cart-num"><i class="fas fa-shopping-cart"></i><strong>{{Session::has('cart') ? Session::get('cart')->totalQty : '0'}}</strong>項</span>
+            <span class="cart-price"><strong>{{Session::has('cart') ? Session::get('cart')->totalPrice : '0'}}</strong>元</span>
           </div>
         </a>
       </div>
@@ -84,15 +84,22 @@
             </a>
             
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="order-management dropdown-item"  href="{{route('order')}}" >
-                <i class="fas fa-shopping-bag"></i> 訂單管理 
-              </a>
-              <a class="address-book dropdown-item"  href="#" >
-                <i class="fas fa-address-book"></i> 通訊錄 
-              </a>
-              <a class="order-management dropdown-item"  href="#" >
-                <i class="fas fa-key"></i> 重設密碼 
-              </a>
+              @if (Auth::user()->type =='1')
+                <a class="order-management dropdown-item"  href="{{route('dashboard')}}" >
+                  <i class="fas fa-tachometer-alt"></i> 後台系統 
+                </a>    
+              @else
+                <a class="order-management dropdown-item"  href="{{route('order')}}" >
+                  <i class="fas fa-shopping-bag"></i> 訂單管理 
+                </a>
+                <a class="address-book dropdown-item"  href="#" >
+                  <i class="fas fa-address-book"></i> 通訊錄 
+                </a>
+                <a class="order-management dropdown-item"  href="#" >
+                  <i class="fas fa-key"></i> 重設密碼 
+                </a> 
+              @endif
+
             </div>
           </div>
           <a class="logout" href="{{ route('logout') }}" 

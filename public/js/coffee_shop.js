@@ -27,14 +27,43 @@ $(document).ready(function () {
         }
     });
 
-
-
-
     /*----------------navbar fixed animation----------------*/
     $(window).resize(function () {
         fixNavbar();
     });
 
+    $(".quantity").change(function(){
+
+        $id = $(this).attr('data-id');
+        $qty = $(this)[0].value;
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: 'cart/' + $id,
+            type: 'PATCH',
+            data: {quantity: $qty},
+            success: function(res) {
+                window.location.reload();
+            }
+        });
+    });
+    $(".delete_button").click(function(){
+
+        $id = $(this).attr('data-id');
+        console.log($id);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'DELETE',
+            url: 'cart/' + $id,
+            data: {quantity:''},
+            success: function(res) {
+                window.location.reload();
+            }
+        });
+    });
 
 
 });

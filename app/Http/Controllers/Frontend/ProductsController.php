@@ -10,6 +10,7 @@ use App\Models\Products\ProductType;
 use App\Models\Share\ShopInfo;
 use App\Models\Share\Calendar;
 use App\Models\Share\Footer;
+
 class ProductsController extends Controller
 {
     public function index(){
@@ -39,4 +40,5 @@ class ProductsController extends Controller
         $footer = Footer::find(1);
         return view('frontend.products_detail',compact('product','shopinfo','calendars','footer'));
     }
+
 }
