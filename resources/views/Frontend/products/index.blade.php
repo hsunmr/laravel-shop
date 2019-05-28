@@ -13,13 +13,19 @@
                             @foreach ($products as $product)
                                 @if ($product->type == $type->name) {{--type of product--}} 
                                     <div class="col-lg-4 col-sm-6 menu_col">
-                                        <img class="d-block w-100 rounded"src="{{asset('uploads/' . $type->type . '/' . $product->image)}}">
-                                        <div class="box_title">{{$product->name}}</div>
-                                        
-                                       @if ($type->type == 'Product')
+                                        @if ($type->type == 'Product')
+                                            <a href="{{route('products.detail',$product->id)}}">
+                                                <img class="d-block w-100 rounded"src="{{asset('uploads/' . $type->type . '/' . $product->image)}}">
+                                                <div class="box_title">{{$product->name}}</div>
+                                            </a>
                                             <div class="price">售價<price> {{$product->price}}</price>元</div>
-                                            <a href="{{route('products.detail',$product->id)}}"><span>購買 <i class="far fa-arrow-alt-circle-right align-middle"></i></span></a>
-                                       @endif                                    
+                                            <div class="buy_button">
+                                                <a href="{{route('products.detail',$product->id)}}"><span>購買 <i class="far fa-arrow-alt-circle-right align-middle"></i></span></a> 
+                                            </div> 
+                                        @else
+                                            <img class="d-block w-100 rounded"src="{{asset('uploads/' . $type->type . '/' . $product->image)}}">
+                                            <div class="box_title">{{$product->name}}</div>
+                                        @endif                                
                                     </div>  
                                 @endif                      
                             @endforeach

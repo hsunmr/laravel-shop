@@ -30,6 +30,7 @@
                             <div class="product_name">
                                 {{ $product['item']['name'] }}
                             </div>
+                            <hr>
                             <div class="product_description">
                                 {!! $product['item']['description'] !!}
                             </div>
@@ -67,10 +68,14 @@
                 </tr>
             </tfoot>
         </table>
+        <div class="cart_send">
+            <a href="{{route('products')}}" id="continue_button">繼續購物</a>
+            <a href="{{route('cart.order')}}" id="next_step_button">下一步</a>
+        </div>
     </div>
     @else
         <div class="noproduct-cart">
-            no product
+            no product in the cart
         </div>
     @endif
    

@@ -26,7 +26,7 @@
         <a class="user dropdown-item"  href="#" ><i class="fas fa-user"></i>  
           {{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} 
         </a>
-        <a class="order-management dropdown-item"  href="{{route('order')}}" >
+        <a class="order-management dropdown-item"  href="#" >
           <i class="fas fa-shopping-bag"></i> 訂單管理 
         </a>
         <a class="address-book dropdown-item"  href="#" >
@@ -89,7 +89,7 @@
                   <i class="fas fa-tachometer-alt"></i> 後台系統 
                 </a>    
               @else
-                <a class="order-management dropdown-item"  href="{{route('order')}}" >
+                <a class="order-management dropdown-item"  href="#" >
                   <i class="fas fa-shopping-bag"></i> 訂單管理 
                 </a>
                 <a class="address-book dropdown-item"  href="#" >

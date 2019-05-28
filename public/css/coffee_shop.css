@@ -410,8 +410,6 @@ body.fixed #mainNav li a:hover{
     font-size: 14px;
     font-weight: bold;
     line-height: 1.0;
-    letter-spacing: 0.3em;
-    list-style: none;
     overflow: hidden;
 }
 .calendar_content .label {
@@ -667,10 +665,13 @@ footer{
     display: inline-block;
 }
 .product_page_product{
-    border-bottom:1px solid #655046;
+    border-bottom:1px solid tan;
 }
 .product_page_product a{
-    background: #655046;
+    text-decoration: none;
+}
+.product_page_product .buy_button a{
+    background: tan;
     border-radius: 5px;
     height: 50px;
     text-align: center;
@@ -681,7 +682,7 @@ footer{
     transition: 0.3s;
 }
 .product_page_product span{
-    color: #ffffff;
+    color: #655046;
     font-weight: bold;
     line-height: 50px;
     display: inline-block;
@@ -768,6 +769,28 @@ footer{
     text-align: center;
     margin-bottom:50px
 }
+.cart_send{
+    text-align: center;
+    text-decoration: none;
+    color:white;
+}
+.cart_send a{
+    text-decoration: none;
+    color:white;
+}
+#continue_button,#next_step_button{
+    
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 15px 10px;
+}
+#continue_button{
+    background-color: tan;
+}
+#next_step_button{
+    background-color: lightcoral;
+}
+
 @media (max-width: 767.98px)  {
     #cart_table .product_info img {
         max-width: 80px;

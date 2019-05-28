@@ -29,7 +29,7 @@ class ProductsController extends Controller
         $calendars = Calendar::all();
         $footer = Footer::find(1);
 
-        return view('frontend.products',compact('categorys','products','types','shopinfo','calendars','footer'));
+        return view('frontend.products.index',compact('categorys','products','types','shopinfo','calendars','footer'));
 
     }
     public function show($id)
@@ -38,7 +38,7 @@ class ProductsController extends Controller
         $shopinfo = ShopInfo::find(1);
         $calendars = Calendar::all();
         $footer = Footer::find(1);
-        return view('frontend.products_detail',compact('product','shopinfo','calendars','footer'));
+        return view('frontend.products.products_detail',compact('product','shopinfo','calendars','footer'));
     }
 
 }

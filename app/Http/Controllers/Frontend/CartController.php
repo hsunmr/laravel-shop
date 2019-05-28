@@ -10,25 +10,27 @@ use App\Models\Share\Calendar;
 use App\Models\Share\Footer;
 use App\Models\Products\Cart;
 use Session;
+
 class CartController extends Controller
 {
-    public function index(Request $request){
-        
+    public function index(Request $request)
+    {
         $shopinfo = ShopInfo::find(1);
         $calendars = Calendar::all();
         $footer = Footer::find(1);
 
-        if(!Session::has('cart'))
-            return view('frontend.cart',compact(['products' => null ],'shopinfo','calendars','footer'));
+        if (!Session::has('cart')) {
+            return view('frontend.cart.index', compact(['products' => null ], 'shopinfo', 'calendars', 'footer'));
+        }
         $oldCart = $request->session()->get('cart');
         $cart = new Cart($oldCart);
         $products =  $cart->items;
         $totalPrice = $cart->totalPrice;
 
-        return view('frontend.cart',compact('products','totalPrice','shopinfo','calendars','footer'));
-        
+        return view('frontend.cart.index', compact('products', 'totalPrice', 'shopinfo', 'calendars', 'footer'));
     }
-    public function getAddToCart(Request $request,$id){
+    public function getAddToCart(Request $request, $id)
+    {
         $product = Product::find($id);
         $shopinfo = ShopInfo::find(1);
         $calendars = Calendar::all();
@@ -37,33 +39,43 @@ class CartController extends Controller
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
 
         $cart = new Cart($oldCart);
-        $cart->add($product,$product->id);
+        $cart->add($product, $product->id);
         $request->session()->put('cart', $cart);
         
-        return view('frontend.products_detail',compact('product','shopinfo','calendars','footer'));
-
+        return view('frontend.products.products_detail', compact('product', 'shopinfo', 'calendars', 'footer'));
     }
-    public function updateCart(Request $request,$id){
+    public function updateCart(Request $request, $id)
+    {
         $product = Product::find($id);
 
         $oldCart = $request->session()->get('cart') ;
 
         $cart = new Cart($oldCart);
-        $cart->update($id,$request->quantity,$product);
+        $cart->update($id, $request->quantity, $product);
 
         $request->session()->put('cart', $cart);
 
         return response()->json(['success'=>true]);
     }
-    public function deleteCart(Request $request,$id){
-
+    public function deleteCart(Request $request, $id)
+    {
         $oldCart = $request->session()->get('cart');
 
         $cart = new Cart($oldCart);
         $cart->delete($id);
-        
-        $request->session()->put('cart', $cart);
+        if ($cart->items == null) {
+            $request->session()->forget('cart');
+        } else {
+            $request->session()->put('cart', $cart);
+        }
 
         return response()->json(['success'=>true]);
+    }
+    public function order(){
+        $shopinfo = ShopInfo::find(1);
+        $calendars = Calendar::all();
+        $footer = Footer::find(1);
+
+        return view('frontend.cart.order', compact('shopinfo', 'calendars', 'footer'));
     }
 }

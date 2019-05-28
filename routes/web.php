@@ -18,14 +18,17 @@ Route::get('/news/detail/{news}', 'Frontend\NewsController@show')->name('news.de
 Route::get('/products', 'Frontend\ProductsController@index')->name('products');
 Route::get('/products/detail/{product}', 'Frontend\ProductsController@show')->name('products.detail');
 Route::get('/shop','Frontend\ShopController@index')->name('shop');
+
+//cart route
 Route::get('/add-to-cart/{id}', 'Frontend\CartController@getAddToCart')->name('product.addToCart');
 Route::get('/cart', 'Frontend\CartController@index')->name('cart');
 Route::patch('/cart/{id}', 'Frontend\CartController@updateCart')->name('cart.update');
 Route::delete('/cart/{id}', 'Frontend\CartController@deleteCart')->name('cart.delete');
 
-Route::get('/order', function () {
-    return view('frontend.user.order');
-})->name('order');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/order','Frontend\CartController@order')->name('cart.order');
+});
+
 
 
 Route::middleware(['auth','admin'])->group(function(){
