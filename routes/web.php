@@ -27,6 +27,8 @@ Route::delete('/cart/{id}', 'Frontend\CartController@deleteCart')->name('cart.de
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/order','Frontend\CartController@order')->name('cart.order');
+    Route::post('/order/{id}','Frontend\CartController@order_confirm')->name('cart.order.confirm');
+    Route::get('/payment','Frontend\CartController@payment')->name('cart.payment');
 });
 
 

@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group1 row">
+                        <div class="form-group row">
                             <label for="name" class="col-md-3 col-form-label text-md-left">{{ __('姓名 ') }}<font style="color:red">*</font></label>
 
                             <div class="col-md-4">                       
@@ -74,7 +74,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group1 row">
+                        <div class="form-group row">
                             <label for="birthday" class="col-md-3 col-form-label text-md-left">{{ __('出生日期') }}</label>
                             <div class="col-md-4">
                                 <input id="birthday" type="date" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}" name="birthday">
@@ -99,7 +99,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group1 row">
+                        <div class="form-group row">
                             <label for="city" class="col-md-3 col-form-label text-md-left">{{ __('縣/市/鄉/鎮') }}</label>
 
                             <div class="col-md-9">
@@ -124,7 +124,7 @@
                                 </span>
                             @endif
                         </div>    
-                        <div class="form-group1 row">
+                        <div class="form-group row">
                             <label for="addr2" class="col-md-3 col-form-label text-md-left">{{ __('巷/弄/號/樓') }}</label>
 
                             <div class="col-md-9">
@@ -150,7 +150,7 @@
                                 @endif
                             </div>
                         </div>   
-                        <div class="form-group1 row">
+                        <div class="form-group row">
                             <label for="password" class=" col-md-3 col-form-label text-md-left">{{ __('密碼 ') }}<font style="color:red">*</font></label>
 
                             <div class="col-md-8">

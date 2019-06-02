@@ -7,6 +7,7 @@
         <h2 class="page_title">Shop Cart</h2>
     </div>
     @if (Session::has('cart'))
+    
     <div id="cart" class="container table-responsive">
         <table class="table" id="cart_table">
             <thead>
