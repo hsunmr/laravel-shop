@@ -26,9 +26,11 @@ Route::patch('/cart/{id}', 'Frontend\CartController@updateCart')->name('cart.upd
 Route::delete('/cart/{id}', 'Frontend\CartController@deleteCart')->name('cart.delete');
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/order','Frontend\CartController@order')->name('cart.order');
-    Route::post('/order/{id}','Frontend\CartController@order_confirm')->name('cart.order.confirm');
-    Route::get('/payment','Frontend\CartController@payment')->name('cart.payment');
+    Route::get('/order','Frontend\OrderController@index')->name('cart.order');
+    Route::post('/order/{id}','Frontend\OrderController@order_confirm')->name('cart.order.confirm');
+    
+    Route::get('/payment','Frontend\PaymentController@index')->name('cart.payment');
+    Route::post('/checkout','Frontend\PaymentController@checkout')->name('cart.checkout');
 });
 
 

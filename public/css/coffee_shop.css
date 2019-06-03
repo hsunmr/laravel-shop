@@ -802,15 +802,11 @@ footer{
 }
 .StripeElement {
     box-sizing: border-box;
-  
     height: 40px;
-  
     padding: 10px 12px;
-  
     border: 1px solid transparent;
     border-radius: 4px;
     background-color: white;
-  
     box-shadow: 0 1px 3px 0 #e6ebf1;
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
@@ -827,13 +823,22 @@ footer{
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
 }
+#card-errors{
+    color:#fa755a;
+}
 #cart-payment{
-    padding:200px;
+    padding:0 200px 50px;
+}
+#cart-payment h5{
+    color:sienna;
 }
 @media (max-width: 767.98px)  {
     #cart_table .product_info img {
         max-width: 80px;
         max-height: 80px;
+    }
+    #cart-payment{
+        padding:0 10px 50px;
     }
 }
 @media (max-width: 991.98px)  { 

@@ -90,27 +90,11 @@
                             @endif
                         </div>
                     </div>   
-        
-                    <script
-                        src="https://www.paypal.com/sdk/js?client-id=AQkwj6bVTQm-nCAoIBB4yA0MU3JZfYikHQcKLgD2Azx7DTYe-EFs7CogsttCzTzsXtPMS-gubQjl8gbG&currency=TWD">
-                    </script>
-                    <script>
-                        paypal.Buttons({
-                            createOrder: function(data, actions) {
-                            // Set up the transaction
-                            return actions.order.create({
-                                purchase_units: [{
-                                amount: {
-                                    value: '{{ $totalPrice }}'
-                                }
-                                }]
-                            });
-                            }
-                        }).render('#paypal-button-container');
-                    </script>
                     <div class="form-group row mb-0">
-                        <div class="col-md-4 offset-md-4 text-center">
-                            <div id="paypal-button-container"></div>
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn w-25" id="order_button">
+                                {{ __('結帳') }}
+                            </button>
                         </div>
                     </div>
                 </form>

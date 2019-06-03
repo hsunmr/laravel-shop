@@ -36,13 +36,12 @@
 
     <!-- Bootstrap core JavaScript -->
     
-    
     <script src="{{asset('jquery/jquery.min.js')}}"></script> 
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('fontawesome/js/all.min.js')}}"></script>
     <script src="{{asset('js/coffee_shop.js')}}"></script>
+    @yield('link')
     
-
   </body>
 
 </html>
