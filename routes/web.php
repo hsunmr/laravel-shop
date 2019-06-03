@@ -25,14 +25,13 @@ Route::get('/cart', 'Frontend\CartController@index')->name('cart');
 Route::patch('/cart/{id}', 'Frontend\CartController@updateCart')->name('cart.update');
 Route::delete('/cart/{id}', 'Frontend\CartController@deleteCart')->name('cart.delete');
 
+//order and payment route
 Route::middleware(['auth'])->group(function(){
     Route::get('/order','Frontend\OrderController@index')->name('cart.order');
     Route::post('/order/{id}','Frontend\OrderController@order_confirm')->name('cart.order.confirm');
     
     Route::get('/payment','Frontend\PaymentController@index')->name('cart.payment');
     Route::post('/checkout','Frontend\PaymentController@checkout')->name('cart.checkout');
-
-    Route::get('/payment_success','Frontend\ConfirmationController@index')->name('confirmation.index');
 });
 
 

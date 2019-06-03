@@ -80,7 +80,7 @@
     @else 
         @if (session()->has('success_message'))
             <div class="container">
-                <div class="alert alert-success pt-3 pb-5 ">
+                <div class="alert alert-success pt-3 pb-3 mb-5">
                     {{ session()->get('success_message') }}
                 </div>
             </div>

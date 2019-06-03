@@ -12,6 +12,7 @@ use App\Models\Share\Footer;
 use App\Models\Products\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Cartalyst\Stripe\Exception\CardErrorException;
+use App\Models\Orders;
 use Session;
 
 class PaymentController extends Controller
@@ -65,10 +66,23 @@ class PaymentController extends Controller
                     'quantity' =>  $cart->totalQty,
                 ]
             ]);
-
+            //add to orders table (database)
+            Orders::create([
+                'user_id' => $customer_info['user']['id'],
+                'email'=> $customer_info['email'],
+                'order_name' => $customer_info['name'],
+                'zip_cd' => $customer_info['zip_cd'],
+                'address' => $customer_info['address'],
+                'tel' => $customer_info['tel'],
+                'order_content' => $content,
+                'totalPrice' => $totalPrice
+            ]);      
+            //refresh session  
             $request->session()->forget('cart');
             $request->session()->forget('customer');
+
             return redirect()->route('cart')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+        
         } catch (CardErrorException $e) {
             return back()->withErrors('Error! ' . $e->getMessage());
         }
