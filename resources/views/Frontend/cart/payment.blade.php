@@ -6,6 +6,15 @@
     <div class="container payment_page_content">
         <h2 class="page_title">Payment</h2>
     </div>
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{!! $error !!}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div id="cart" class="container table-responsive">
         <table class="table" id="cart_table">
             <thead>
@@ -64,7 +73,7 @@
             <div class="form-group">
                 <label for="name" class="col-form-label text-md-left">{{ __('Name on Card ') }}</label>
                 <div>                       
-                    <input id="name_on_card" type="text" class="form-control{{ $errors->has('name_on_card') ? ' is-invalid' : '' }}" name="name_on_card" value="{{ old('name_on_card') }}" required>
+                    <input id="name_on_card" type="text" class="form-control{{ $errors->has('name_on_card') ? ' is-invalid' : '' }}" name="name_on_card" value="{{ old('name_on_card') }}" >
                 </div>
             </div>
             <div class="form-group">
@@ -79,7 +88,7 @@
             <div id="card-errors" role="alert"></div>
             </div>
         
-            <button class="btn btn-primary">Submit Payment</button>
+            <button class="btn btn-success">Submit Payment</button>
         </form>
     </div>
 

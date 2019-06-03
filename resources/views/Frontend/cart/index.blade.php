@@ -5,7 +5,10 @@
 <div class="container-fluid cart_page_des">
     <div class="container cart_page_content">
         <h2 class="page_title">Shop Cart</h2>
+
     </div>
+    
+
     @if (Session::has('cart'))
     
     <div id="cart" class="container table-responsive">
@@ -74,10 +77,19 @@
             <a href="{{route('cart.order')}}" id="next_step_button">下一步</a>
         </div>
     </div>
-    @else
-        <div class="noproduct-cart">
-            no product in the cart
-        </div>
+    @else 
+        @if (session()->has('success_message'))
+            <div class="container">
+                <div class="alert alert-success pt-3 pb-5 ">
+                    {{ session()->get('success_message') }}
+                </div>
+            </div>
+        @else
+            <div class="noproduct-cart">
+                no product in the cart
+            </div>
+        @endif
+
     @endif
    
 </div>

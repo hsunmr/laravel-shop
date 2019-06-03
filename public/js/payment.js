@@ -1,5 +1,5 @@
 // Create a Stripe client.
-var stripe = Stripe('pk_test_W1KjutdegW5R8Ogbg3JbjUMc002vr58OE5');
+var stripe = Stripe('pk_test_OQCyyF1ZgnkwlsX9opoHFKTQ00SxI88C3J');
 
 // Create an instance of Elements.
 var elements = stripe.elements({

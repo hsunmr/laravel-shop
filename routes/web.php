@@ -31,6 +31,8 @@ Route::middleware(['auth'])->group(function(){
     
     Route::get('/payment','Frontend\PaymentController@index')->name('cart.payment');
     Route::post('/checkout','Frontend\PaymentController@checkout')->name('cart.checkout');
+
+    Route::get('/payment_success','Frontend\ConfirmationController@index')->name('confirmation.index');
 });
 
 
