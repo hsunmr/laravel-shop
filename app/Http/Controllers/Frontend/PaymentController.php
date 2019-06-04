@@ -75,7 +75,8 @@ class PaymentController extends Controller
                 'address' => $customer_info['address'],
                 'tel' => $customer_info['tel'],
                 'order_content' => $content,
-                'totalPrice' => $totalPrice
+                'totalPrice' => $totalPrice,
+                'status' => '0'
             ]);      
             //refresh session  
             $request->session()->forget('cart');

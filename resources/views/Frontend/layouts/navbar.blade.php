@@ -5,10 +5,11 @@
 
     
     <button class="navbar-toggler x collapsed" id="toggle-button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="close" aria-label="Toggle navigation">
-      
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+      <div id="menuBtn" class="btn">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
         {{-- <span class="navbar-toggler-text  font-weight-bold">MENU</span>   --}}
       
     </button>

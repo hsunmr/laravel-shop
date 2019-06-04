@@ -4,6 +4,11 @@ $(document).ready(function () {
     var pos = $(window).scrollTop();
     fixNavbar();
     scroll_bottom_fade();
+
+    //toggle button
+    $("#menuBtn").click(function(){
+        $("body").toggleClass("is-open") 
+    });
     //init fix size
     if (pos > 100 && window.matchMedia('(min-width: 991.98px)').matches) {
         Navbar_fadeOut();
