@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Products\Product;
@@ -34,7 +34,7 @@ class OrderController extends Controller
         return view('frontend.cart.order', compact('products', 'totalPrice','shopinfo', 'calendars', 'footer'));
     }
     // order page post
-    public function order_confirm(Request $request, $id){
+    public function order_confirm(Request $request){
 
         $request->validate([
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -43,7 +43,7 @@ class OrderController extends Controller
             'address' => ['required', 'alpha_dash','string', 'max:255'],
             'tel' => ['required', 'numeric', 'digits_between:6,11'],
         ]);
-        $user = User::find($id);
+        $user = Auth::user();
 
         $customer = [
             'user'=> $user,

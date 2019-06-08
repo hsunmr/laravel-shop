@@ -5,7 +5,6 @@
 <div class="container-fluid cart_page_des">
     <div class="container cart_page_content">
         <h2 class="page_title">Shop Cart</h2>
-
     </div>
     
 
@@ -73,8 +72,8 @@
             </tfoot>
         </table>
         <div class="cart_send">
-            <a href="{{route('products')}}" id="continue_button">繼續購物</a>
-            <a href="{{route('cart.order')}}" id="next_step_button">下一步</a>
+            <a href="{{route('products')}}" class='linkbutton' id="continue_button">繼續購物</a>
+            <a href="{{route('cart.order')}}" class='linkbutton' id="next_step_button">下一步</a>
         </div>
     </div>
     @else 
