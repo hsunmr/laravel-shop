@@ -1,5 +1,6 @@
 body{
     background-color: #f5f9fc;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 #wrapper{
     position: relative;
@@ -296,7 +297,7 @@ nav{
     width:100px;
     height:100px;
 }
-#carousel-content table a,#aboutdiv-content table a,#newsdiv-content table a,#menu-content table a,#product-content table a,#shop-content table a{
+#carousel-content table a,#aboutdiv-content table a,#newsdiv-content table a,#menu-content table a,#product-content table a,#shop-content table a,#orders-content table a{
     color:white;
     margin-bottom: 5px;
 }
@@ -363,7 +364,23 @@ img{
 .tableresponsive{
     overflow-x:auto;
 }
-
+#cart_table .product_info{
+    width:600px;
+}
+#cart_table .product_info img {
+    margin: 0;
+    max-width: 160px;
+    max-height: 160px;
+    height: auto;
+    width: auto;
+    display: block;
+}
+.order_customer_info .card-header{
+    background-color: lightsalmon;
+}
+.order_products .card-header{
+    background-color: lightcoral;
+}
 
 footer{
     position: absolute;

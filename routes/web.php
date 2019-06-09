@@ -45,37 +45,43 @@ Route::middleware(['auth','admin'])->group(function(){
     })->name('dashboard');
 
     
+    Route::prefix('backend')->group(function () {
+        Route::group(['as' => 'backend.home.'], function() {
+            Route::resource('/carousel', 'Backend\Home\CarouselController');
+            Route::resource('/aboutdiv', 'Backend\Home\AboutDivController');
+        });
     
-    Route::group(['as' => 'backend.home.'], function() {
-        Route::resource('/carousel', 'Backend\Home\CarouselController');
-        Route::resource('/aboutdiv', 'Backend\Home\AboutDivController');
-    });
+        Route::group(['as' => 'backend.share.'], function() {
+            Route::get('/shopinfo', 'Backend\Share\ShopInfoController@index')->name('shopinfo.index');
+            Route::put('/shopinfo', 'Backend\Share\ShopInfoController@update')->name('shopinfo.update');
+            Route::get('/footer', 'Backend\Share\FooterController@index')->name('footer.index');
+            Route::put('/footer', 'Backend\Share\FooterController@update')->name('footer.update');
+        });
+    
+        Route::group(['as' => 'backend.about.'], function() {
+            Route::resource('/introdiv', 'Backend\About\IntroDivController');
+            Route::resource('/historydiv', 'Backend\About\HistoryDivController');
+        });
+    
+        Route::group(['as' => 'backend.news.'], function() {
+            Route::resource('/newsdiv', 'Backend\News\NewsController');
+        });
+    
+        Route::group(['as' => 'backend.products.'], function() {
+            Route::resource('/menu', 'Backend\Products\MenuController');
+            Route::resource('/product', 'Backend\Products\ProductController');
+            Route::resource('/product-type', 'Backend\Products\ProductTypeController');
+        });
+    
+        Route::group(['as' => 'backend.shop.'], function() {
+            Route::resource('/shop-detail', 'Backend\Shop\ShopController');
+        });
 
-    Route::group(['as' => 'backend.share.'], function() {
-        Route::get('/shopinfo', 'Backend\Share\ShopInfoController@index')->name('shopinfo.index');
-        Route::put('/shopinfo', 'Backend\Share\ShopInfoController@update')->name('shopinfo.update');
-        Route::get('/footer', 'Backend\Share\FooterController@index')->name('footer.index');
-        Route::put('/footer', 'Backend\Share\FooterController@update')->name('footer.update');
+        Route::group(['as' => 'backend.user.'], function() {
+            Route::resource('/orders', 'Backend\User\OrdersController');
+        });
     });
-
-    Route::group(['as' => 'backend.about.'], function() {
-        Route::resource('/introdiv', 'Backend\About\IntroDivController');
-        Route::resource('/historydiv', 'Backend\About\HistoryDivController');
-    });
-
-    Route::group(['as' => 'backend.news.'], function() {
-        Route::resource('/newsdiv', 'Backend\News\NewsController');
-    });
-
-    Route::group(['as' => 'backend.products.'], function() {
-        Route::resource('/menu', 'Backend\Products\MenuController');
-        Route::resource('/product', 'Backend\Products\ProductController');
-        Route::resource('/product-type', 'Backend\Products\ProductTypeController');
-    });
-
-    Route::group(['as' => 'backend.shop.'], function() {
-        Route::resource('/shop-detail', 'Backend\Shop\ShopController');
-    });
+    
 
 
 

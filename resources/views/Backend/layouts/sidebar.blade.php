@@ -92,7 +92,7 @@
           
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('backend.user.orders.index')}}">
             <i class="fas fa-file-invoice-dollar fa-fw" aria-hidden="true"></i>
             <span>訂單資訊</span>
             </a>

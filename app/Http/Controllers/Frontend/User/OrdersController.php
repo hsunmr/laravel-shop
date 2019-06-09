@@ -21,7 +21,7 @@ class OrdersController extends Controller
 
         $user = Auth::user();
         $orders = Orders::where('user_id',$user->id)->get();
-        
+
         return view('frontend.user.order',compact('orders','shopinfo','calendars','footer'));
 
     }
