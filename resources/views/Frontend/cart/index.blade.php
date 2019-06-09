@@ -25,7 +25,7 @@
                 <tr>
                     <td class="product_info">
                         <div class="product_img d-inline-block">
-                            <a href="#">
+                            <a href="{{route('products.detail',$product['item']['id'])}}">
                                 <img src="{{asset('uploads/product/' . $product['item']['image'] )}}">
                             </a>
                         </div>

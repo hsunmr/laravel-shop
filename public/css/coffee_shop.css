@@ -831,7 +831,7 @@ footer{
 #cart_table .product_info .product_text{
     vertical-align: top;
 }
-#cart tfoot{
+#cart tfoot,.order_products tfoot{
     text-align: center;
 }
 .total .priceval{
@@ -908,7 +908,7 @@ footer{
     border:1px solid sienna;
     border-radius: 25px;
     padding: 10px 15px;
-    background-color: linen;
+    background-color:whitesmoke;
 }
 .order_item a{
     text-decoration: none;
@@ -917,6 +917,20 @@ footer{
 #orders_button{
     background-color: lightcoral;
     margin-bottom: 5px;
+}
+#orders_button:hover{
+    background-color: lightsalmon;
+}
+#order_detail_content .card-body{
+    background: white;
+}
+.order_customer_info .card-header{
+    background-color: lightsalmon;
+    color:white;
+}
+.order_products .card-header{
+    background-color: lightslategrey;
+    color:white;
 }
 @media (max-width: 768px)  {
     .dropdown-menu{

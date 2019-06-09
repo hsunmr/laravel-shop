@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/checkout','Frontend\PaymentController@checkout')->name('cart.checkout');
 
     Route::get('/orders','Frontend\User\OrdersController@index')->name('orders');
+    Route::get('/order_detail/{id}','Frontend\User\OrdersController@getOrder')->name('order.detail');
 });
 
 
