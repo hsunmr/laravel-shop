@@ -12,7 +12,7 @@
                <i class="fas fa-user-circle fa-5x dashboard-icon"></i>
                <p class="card-text">目前使用者人數 <span class="align-middle" id="user-num">{{  Auth::user()->count()  }}</span></p>
                <p class="card-text">資料庫中有{{  Auth::user()->count()  }}個使用者資料，你可以點擊下方取得更多使用者の資訊</p>
-               <a href="#" class="btn btn-primary dashboard-btn">View All Users</a>
+               <a href="{{route('backend.user.users.index')}}" class="btn btn-primary dashboard-btn">View All Users</a>
             </div>
          </div>
       </div>

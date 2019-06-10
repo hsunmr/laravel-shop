@@ -85,6 +85,7 @@ Route::middleware(['auth','admin'])->group(function(){
 
         Route::group(['as' => 'backend.user.'], function() {
             Route::resource('/orders', 'Backend\User\OrdersController');
+            Route::get('/users', 'Backend\User\UsersController@index')->name('users.index');
         });
     });
     

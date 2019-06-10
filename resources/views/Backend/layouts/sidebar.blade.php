@@ -100,7 +100,7 @@
     
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="{{route('backend.user.users.index')}}">
             <i class="fas fa-users-cog fa-fw" aria-hidden="true"></i>
             <span>使用者資料</span></a>
         </li>
