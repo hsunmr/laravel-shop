@@ -35,6 +35,9 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/orders','Frontend\User\OrdersController@index')->name('orders');
     Route::get('/order_detail/{id}','Frontend\User\OrdersController@getOrder')->name('order.detail');
+
+    Route::get('/profile', 'Frontend\User\ProfileController@index')->name('profile');
+    Route::post('/profile', 'Frontend\User\ProfileController@update')->name('profile.update');
 });
 
 

@@ -30,8 +30,8 @@
         <a class="order-management dropdown-item"  href="{{route('orders')}}" >
           <i class="fas fa-shopping-bag"></i> 訂單管理 
         </a>
-        <a class="address-book dropdown-item"  href="#" >
-          <i class="fas fa-address-book"></i> 通訊錄 
+        <a class="address-book dropdown-item"  href="{{route('profile')}}" >
+          <i class="fas fa-address-book"></i> 個人資料 
         </a>
         <a class="order-management dropdown-item"  href="#" >
           <i class="fas fa-key"></i> 重設密碼 
@@ -93,8 +93,8 @@
                 <a class="order-management dropdown-item"  href="{{route('orders')}}" >
                   <i class="fas fa-shopping-bag"></i> 訂單管理 
                 </a>
-                <a class="address-book dropdown-item"  href="#" >
-                  <i class="fas fa-address-book"></i> 通訊錄 
+                <a class="address-book dropdown-item"  href="{{route('profile')}}" >
+                  <i class="fas fa-address-book"></i> 個人資料 
                 </a>
                 <a class="order-management dropdown-item"  href="#" >
                   <i class="fas fa-key"></i> 重設密碼 
