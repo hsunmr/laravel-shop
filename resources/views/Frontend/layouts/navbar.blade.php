@@ -33,7 +33,7 @@
         <a class="address-book dropdown-item"  href="{{route('profile')}}" >
           <i class="fas fa-address-book"></i> 個人資料 
         </a>
-        <a class="order-management dropdown-item"  href="#" >
+        <a class="order-management dropdown-item"  href="{{route('resetpassword')}}" >
           <i class="fas fa-key"></i> 重設密碼 
         </a>
         <a class="logout dropdown-item" href="{{ route('logout') }}" 
@@ -96,7 +96,7 @@
                 <a class="address-book dropdown-item"  href="{{route('profile')}}" >
                   <i class="fas fa-address-book"></i> 個人資料 
                 </a>
-                <a class="order-management dropdown-item"  href="#" >
+                <a class="order-management dropdown-item"  href="{{route('resetpassword')}}" >
                   <i class="fas fa-key"></i> 重設密碼 
                 </a> 
               @endif

@@ -38,6 +38,9 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/profile', 'Frontend\User\ProfileController@index')->name('profile');
     Route::post('/profile', 'Frontend\User\ProfileController@update')->name('profile.update');
+
+    Route::get('/resetpassword', 'Frontend\User\ResetPasswordController@index')->name('resetpassword');
+    Route::post('/resetpassword', 'Frontend\User\ResetPasswordController@update')->name('resetpassword.update');
 });
 
 
