@@ -15,7 +15,10 @@
     </button>
 
     <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none mx-auto" href="{{route('home')}}">HSUN COFFEE</a>
-    <a class="cart-toggler-link  d-lg-none" href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i></a>
+    <a class="cart-toggler-link  d-lg-none" href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i>
+    <span class="badge badge-danger">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+    </a>
+    
     @guest
       <a class="login-toggler-link d-lg-none"  href="{{route('login')}}"><i class="fas fa-user"></i></a>
     @endguest

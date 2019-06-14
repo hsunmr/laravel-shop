@@ -6,11 +6,11 @@
         @foreach ($carousels as $carousel)
             @if ($loop->first)
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{asset('uploads/carousel/' . $carousel->image_name)}}" alt="First slide">
+                    <div class="hero-item" style="background-image: url('{{asset('uploads/carousel/' . $carousel->image_name)}}'); "></div>
                 </div>
             @endif
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('uploads/carousel/' . $carousel->image_name)}}" alt="First slide">
+                <div class="hero-item" style="background-image: url('{{asset('uploads/carousel/' . $carousel->image_name)}}'); "></div>
             </div>
         @endforeach
         </div>
