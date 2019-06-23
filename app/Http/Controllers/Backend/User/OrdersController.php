@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Orders;
+use App\Models\Earnings;
 use App\Models\Products\Product;
 class OrdersController extends Controller
 {
@@ -88,7 +89,12 @@ class OrdersController extends Controller
         $order->save();
 
         if($order->status == '2'){
-            
+            $year = date('Y');
+            $month = date('m');
+            $earning = Earnings::where('year',$year)->where('month',$month)->get();
+            //calcute earnings and save to table
+            $earning[0]->earnings = $earning[0]->earnings + $order->totalPrice;
+            $earning[0]->save();
         }
 
         return redirect()->route('backend.user.orders.index')

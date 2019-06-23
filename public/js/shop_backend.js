@@ -10,10 +10,20 @@ $(document).ready(function () {
     $('#sidebarToggle,#sidebarToggleTop').click(function(){
         $('#sidebar').toggleClass('toggled');
     })
-    $('.delete-button,.edit-button').click(function(){
+    $('.delete-button').click(function(){
         $id = $(this).attr('data-id');
         $url = $(this).attr('data-url');
-        $('.delete-form,.edit-form').attr('action',$url);
+
+        $('.delete-form').attr('action',$url);
+    })
+    $('.edit-button').click(function(){
+        $id = $(this).attr('data-id');
+        $url = $(this).attr('data-url');
+        $status = $(this).attr('data-status');
+        //set disabled
+        $("#status option").removeAttr('disabled');
+        $("#status option[value=" + $status +"]").attr('disabled','true');
+        $('.edit-form').attr('action',$url);
     })
     $("#img-update,#image-create").change(function () {
         preview(this);   //if change -> preview img

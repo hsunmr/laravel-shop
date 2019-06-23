@@ -49,7 +49,7 @@
                         <tbody>
                         @foreach ($orders as $order)   
                         <tr>
-                            <td>{{ $order->id }}</td>
+                            <td>{{ $order->id }} {{ $order->status }}</td>
                             <td>{{ $order->user_id }}</td>
                             <td>{{ $order->order_name }}</td>
                             <td>{{ $order->zip_cd }}</td>
@@ -78,7 +78,7 @@
                                 {{-- View button --}}
                                 <a href="{{ route('backend.user.orders.show',$order->id ) }}" class="btn btn-warning"><i class="far fa-eye fa-fw"></i><span class="d-none d-lg-inline"> View</span></a>
                                 {{-- edit button --}}
-                                <button type="button" class="btn btn-primary align-top edit-button" data-toggle="modal" data-target="#editModal" data-id="{{ $order->id }}" data-url="{{ route('backend.user.orders.update', $order->id ) }}" >
+                                <button type="button" class="btn btn-primary align-top edit-button" data-toggle="modal" data-target="#editModal" data-status="{{ $order->status }}" data-id="{{ $order->id }}" data-url="{{ route('backend.user.orders.update', $order->id ) }}" >
                                     <i class="far fa-edit fa-fw"></i><span class="d-none d-lg-inline"> Edit Status</span>
                                 </button>
                                 {{-- edit Modal --}}
