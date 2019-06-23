@@ -87,6 +87,10 @@ class OrdersController extends Controller
         $order->status = $request->input('status');
         $order->save();
 
+        if($order->status == '2'){
+            
+        }
+
         return redirect()->route('backend.user.orders.index')
                          ->with('success', 'Update successfully');
     }

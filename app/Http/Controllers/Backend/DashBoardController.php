@@ -10,7 +10,7 @@ class DashBoardController extends Controller
 {
     public function index(){
         $ordersCount = Orders::all()->count();
-
+        
         return view('backend.index',compact('ordersCount'));
     }
 }

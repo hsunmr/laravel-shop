@@ -54,7 +54,7 @@
                   </div>
                </div>
                <div class="col-auto">
-                  <a href="{{route('backend.user.users.index')}}"><i class="fas fa-user-friends fa-2x"></i></a>
+                  <a href="{{route('backend.user.users.index')}}"><i class="fas fa-user-circle fa-2x"></i></a>
                </div>
             </div>
             </div>
