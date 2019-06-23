@@ -2,7 +2,7 @@
 @section('title','Carousel')
 @section('content')
 <div class="container-fluid" id="carousel">
-    <div class="row" id="carousel-title">
+    <div class="row title" id="carousel-title">
         <div class="col content-title">
             <i class="fas fa-images fa-3x align-middle"></i>
             <span class="align-middle">Carousel</span>

@@ -2,7 +2,7 @@
 @section('title','PRODUCT | CREATE')
 @section('content')
 <div class="container-fluid" id="product-create">
-    <div class="row">
+    <div class="row title">
         <div class="col content-title">
             <i class="fas fa-plus-circle fa-2x align-middle"></i>
             <span class="align-middle">New Product</span>

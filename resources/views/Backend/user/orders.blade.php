@@ -2,7 +2,7 @@
 @section('title','ORDERS')
 @section('content')
 <div class="container-fluid" id="orders">
-    <div class="row" id="orders-title">
+    <div class="row title" id="orders-title">
         <div class="col content-title">
             <i class="fas fa-file-invoice-dollar fa-3x align-middle"></i>
             <span class="align-middle">Orders</span>

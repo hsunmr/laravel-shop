@@ -2,7 +2,7 @@
 @section('title','ABOUT-DIV | CREATE')
 @section('content')
 <div class="container-fluid" id="aboutdiv-create">
-    <div class="row">
+    <div class="row tb-2">
         <div class="col content-title">
             <i class="fas fa-plus-circle fa-2x align-middle"></i>
             <span class="align-middle">New AboutDiv Posts</span>

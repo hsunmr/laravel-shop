@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid" id="shopinfo">
-    <div class="row" id="shopinfo-title">
+    <div class="row title" id="shopinfo-title">
         <div class="col content-title">
             <i class="fas fa-store fa-3x align-middle"></i>
             <span class="align-middle">ShopInfo</span>

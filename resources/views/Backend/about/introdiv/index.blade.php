@@ -2,7 +2,7 @@
 @section('title','INTRO-DIV')
 @section('content')
 <div class="container-fluid" id="intordiv">
-    <div class="row" id="about-title">
+    <div class="row title" id="about-title">
         <div class="col content-title">
             <i class="fas fa-book-open fa-3x align-middle"></i>
             <span class="align-middle">Intro Div</span>

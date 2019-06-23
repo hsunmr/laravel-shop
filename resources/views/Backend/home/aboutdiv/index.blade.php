@@ -2,7 +2,7 @@
 @section('title','ABOUT-DIV')
 @section('content')
 <div class="container-fluid" id="aboutdiv">
-    <div class="row" id="about-title">
+    <div class="row title" id="about-title">
         <div class="col content-title">
             <i class="far fa-clipboard fa-3x align-middle"></i>
             <span class="align-middle">About Div</span>

@@ -16,7 +16,7 @@
     <form action="{{route('backend.shop.shop-detail.update',$shop->id)}}" method="post">
         @csrf
         @method('PUT')
-        <div class="row">
+        <div class="row tb-2">
             <div class="col-md-7">
                 <div class="card mb-3">
                     <div class="card-body">

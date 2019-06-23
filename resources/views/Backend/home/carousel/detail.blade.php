@@ -2,7 +2,7 @@
 @section('title','Carousel | DETAIL')
 @section('content')
     <div class="container-fluid" id="carousel-detail">
-        <div class="row">
+        <div class="row tb-2">
             
             <div class="col-md-12">
                 <div class="form-group">

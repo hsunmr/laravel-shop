@@ -2,7 +2,7 @@
 @section('title','MENU | DETAIL')
 @section('content')
 <div class="container-fluid" id="menu-detail">
-    <div class="row">
+    <div class="row tb-2">
         <div class="col-md-8 ">
             <div class="card mb-3">
                 <div class="card-header bg-warning">Product Info:</div>

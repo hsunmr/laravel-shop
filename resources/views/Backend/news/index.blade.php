@@ -2,7 +2,7 @@
 @section('title','NEWS-DIV')
 @section('content')
 <div class="container-fluid" id="newsdiv">
-    <div class="row" id="news-title">
+    <div class="row title" id="news-title">
         <div class="col content-title">
             <i class="far fa-newspaper fa-3x align-middle"></i>
             <span class="align-middle">News Div</span>

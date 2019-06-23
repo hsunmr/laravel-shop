@@ -2,7 +2,7 @@
 @section('title','PRODUCTS | PRODUCT')
 @section('content')
 <div class="container-fluid" id="product">
-    <div class="row" id="menu-title">
+    <div class="row title" id="menu-title">
         <div class="col content-title">
             <i class="fas fa-store fa-3x align-middle"></i>
             <span class="align-middle">Product</span>

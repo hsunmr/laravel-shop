@@ -2,7 +2,7 @@
 @section('title','SHOP | DETAIL')
 @section('content')
 <div class="container-fluid" id="shop-detail">
-    <div class="row">
+    <div class="row tb-2">
         <div class="col-md-7">
             <div class="card mb-3">
                 <div class="card-body">

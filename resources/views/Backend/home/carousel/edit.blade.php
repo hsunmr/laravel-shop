@@ -2,7 +2,7 @@
 @section('title','Carousel | EDIT')
 @section('content')
     <div class="container-fluid" id="carousel-edit">
-        <div class="row">
+        <div class="row tb-2">
             <div class="col-md-12">
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -37,7 +37,7 @@
                     <img class="preview"src="{{ asset('uploads/carousel/' . $carousel->image_name) }}">
                 </div>
             </div>
-            <div class="row">
+            <div class="row tb-2">
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary">更新</button>
                     <a href="{{route('backend.home.carousel.index')}}" class="btn btn-secondary">Back</a>

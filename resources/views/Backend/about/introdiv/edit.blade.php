@@ -16,7 +16,7 @@
     <form action="{{route('backend.about.introdiv.update',$introdiv->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class="row">
+        <div class="row tb-2">
             <div class="col-md-8 ">
                 <div class="card mb-3">
                     <div class="card-body">

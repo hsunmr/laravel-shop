@@ -2,7 +2,7 @@
 @section('title','HISTORY-DIV')
 @section('content')
 <div class="container-fluid" id="historydiv">
-    <div class="row" id="historydiv-title">
+    <div class="row title" id="historydiv-title">
         <div class="col content-title">
             <i class="fas fa-history fa-3x align-middle"></i>
             <span class="align-middle">History Div</span>
