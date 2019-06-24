@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Orders;
 use App\Models\Earnings;
+use App\Models\ProductsSales;
 class DashBoardController extends Controller
 {
     public function index(){
@@ -27,7 +28,7 @@ class DashBoardController extends Controller
         }
         //calcute earnings chart data
         $count = 6;
-        $earnings_label = array();
+        $earnings_labels = array();
         $earnings_data = array();
         $temp_month = $month-1;
         
@@ -37,14 +38,23 @@ class DashBoardController extends Controller
                 $temp_month = 11;
                 $earnings_of_current_year = $Earning_Annual_last;
             }
-            array_unshift($earnings_label,$english_month[$temp_month]);
+            array_unshift($earnings_labels,$english_month[$temp_month]);
             array_unshift($earnings_data,$earnings_of_current_year[$temp_month]->earnings);
             $temp_month--;
             $count--;
         }
-        $line_data = array('labels'=>$earnings_label,'data'=>$earnings_data);
-       
+        $line_data = array('labels'=>$earnings_labels,'data'=>$earnings_data);
 
-        return view('backend.index',compact('ordersCount','Earning','EarningsofAnnual','line_data'));
+        //transfer product sales table data 
+        $product_sales = ProductsSales::all();
+        $sales_labels = array();
+        $sales_data = array();
+        foreach ($product_sales as $id => $product) {
+            array_unshift($sales_labels,$product['product_name']);
+            array_unshift($sales_data,$product['sales_volume']);
+        }
+        $Pie_data = array('labels'=>$sales_labels,'data'=>$sales_data);
+
+        return view('backend.index',compact('ordersCount','Earning','EarningsofAnnual','line_data','Pie_data'));
     }
 }

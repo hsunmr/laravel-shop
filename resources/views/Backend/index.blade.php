@@ -6,7 +6,7 @@
       var earnings_canvas = $('#Earnings_chart');
       var rated_canvas = $('#Rated_chart');
       var line_data = {!! json_encode($line_data) !!};
-
+      var Pie_data = {!! json_encode($Pie_data) !!};
       var earnings_config ={
          // The type of chart we want to create
          type: 'line',
@@ -40,11 +40,11 @@
       };
       var rated_config ={
          // The type of chart we want to create
-         type: 'pie',
+         type: 'doughnut',
 
          // The data for our dataset
          data: {
-            labels: ['Red','Orange','Yellow','Green','Blue'],
+            labels: Pie_data.labels,
             datasets: [{
                   label: 'Earnings',
                   backgroundColor: [
@@ -53,10 +53,10 @@
                      'rgb(255, 205, 86)',
                      'rgb(75, 192, 192)',
                      'rgb(54, 162, 235)',
+                     'rgb(154, 162, 235)',
                   ],
 
-                  data: [ 5, 2, 20, 30, 45],
-                  fill: false,
+                  data: Pie_data.data,
             }],
             
          },
@@ -65,8 +65,9 @@
          options: {
             legend: {
                display: true,
-               position: 'bottom',
+               position: 'right',
             },
+            cutoutPercentage: 80,
             responsive: true,
             maintainAspectRatio: false,
          }
@@ -156,7 +157,7 @@
       </div>
    </div>
    <div class="row" id="dashboard_earnings_linechart">
-      <div class="col-xl-8 col-lg-7 mb-4">
+      <div class="col-xl-7 mb-4">
          <div class="card">
             <div class="card-header">
                <span class="text-primary">Earnings OverView</span>
@@ -169,7 +170,7 @@
             </div>
          </div>
       </div>
-      <div class="col-xl-4 col-lg-5">
+      <div class="col-xl-5">
             <div class="card">
                <div class="card-header">
                   <span class="text-success">Top Rated Products (MONTHLY)</span>  

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Orders;
 use App\Models\Earnings;
+use App\Models\ProductsSales;
 use App\Models\Products\Product;
 class OrdersController extends Controller
 {
@@ -86,15 +87,31 @@ class OrdersController extends Controller
     {
         $order = Orders::find($id);
         $order->status = $request->input('status');
+        $order_product = json_decode($order->order_content,true);
         $order->save();
 
         if($order->status == '2'){
             $year = date('Y');
-            $month = date('m');
+            $month = date('n');
             $earning = Earnings::where('year',$year)->where('month',$month)->get();
             //calcute earnings and save to table
             $earning[0]->earnings = $earning[0]->earnings + $order->totalPrice;
             $earning[0]->save();
+            
+            
+            //set order_products to products_sales table
+            foreach ($order_product as $product_id => $value) {
+                $product_sales = ProductsSales::where('product_name',$value['product_name'])->get();
+                if($product_sales->isEmpty()){
+                    ProductsSales::create([
+                        'product_name' => $value['product_name'],
+                        'sales_volume' => $value['qty'],
+                    ]);
+                }else{
+                    $product_sales[0]->sales_volume += $value['qty'];
+                    $product_sales[0]->save();
+                }
+            }
         }
 
         return redirect()->route('backend.user.orders.index')

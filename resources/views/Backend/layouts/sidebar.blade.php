@@ -90,7 +90,7 @@
             使用者管理
         </div>
           
-        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Nav Item - Orders -->
         <li class="nav-item">
             <a class="nav-link" href="{{route('backend.user.orders.index')}}">
             <i class="fas fa-file-invoice-dollar fa-fw" aria-hidden="true"></i>
@@ -98,18 +98,11 @@
             </a>
         </li>
     
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item - Users -->
         <li class="nav-item">
             <a class="nav-link" href="{{route('backend.user.users.index')}}">
             <i class="fas fa-users-cog fa-fw" aria-hidden="true"></i>
             <span>使用者資料</span></a>
-        </li>
-    
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table fa-fw" aria-hidden="true"></i>
-            <span>Tables</span></a>
         </li>
     
         <!-- Divider -->
