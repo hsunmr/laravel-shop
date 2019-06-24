@@ -14,7 +14,7 @@ class EarningsTableSeeder extends Seeder
     {
         for($i = 0 ;$i <12 ;$i++){
             Earnings::create([
-                'year' => '2019',
+                'year' => '2018',
                 'month' => $i+1,
                 'earnings' => '0'
             ]);

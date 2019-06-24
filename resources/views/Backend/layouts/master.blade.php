@@ -46,6 +46,8 @@
   <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
   <script src="{{asset('ckeditor/adapters/jquery.js')}}"></script>
   <script src="{{asset('js/shop_backend.js')}}"></script>
+  @stack('scripts')
+
 
 </body>
 

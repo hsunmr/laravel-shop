@@ -11,16 +11,40 @@ class DashBoardController extends Controller
     public function index(){
         $ordersCount = Orders::all()->count();
         $year = date('Y');
-        $month = date('m');
-        //get annual earnings and month earings  
+        $month = date('n');
+        $english_month = array('January','February','March','April','May','June',
+            'July','August','September','October','November','December',
+        );
+        //get monthly earnings
+        $Earning = Earnings::where('year',$year)->where('month',$month)->get();
+        //get annual earnings and month earnings  
         $Earning_Annual = Earnings::where('year',$year)->get();
+        $Earning_Annual_last = Earnings::where('year',$year-1)->get();
         $EarningsofAnnual = 0;
         //calcute annual earnings
         for($i = 0 ; $i < $Earning_Annual->count(); $i++){
             $EarningsofAnnual += $Earning_Annual[$i]->earnings;
         }
-        $Earning = Earnings::where('year',$year)->where('month',$month)->get();
+        //calcute earnings chart data
+        $count = 6;
+        $earnings_label = array();
+        $earnings_data = array();
+        $temp_month = $month-1;
+        
+        $earnings_of_current_year = $Earning_Annual;
+        while($count != 0){
+            if($temp_month == '-1'){
+                $temp_month = 11;
+                $earnings_of_current_year = $Earning_Annual_last;
+            }
+            array_unshift($earnings_label,$english_month[$temp_month]);
+            array_unshift($earnings_data,$earnings_of_current_year[$temp_month]->earnings);
+            $temp_month--;
+            $count--;
+        }
+        $line_data = array('labels'=>$earnings_label,'data'=>$earnings_data);
+       
 
-        return view('backend.index',compact('ordersCount','Earning','EarningsofAnnual'));
+        return view('backend.index',compact('ordersCount','Earning','EarningsofAnnual','line_data'));
     }
 }
