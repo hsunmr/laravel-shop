@@ -49,7 +49,7 @@
                         <tbody>
                         @foreach ($orders as $order)   
                         <tr>
-                            <td>{{ $order->id }} {{ $order->status }}</td>
+                            <td>{{ $order->id }}</td>
                             <td>{{ $order->user_id }}</td>
                             <td>{{ $order->order_name }}</td>
                             <td>{{ $order->zip_cd }}</td>
