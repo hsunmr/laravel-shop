@@ -55,7 +55,7 @@ class MenuController extends Controller
         //set image path ,name and move it to local directory 
         $file = $request->file('image');
 
-        $path = public_path() . '\uploads\menu\\';
+        $path = public_path() . '/uploads/menu/';
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->move($path, $fileName);
         Menu::create([

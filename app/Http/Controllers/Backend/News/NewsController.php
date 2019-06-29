@@ -52,7 +52,7 @@ class NewsController extends Controller
         //set image path ,name and move it to local directory 
         $file = $request->file('image');
 
-        $path = public_path() . '\uploads\newsdiv\\';
+        $path = public_path() . '/uploads/newsdiv/';
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->move($path, $fileName);
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Home\Carousel;
-use App\models\Home\AboutDiv;
+use App\Models\Home\AboutDiv;
 use App\Models\Share\ShopInfo;
 use App\Models\Share\Calendar;
 use App\Models\Share\Footer;

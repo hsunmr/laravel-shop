@@ -43,7 +43,7 @@ class CarouselController extends Controller
         //set image path ,name and move it to local directory 
         $file = $request->file('image_name');
 
-        $path = public_path() . '\uploads\carousel\\';
+        $path = public_path() . '/uploads/carousel/';
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->move($path, $fileName);
 

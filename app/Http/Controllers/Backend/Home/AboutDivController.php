@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\models\Home\AboutDiv;
+use App\Models\Home\AboutDiv;
 class AboutDivController extends Controller
 {
     /**
@@ -53,7 +53,7 @@ class AboutDivController extends Controller
         //set image path ,name and move it to local directory 
         $file = $request->file('image');
 
-        $path = public_path() . '\uploads\aboutdiv\\';
+        $path = public_path() . '/uploads/aboutdiv/';
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->move($path, $fileName);
 

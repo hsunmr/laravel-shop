@@ -13,7 +13,7 @@
                             @foreach ($products as $product)
                                 @if ($product->type == $type->name) {{--type of product--}} 
                                     <div class="col-lg-4 col-sm-6 menu_col">
-                                        @if ($type->type == 'Product')
+                                        @if ($type->type == 'product')
                                             <a href="{{route('products.detail',$product->id)}}">
                                                 <img class="d-block w-100 rounded"src="{{asset('uploads/' . $type->type . '/' . $product->image)}}">
                                                 <div class="box_title">{{$product->name}}</div>
