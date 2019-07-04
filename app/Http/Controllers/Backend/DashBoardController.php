@@ -9,6 +9,10 @@ use App\Models\Earnings;
 use App\Models\ProductsSales;
 class DashBoardController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth:admin'); 
+    }
+    
     public function index(){
         $ordersCount = Orders::all()->count();
         $year = date('Y');

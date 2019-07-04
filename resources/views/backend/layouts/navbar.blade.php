@@ -14,7 +14,7 @@
 
       <li class="nav-item dropdown ">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="">{{  Auth::user()->name_last  }}{{  Auth::user()->name_first  }} </span>
+          <span class="">{{  Auth::user()->nickname }} </span>
           <i class="fas fa-user-astronaut fa-2x"></i>
         </a>
         <!-- Dropdown - User Information -->
@@ -24,12 +24,12 @@
             Home
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{ route('logout') }}" 
+          <a class="dropdown-item" href="{{ route('admin.logout') }}" 
                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
             Logout
           </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
               @csrf
           </form>
         </div>

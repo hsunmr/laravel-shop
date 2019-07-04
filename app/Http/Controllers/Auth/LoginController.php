@@ -35,25 +35,7 @@ class LoginController extends Controller
 
         return view('auth.login',compact('shopinfo','calendars','footer'));
     }
-    public function redirectTo(){
-
-        // User role
- 
-        $role = auth()->user()->type; 
-        
-        // Check user role
-        switch ($role) {
-            case '1':
-                    return '/dashboard';
-                break;
-            case '0':
-                    return '/';
-                break; 
-            default:
-                    return '/login'; 
-                break;
-        }
-    }
+    protected $redirectTo ='/';
 
     /**
      * Create a new controller instance.

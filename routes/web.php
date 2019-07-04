@@ -42,10 +42,12 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/resetpassword', 'Frontend\User\ResetPasswordController@index')->name('resetpassword');
     Route::post('/resetpassword', 'Frontend\User\ResetPasswordController@update')->name('resetpassword.update');
 });
-
-
-
-Route::middleware(['auth','admin'])->group(function(){
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'Auth\AdminController@showLoginForm')->name('admin.login');
+    Route::post('/', 'Auth\AdminController@login')->name('admin.login');
+    Route::post('/logout', 'Auth\AdminController@logout')->name('admin.logout');
+});
+Route::middleware(['auth:admin'])->group(function(){
     Route::get('/dashboard', 'Backend\DashBoardController@index')->name('dashboard');
 
     
