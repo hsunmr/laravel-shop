@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 use App\Models\Orders;
 use App\Models\Earnings;
 use App\Models\ProductsSales;
@@ -15,6 +16,7 @@ class DashBoardController extends Controller
     
     public function index(){
         $ordersCount = Orders::all()->count();
+        $usersCount = User::all()->count();
         $year = date('Y');
         $month = date('n');
         $english_month = array('January','February','March','April','May','June',
@@ -22,6 +24,9 @@ class DashBoardController extends Controller
         );
         //get monthly earnings
         $Earning = Earnings::where('year',$year)->where('month',$month)->get();
+
+        $EarningsofMonth= number_format($Earning[0]->earnings);
+
         //get annual earnings and month earnings  
         $Earning_Annual = Earnings::where('year',$year)->get();
         $Earning_Annual_last = Earnings::where('year',$year-1)->get();
@@ -30,6 +35,7 @@ class DashBoardController extends Controller
         for($i = 0 ; $i < $Earning_Annual->count(); $i++){
             $EarningsofAnnual += $Earning_Annual[$i]->earnings;
         }
+        $EarningsofAnnual = number_format($EarningsofAnnual);
         //calcute earnings chart data
         $count = 6;
         $earnings_labels = array();
@@ -59,6 +65,6 @@ class DashBoardController extends Controller
         }
         $Pie_data = array('labels'=>$sales_labels,'data'=>$sales_data);
 
-        return view('backend.index',compact('ordersCount','Earning','EarningsofAnnual','line_data','Pie_data'));
+        return view('backend.index',compact('usersCount','ordersCount','EarningsofMonth','EarningsofAnnual','line_data','Pie_data'));
     }
 }

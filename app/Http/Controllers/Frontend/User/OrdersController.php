@@ -20,7 +20,7 @@ class OrdersController extends Controller
         $footer = Footer::find(1);
 
         $user = Auth::user();
-        $orders = Orders::where('user_id',$user->id)->get();
+        $orders = Orders::where('user_id',$user->id)->orderby('created_at','desc')->get();
 
         return view('frontend.user.order',compact('orders','shopinfo','calendars','footer'));
 
