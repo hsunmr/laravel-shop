@@ -22,15 +22,31 @@ class DashBoardController extends Controller
         $english_month = array('January','February','March','April','May','June',
             'July','August','September','October','November','December',
         );
-        //get monthly earnings
-        $Earning = Earnings::where('year',$year)->where('month',$month)->get();
-
-        $EarningsofMonth= number_format($Earning[0]->earnings);
-
         //get annual earnings and month earnings  
         $Earning_Annual = Earnings::where('year',$year)->get();
+        if(empty($Earning_Annual[0]))
+        {
+            for($i = 0 ;$i <12 ;$i++){
+                Earnings::create([
+                    'year' => $year,
+                    'month' => $i+1,
+                    'earnings' => '0'
+                ]);
+            }
+        }
         $Earning_Annual_last = Earnings::where('year',$year-1)->get();
+        if(empty($Earning_Annual_last[0]))
+        {
+            for($i = 0 ;$i <12 ;$i++){
+                Earnings::create([
+                    'year' => $year-1,
+                    'month' => $i+1,
+                    'earnings' => '0'
+                ]);
+            }
+        }
         $EarningsofAnnual = 0;
+      
         //calcute annual earnings
         for($i = 0 ; $i < $Earning_Annual->count(); $i++){
             $EarningsofAnnual += $Earning_Annual[$i]->earnings;
@@ -54,7 +70,11 @@ class DashBoardController extends Controller
             $count--;
         }
         $line_data = array('labels'=>$earnings_labels,'data'=>$earnings_data);
-
+        
+        //get monthly earnings
+        $Earning = Earnings::where('year',$year)->where('month',$month)->get();
+        $EarningsofMonth= number_format($Earning[0]->earnings);
+        
         //transfer product sales table data 
         $product_sales = ProductsSales::all();
         $sales_labels = array();
@@ -64,7 +84,7 @@ class DashBoardController extends Controller
             array_unshift($sales_data,$product['sales_volume']);
         }
         $Pie_data = array('labels'=>$sales_labels,'data'=>$sales_data);
-
+        
         return view('backend.index',compact('usersCount','ordersCount','EarningsofMonth','EarningsofAnnual','line_data','Pie_data'));
     }
 }
