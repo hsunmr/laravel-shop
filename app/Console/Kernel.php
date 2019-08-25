@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
                 $Sales[$i]->sales_volume = 0;
                 $Sales[$i]->save();
             }
-        })->everyMinute();
+        })->monthly();
     }
 
     /**
