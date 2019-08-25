@@ -17,7 +17,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Orders::paginate(6);
+        $orders = Orders::orderby('created_at','desc')->paginate(6);
         return view('backend.user.orders',compact('orders'));
     }
 
