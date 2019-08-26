@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Products\Product;
 use App\Models\Products\ProductType;
+use App\Models\ProductsSales;
 class ProductController extends Controller
 {
     /**
@@ -63,6 +64,11 @@ class ProductController extends Controller
             'price' => $request->input('price'),
             'type' => $request->input('type'),
             'description' => $request->input('description')
+        ]);
+        //product sales table create
+        ProductsSales::create([
+            'product_name' =>  $request->input('name'),
+            'sales_volume'=> '0'
         ]);
         return redirect()->route('backend.products.product.index')
                          ->with('success', 'New product created successfully');
@@ -124,13 +130,18 @@ class ProductController extends Controller
 
             $product->image =  $fileName;
         }
+        $old_name = $product->name;
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->type = $request->input('type');
         $product->description = $request->input('description');
-      
         $product->save();
-        
+
+        //product sales table update
+        $product_sales = ProductsSales::where('product_name',$old_name)->get();
+        $product_sales[0]->product_name = $request->input('name');
+        $product_sales[0]->save();
+
         return redirect()->route('backend.products.product.index')
                          ->with('success', 'Update successfully');
     }
@@ -147,6 +158,8 @@ class ProductController extends Controller
         //remove img
         @unlink('uploads/product/' . $product->image);
         $product->delete();
+        $product_sales = ProductsSales::where('product_name',$product->name)->get();
+        $product_sales[0]->delete();
         return redirect()->route('backend.products.product.index')
                          ->with('success', 'Delete successfully');
     }
