@@ -15,9 +15,9 @@ class AboutController extends Controller
         
         $introdivs = IntroDiv::all();
         $historys = HistoryDiv::all();
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         return view('frontend.about',compact('introdivs','historys','shopinfo','calendars','footer'));
 

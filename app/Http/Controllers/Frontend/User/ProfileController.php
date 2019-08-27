@@ -13,9 +13,9 @@ use Auth;
 class ProfileController extends Controller
 {
     public function index(){
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         return view('frontend.user.profile',compact('shopinfo','calendars','footer'));
     }

@@ -59,9 +59,9 @@ Route::middleware(['auth:admin'])->group(function(){
     
         Route::group(['as' => 'backend.share.'], function() {
             Route::get('/shopinfo', 'Backend\Share\ShopInfoController@index')->name('shopinfo.index');
-            Route::put('/shopinfo', 'Backend\Share\ShopInfoController@update')->name('shopinfo.update');
+            Route::put('/shopinfo/{id}', 'Backend\Share\ShopInfoController@update')->name('shopinfo.update');
             Route::get('/footer', 'Backend\Share\FooterController@index')->name('footer.index');
-            Route::put('/footer', 'Backend\Share\FooterController@update')->name('footer.update');
+            Route::put('/footer/{id}', 'Backend\Share\FooterController@update')->name('footer.update');
         });
     
         Route::group(['as' => 'backend.about.'], function() {

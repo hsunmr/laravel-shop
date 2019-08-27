@@ -25,9 +25,9 @@ class ProductsController extends Controller
 
         $categorys = ProductType::orderBy('type','desc')->get()->groupBy('type');
         $types = ProductType::orderby('order')->get();
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         return view('frontend.products.index',compact('categorys','products','types','shopinfo','calendars','footer'));
 
@@ -35,9 +35,9 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
         return view('frontend.products.products_detail',compact('product','shopinfo','calendars','footer'));
     }
 

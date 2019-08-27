@@ -14,9 +14,9 @@ use Auth;
 class ResetPasswordController extends Controller
 {
     public function index(){
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         return view('frontend.user.reset',compact('shopinfo','calendars','footer'));
     }

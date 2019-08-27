@@ -19,9 +19,9 @@ class PaymentController extends Controller
 {
     // payment page 
     public function index(Request $request){
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         $oldCart = $request->session()->get('cart');
         $cart = new Cart($oldCart);

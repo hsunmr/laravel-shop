@@ -2,38 +2,38 @@
     <div class="container-fluid" id="detail-cotent">
         <h2 class="head_title">SHOP INFO</h2>
         <div class="img_wrap">
-            <img src="{{asset('uploads/shopinfo/' . $shopinfo->image)}}" alt="shop img" >
+            <img src="{{isset($shopinfo->image) ? asset('uploads/shopinfo/' .  $shopinfo->image ) : asset('uploads/shopinfo/shop_image.png')}}" alt="shop img" >
         </div>
         <div class="container-fluid">
             <div class="row block_wrap">
                 <div class="col-lg-6">
                     <div class="block_left">
-                        <div class="font-weight-bold shop_name">{{$shopinfo->title}}</div>
+                        <div class="font-weight-bold shop_name">{{isset($shopinfo->title) ? $shopinfo->title : 'HSUN COFFEE'}}</div>
                         <br>
                         <div class="address">
                             <span class="font-weight-bold box_head">地址</span>
                             <br class="break">
-                            <span>{{$shopinfo->address}}</span>
+                            <span>{{isset($shopinfo->address) ? $shopinfo->address : 'ADDRESS'}}</span>
                         </div>
                         <br>
                         <div class="tel_box">
                             <span class="font-weight-bold box_head">TEL</span>
                             <br class="break">
-                            <span class="tel">{{$shopinfo->tel}}</span>
+                            <span class="tel">{{isset($shopinfo->tel) ? $shopinfo->tel : 'TEL'}}</span>
                         </div>
                         <div class="mail_box">
                             <span class="font-weight-bold box_head">MAIL</span>
                             <br class="break">
-                            <a href="{{'mailto:' . $shopinfo->mail}}" class="mail">{{$shopinfo->mail}}</a>
+                            <a href="{{isset($shopinfo->mail) ? 'mailto:' .  $shopinfo->mail : 'mailto:MAIL'}}" class="mail">{{isset($shopinfo->mail) ? $shopinfo->mail : 'MAIL'}}</a>
                         </div>
                         <br>
                         <div class="open_info_box">
                             <span class="font-weight-bold box_head">營業時間</span>
-                            <span class="open_time">{{$shopinfo->businesshours}}</span>
+                            <span class="open_time">{{isset($shopinfo->businesshours) ? $shopinfo->businesshours : 'BUSINESS HOURS'}}</span>
                         </div>
                         <div class="rest_info_box">
                             <span class="font-weight-bold box_head">定休日</span>
-                            <span class="rest_time">{{$shopinfo->offday}}</span>
+                            <span class="rest_time">{{isset($shopinfo->offday) ? $shopinfo->offday : 'OFF DAY'}}</span>
                         </div>
                     </div>
                 </div>
@@ -73,11 +73,18 @@
    
    var month_olympic = [31,29,31,30,31,30,31,31,30,31,30,31];
    var month_normal = [31,28,31,30,31,30,31,31,30,31,30,31];
-
+   var calendar = [];
+   for(var i=0; i<31; i++){
+        calendar[i] ={
+            offday :1
+        }; 
+   }
    var create_calendar = function(){
-
-       var calendar = {!! json_encode($calendars) !!};
-
+    
+       //empty table
+       if({!! json_encode($calendars) !!}.length != 0) 
+        calendar = {!! json_encode($calendars) !!};
+    
        //get today date
        var date = new Date();
        var year = date.getFullYear();

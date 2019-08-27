@@ -17,9 +17,9 @@ class HomeController extends Controller
         $carousels = Carousel::all();
         $aboutdivs = AboutDiv::all();
         $newss = News::orderby('created_at','desc')->take(5)->get();
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
         
         return view('frontend.index',compact('carousels','aboutdivs','newss','shopinfo','calendars','footer'));
 

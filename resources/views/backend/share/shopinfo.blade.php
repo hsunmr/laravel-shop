@@ -23,7 +23,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('backend.share.shopinfo.update')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('backend.share.shopinfo.update',$shopinfo->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row" id="shopinfo-content">

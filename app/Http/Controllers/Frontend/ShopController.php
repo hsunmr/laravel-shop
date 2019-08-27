@@ -13,9 +13,9 @@ class ShopController extends Controller
     public function index(){
         
         $shops = Shop::all();
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         return view('frontend.shop',compact('shops','shopinfo','calendars','footer'));
 

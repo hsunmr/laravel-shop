@@ -11,12 +11,32 @@ class ShopInfoController extends Controller
 {
     public function index(){
 
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
+        if(empty($shopinfo)){
+            ShopInfo::create([
+                'title' => 'HSUN COFFEE',
+                'address' => 'ADDRESS',
+                'tel' => 'TEL',
+                'mail' => 'MAIL',
+                'businesshours' => 'BUSINESS HOURS',
+                'offday' => 'OFF DAY',
+                'image' => 'shop_image.png'
+            ]);
+            $shopinfo = ShopInfo::all()->first();
+        }
         $calendars = Calendar::all();
+        if($calendars->isEmpty()){
+            for ($i = 0; $i<31; $i++) {
+                Calendar::create([
+                    'offday'=> '1'
+                ]);
+            }
+            $calendars = Calendar::all();
+        }
 
         return view('backend.share.shopinfo',compact('shopinfo','calendars'));
     }
-    public function update(Request $request){
+    public function update(Request $request,$id){
         $request->validate([
             'title'=> ['required','string', 'max:50'],
             'address'=> ['required','string', 'max:50'],
@@ -26,7 +46,7 @@ class ShopInfoController extends Controller
             'offday'=> ['required','string', 'max:10'],
             'image'=>['image']
         ]);
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::find($id);
         if ($request->file('image')) {
             //remove original file
             @unlink('uploads/shopinfo/' . $shopinfo->image);
@@ -46,18 +66,16 @@ class ShopInfoController extends Controller
         $shopinfo->businesshours = $request->input('businesshours');
         $shopinfo->offday = $request->input('offday');
         $shopinfo->save();
-
-        for($i = 0; $i <= 31; $i++){
-
-            $calendar = Calendar::find($i);
-            if(isset($calendar)){
-                if ($request->input('day' . $i)=='on') {
-                    $calendar->offday = true;
-                } else{
-                    $calendar->offday = false;
-                }
-                $calendar->save();
-            }      
+        $calendar = Calendar::all();
+        $i = 1;
+        foreach ($calendar as $day => $value) {
+            if ($request->input('day' . $i)=='on') {
+                $value->offday = true;
+            } else{
+                $value->offday = false;
+            }
+            $value->save();
+            $i++;
         }
         return redirect()->route('backend.share.shopinfo.index')
                          ->with('success', 'Update successfully');

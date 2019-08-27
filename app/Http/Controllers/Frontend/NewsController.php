@@ -13,9 +13,9 @@ class NewsController extends Controller
     public function index(){
         
         $newss = News::orderby('created_at','desc')->paginate(10);
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         return view('frontend.news',compact('newss','shopinfo','calendars','footer'));
 
@@ -23,9 +23,9 @@ class NewsController extends Controller
     public function show($id)
     {
         $news = News::find($id);
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
         return view('frontend.news_detail',compact('news','shopinfo','calendars','footer'));
     }
 

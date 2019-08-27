@@ -15,9 +15,9 @@ class OrdersController extends Controller
 {
     public function index(){
 
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         $user = Auth::user();
         $orders = Orders::where('user_id',$user->id)->orderby('created_at','desc')->get();
@@ -27,9 +27,9 @@ class OrdersController extends Controller
     }
     public function getOrder($id){
 
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
         $isUser = false;
 
         $user = Auth::user();

@@ -9,14 +9,20 @@ use App\Models\Share\Footer;
 class FooterController extends Controller
 {
     public function index(){
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
+        if(empty($footer)){
+            Footer::create([
+                'footertext' => '© 2019 HSUN All Rights Reserved.'
+            ]);
+            $footer = Footer::all()->first();
+        }
         return view('backend.share.footer',compact('footer'));
     }
-    public function update(Request $request){
+    public function update(Request $request,$id){
         $request->validate([
             'footertext'=> ['required','string', 'max:50'],
         ]);
-        $footer = Footer::find(1);
+        $footer = Footer::find($id);
         $footer->footertext = $request->input('footertext');
         $footer->save();
 

@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('backend.share.footer.update')}}" method="post">
+    <form action="{{route('backend.share.footer.update',$footer->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="row" id="footer-content">

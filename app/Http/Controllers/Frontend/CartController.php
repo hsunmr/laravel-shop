@@ -16,9 +16,9 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         if (!Session::has('cart')) {
             return view('frontend.cart.index', compact(['products' => null ], 'shopinfo', 'calendars', 'footer'));
@@ -33,9 +33,9 @@ class CartController extends Controller
     public function getAddToCart(Request $request, $id)
     {
         $product = Product::find($id);
-        $shopinfo = ShopInfo::find(1);
+        $shopinfo = ShopInfo::all()->first();
         $calendars = Calendar::all();
-        $footer = Footer::find(1);
+        $footer = Footer::all()->first();
 
         $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
 
